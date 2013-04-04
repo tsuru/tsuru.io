@@ -3,3 +3,6 @@ deps:
 
 test: deps
 	@python test_app.py
+
+run: deps
+	@python app.py
