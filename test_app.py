@@ -13,7 +13,7 @@ class AppTestCase(unittest.TestCase):
 
     def test_should_have_facebook_login_button_in_content(self):
         resp = self.api.get("/")
-        self.assertIn(resp.data, "facebook-login")
+        self.assertIn("facebook-login", resp.data)
 
 
 if __name__ == "__main__":
