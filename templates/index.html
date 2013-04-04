@@ -6,24 +6,38 @@
 <body>
 	<div class="container">
 		<div class="header row">
-			<ul>
-				<li><a href="">software</a></li>
-				<li><a href="">community</a></li>
-				<li><a href="">documentation</a></li>
-				<li><a href="">code</a></li>
-			</ul>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<ul class="nav">
+						<li><a href="">software</a></li>
+						<li><a href="">community</a></li>
+						<li><a href="">documentation</a></li>
+						<li><a href="">code</a></li>
+					</ul>
+				</div>
+			</div>
 			<h1>Tsuru</h1>
 			<p>open source platform as a service</p>
 		</div>
 		<div class="content row">
 			<h2>Try tsuru</h2>
-			<div class="login-btns">
-				<a href="#" id="facebook-login"><img src="/static/img/botao_facebook.png"></a>
-				<a href="#"><img src="/static/img/botao_github.png"></a>
-				<a href="#"><img src="/static/img/botao_gplus.png"></a>
-				<div id="fb-root"></div>
+			<div class="login-btns span6">
+				<ul>
+					<li>
+						<a href="#" id="facebook-login"><img src="/static/img/botao_facebook.png"></a>
+						<div id="fb-root"></div>
+					</li>
+
+					<li>
+						<a href="#"><img src="/static/img/botao_github.png"></a>
+					</li>
+
+					<li>
+						<a href="#"><img src="/static/img/botao_gplus.png"></a>
+					</li>
+				</ul>
 			</div>
-			<div class="login-form">
+			<div class="login-form span6">
 				<form action="index_submit" method="get" accept-charset="utf-8">
 					<label for="first_name">First name</label><input type="text/submit/hidden/button" first_name="first_name" value="" id="first_name">
 					<label for="last_name">Last name</label><input type="text/submit/hidden/button" last_name="last_name" value="" id="last_name">
