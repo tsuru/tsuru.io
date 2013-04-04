@@ -1,0 +1,7 @@
+#facebook-login {
+    background-image: url("../img/facebook_button.png");
+    background-color: #ccc;
+    width: 155px;
+    height: 30px;
+    display: block;
+}
