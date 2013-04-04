@@ -17,6 +17,14 @@ function testAPI() {
     });
 }
 
+function showLoginButtons() {
+    var fLogin = $("#facebook-login");
+    fLogin.css("display", "block");
+    fLogin.on("click", function(){
+        login();
+    });
+}
+
 window.fbAsyncInit = function() {
     FB.init({
         appId      : '441115332643061', // App ID
@@ -32,12 +40,10 @@ window.fbAsyncInit = function() {
             testAPI();
         } else if (response.status === 'not_authorized') {
             // not_authorized
-            // show login buttons
-            // login()
+            showLoginButtons()
         } else {
             // not_logged_in
-            // show login buttons
-            // login()
+            showLoginButtons()
         }
     });
 };
