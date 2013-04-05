@@ -30,3 +30,12 @@
 .content .title {
 	text-align: center;
 }
+
+.thanks .share-btns {
+	list-style: none;
+	margin: 0;
+}
+
+.thanks .share-btns li {
+	display: inline;
+}
