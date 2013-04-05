@@ -18,10 +18,20 @@
 </div>
 <div class="login-form span6">
 	<form action="index_submit" method="get" accept-charset="utf-8">
-		<label for="first_name">First name</label><input type="text/submit/hidden/button" first_name="first_name" value="" id="first_name">
-		<label for="last_name">Last name</label><input type="text/submit/hidden/button" last_name="last_name" value="" id="last_name">
-		<label for="email">Email</label><input type="text/submit/hidden/button" email="email" value="" id="email">
-	<p><input type="submit" value="Continue &rarr;"></p>
+		<div class="row">
+			<div class="span3">
+				<label for="first_name">First name</label><input type="text/submit/hidden/button" first_name="first_name" value="" id="first_name">
+			</div>
+			<div class="span3">
+				<label for="last_name">Last name</label><input type="text/submit/hidden/button" last_name="last_name" value="" id="last_name">
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<label for="email">Email</label><input type="text/submit/hidden/button" email="email" value="" id="email">
+			</div>
+		</div>
+		<p><input type="submit" value="Continue &rarr;"></p>
 	</form>
 </div>
 {% endblock %}
