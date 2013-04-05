@@ -54,7 +54,7 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         data = {"first_name": "First", "last_name": "Last", "email": "first@last.com"}
         self._mock_requests(mock, data)
         resp = self.api.get("/register/facebook?access_token=123awesometoken456")
-        self.assertEqual(302, resp.status_code)
+        self.assertEqual(200, resp.status_code)
         u = self.db.users.find_one(data)
         self.assertIsNotNone(u)
         self.assertEqual(data["first_name"], u["first_name"])
@@ -94,7 +94,7 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
         resp = self.api.get("/register/github?code=coolcode")
-        self.assertEqual(302, resp.status_code)
+        self.assertEqual(200, resp.status_code)
 
     def test_should_return_400_when_code_is_not_present(self):
         resp = self.api.get("/register/github")
@@ -107,7 +107,7 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
         resp = self.api.get("/register/github?code=code21")
-        self.assertEqual(302, resp.status_code)
+        self.assertEqual(200, resp.status_code)
         self.assertEqual(1, mock.call_count)
         self.assertEqual(1, mock_get.call_count)
 
@@ -118,7 +118,7 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
         resp = self.api.get("/register/github?code=code21")
-        self.assertEqual(302, resp.status_code)
+        self.assertEqual(200, resp.status_code)
         u = self.db.users.find_one({"first_name": "Foo", "last_name": "Bar"})
         self.assertIsNotNone(u)
         self.assertEqual(u["email"], "test@test.com")

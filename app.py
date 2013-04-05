@@ -39,10 +39,10 @@ def facebook_register():
             "last_name": info["last_name"],
             "email": info["email"]}
     g.db.users.insert(user)
-    return redirect(url_for("confirmation"))
+    return render_template("confirmation.html", email=info["email"])
 
 
-@app.route("/register/github", methods=["GET"])
+@app.route("/register/github")
 def github_register():
     code = request.args.get("code")
     if code is None:
@@ -62,7 +62,7 @@ def github_register():
             "last_name": last_name,
             "email": info["email"]}
     g.db.users.insert(user)
-    return redirect(url_for("confirmation"))
+    return render_template("confirmation.html", email=info["email"])
 
 
 def parse_github_name(info):
