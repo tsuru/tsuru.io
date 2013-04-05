@@ -17,8 +17,10 @@
 		</li>
 	</ul>
 </div>
+{% if not registered %}
 <div class="more-info span6">
 	<form action="" method="post" accept-charset="utf-8">
+		<input type="hidden" name="email" value="{{email}}">
 		<div class="row">
 			<div class="span3">
 				<label for="work">What do you do for a living?</label>
@@ -300,4 +302,5 @@
 		</div>
 	</form>
 </div>
+{% endif %}
 {% endblock %}
