@@ -23,7 +23,6 @@ window.fbAsyncInit = function() {
         if (response.status === 'connected') {
             // connected
             // no login buttons
-            testAPI();
         } else if (response.status === 'not_authorized') {
             // not_authorized
         } else {
