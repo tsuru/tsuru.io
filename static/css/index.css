@@ -85,3 +85,7 @@ input[type=submit] {
 .content .login-btns ul li {
 	margin: 20px 0;
 }
+
+.content .login-btns span {
+	cursor: pointer;
+}
