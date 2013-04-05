@@ -15,6 +15,9 @@ MONGO_DATABASE_NAME = os.environ.get("MONGO_DATABASE_NAME", "test")
 GITHUB_CLIENT_ID = os.environ.get("GITHUB_CLIENT_ID", "")
 GITHUB_CLIENT_SECRET = os.environ.get("GITHUB_CLIENT_SECRET", "")
 FACEBOOK_APP_ID = os.environ.get("FACEBOOK_APP_ID", "")
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
+GOOGLE_USER_IP = os.environ.get("GOOGLE_USER_IP")
+GOOGLE_OAUTH_ENDPOINT = os.environ.get("GOOGLE_OAUTH_ENDPOINT", "https://www.googleapis.com/oauth2/v2")
 
 
 @app.route("/")
@@ -70,6 +73,23 @@ def parse_github_name(info):
     if len(splitted) > 1:
         return splitted[0], splitted[-1]
     return splitted[0], ""
+
+
+@app.route("/register/gplus", methods=["GET"])
+def gplus_register():
+    token = request.args.get("token")
+    token_type = request.args.get("token_type")
+    if token is None or token_type is None:
+        return "Token is required.", 400
+    headers = {"Authorization": "%s %s" % (token_type, token)}
+    url = "%s/userinfo?key=%s&userIp=%s" % (GOOGLE_OAUTH_ENDPOINT, GOOGLE_API_KEY, GOOGLE_USER_IP)
+    resp = requests.get(url, headers=headers)
+    info = resp.json()
+    user = {"first_name": info["given_name"],
+            "last_name": info["family_name"],
+            "email": info["email"]}
+    g.db.users.insert(user)
+    return ""
 
 
 def has_token(form):

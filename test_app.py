@@ -1,8 +1,9 @@
-import os
 import unittest
-import app
+
 from pymongo import Connection
 from mock import patch, Mock
+
+import app
 
 
 class ClientTest(object):
@@ -122,6 +123,54 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         u = self.db.users.find_one({"first_name": "Foo", "last_name": "Bar"})
         self.assertIsNotNone(u)
         self.assertEqual(u["email"], "test@test.com")
+
+
+class GplusLoginTestCase(ClientTest, unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        mongo_uri_port = app.MONGO_URI.split(":")
+        host = mongo_uri_port[0]
+        port = int(mongo_uri_port[1])
+        cls.conn = Connection(host, port)
+        cls.db = cls.conn[app.MONGO_DATABASE_NAME]
+        ClientTest.setUpClass()
+
+    def tearDown(self):
+        self.db.users.remove()
+
+    def clean_api_client(self):
+        app.GOOGLE_USER_IP = None
+        app.GOOGLE_API_KEY = None
+
+    def test_should_return_bad_request_when_token_is_missing(self):
+        resp = self.api.get("/register/gplus")
+        self.assertEqual(400, resp.status_code)
+        self.assertEqual(u"Token is required.", resp.data)
+
+    @patch("requests.get")
+    def test_should_send_request_to_google_plus(self, mock):
+        app.GOOGLE_USER_IP = "127.0.0.1"
+        app.GOOGLE_API_KEY = "key"
+        self.addCleanup(self.clean_api_client)
+        m = Mock()
+        m.json.return_value = {
+            "id": "1234",
+            "email": "secret@company.com",
+            "verified_email": True,
+            "given_name": "Francisco",
+            "family_name": "Souza",
+            "name": "Francisco Souza",
+            "gender": "male",
+        }
+        mock.return_value = m
+        resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
+        self.assertEqual(200, resp.status_code)
+        url = "%s/userinfo?key=%s&userIp=%s" % (app.GOOGLE_OAUTH_ENDPOINT, app.GOOGLE_API_KEY, app.GOOGLE_USER_IP)
+        headers = {"Authorization": "Bearer mytoken"}
+        mock.assert_called_with(url, headers=headers)
+        u = self.db.users.find_one({"email": "secret@company.com", "first_name": "Francisco", "last_name": "Souza"})
+        self.assertIsNotNone(u)
 
 
 class HelperTests(unittest.TestCase):
