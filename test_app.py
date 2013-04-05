@@ -30,6 +30,5 @@ class FacebookLoginTestCase(ClientTest, unittest.TestCase):
         resp = self.api.post("/facebook-login")
         self.assertEqual(201, resp.status_code)
 
-
 if __name__ == "__main__":
     unittest.main()
