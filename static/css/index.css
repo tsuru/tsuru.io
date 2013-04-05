@@ -4,19 +4,43 @@
 }
 
 .header {
-	background: #000 url('/static/img/tsuru_maps.png');
+	background: #000 url('/static/img/tsuru_maps.png') no-repeat fixed -60px -300px;
 	color: #fff;
-	height: 582px;
+}
+
+.header img {
+	margin-top: -15px;
+}
+
+.header .main {
+	padding: 85px 0;
+}
+
+.header h1 {
+	font-size: 82px;
+	font-weight: normal;
+	margin: 0 0 50px;
+}
+
+.header p {
+	font-size: 30px;
+	font-weight: lighter;
+}
+
+.navegation {
+	background-color: #171717;
 }
 
 .header .navbar-inner {
-	background: #000;
+	background: #171717;
 	border: none;
+	padding: 13px 0 0;
 }
 
 .header .navbar .nav > li > a {
 	color: #fff;
 	text-shadow: none;
+	font-weight: lighter;
 }
 
 .content .title {
