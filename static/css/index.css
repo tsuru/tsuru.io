@@ -56,6 +56,10 @@
 	padding-right: 25px;
 }
 
+.content {
+	margin-bottom: 30px;
+}
+
 .content .title {
 	text-align: center;
 	margin-bottom: 30px;
@@ -73,14 +77,6 @@
 
 .content .legal-note {
 	font-size: 10px;
-}
-
-.content .about {
-	margin: 30px;
-}
-
-.content .community {
-	margin: 30px;
 }
 
 .thanks .share-btns {
