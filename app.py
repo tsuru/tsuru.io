@@ -5,7 +5,7 @@
 import requests
 import os
 import pymongo
-from flask import Flask, render_template, g, request
+from flask import Flask, render_template, g, request, redirect, url_for
 
 app = Flask(__name__)
 MONGO_URI = os.environ.get("MONGO_URI", "localhost:27017")
@@ -62,7 +62,7 @@ def github_register():
             "last_name": last_name,
             "email": info["email"]}
     g.db.users.insert(user)
-    return "", 201
+    return redirect(url_for("confirmation"))
 
 
 def parse_github_name(info):

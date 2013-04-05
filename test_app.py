@@ -1,7 +1,3 @@
-# Copyright 2013 Globo.com. All rights reserved.
-# Use of this source code is governed by a BSD-style
-# license that can be found in the LICENSE file.
-
 import os
 import unittest
 import app
@@ -95,12 +91,12 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @patch("requests.post")
     @patch("requests.get")
-    def test_should_request_and_be_success(self, mock_get, mock):
+    def test_should_request_be_success_and_redirect(self, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
         resp = self.api.get("/register/github?code=coolcode")
-        self.assertEqual(201, resp.status_code)
+        self.assertEqual(302, resp.status_code)
 
     def test_should_return_400_when_code_is_not_present(self):
         resp = self.api.get("/register/github")
@@ -113,7 +109,7 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
         resp = self.api.get("/register/github?code=code21")
-        self.assertEqual(201, resp.status_code)
+        self.assertEqual(302, resp.status_code)
         self.assertEqual(1, mock.call_count)
         self.assertEqual(1, mock_get.call_count)
 
@@ -124,7 +120,7 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
         resp = self.api.get("/register/github?code=code21")
-        self.assertEqual(201, resp.status_code)
+        self.assertEqual(302, resp.status_code)
         u = self.db.users.find_one({"first_name": "Foo", "last_name": "Bar"})
         self.assertIsNotNone(u)
         self.assertEqual(u["email"], "test@test.com")
