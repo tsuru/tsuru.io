@@ -12,11 +12,15 @@ MONGO_URI = os.environ.get("MONGO_URI", "localhost:27017")
 MONGO_USER = os.environ.get("MONGO_USER", "")
 MONGO_PASSWORD = os.environ.get("MONGO_PASSWORD", "")
 MONGO_DATABASE_NAME = os.environ.get("MONGO_DATABASE_NAME", "test")
+GITHUB_CLIENT_ID = os.environ.get("GITHUB_CLIENT_ID", "")
+GITHUB_CLIENT_SECRET = os.environ.get("GITHUB_CLIENT_SECRET", "")
+FACEBOOK_APP_ID = os.environ.get("FACEBOOK_APP_ID", "")
 
 
 @app.route("/")
 def index():
-    return render_template("index.html"), 200
+    return render_template("index.html", facebook_app_id=FACEBOOK_APP_ID,
+                                         github_client_id=GITHUB_CLIENT_ID), 200
 
 
 @app.route("/confirmation")
@@ -43,7 +47,7 @@ def github_register():
     code = request.args.get("code")
     if code is None:
         return "Could not obtain code access to github.", 400
-    data = "client_id=706bfb0686350478f3cd&code={0}&client_secret=d56509a2914116dccb2ba12e92d83b0ab829e42c".format(code)
+    data = "client_id={0}&code={1}&client_secret={2}".format(GITHUB_CLIENT_ID, code, GITHUB_CLIENT_SECRET)
     headers = {"Accept": "application/json"}
     url = "https://github.com/login/oauth/access_token"
     response = requests.post(url, data=data, headers=headers)
