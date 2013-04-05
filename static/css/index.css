@@ -72,14 +72,30 @@
 	display: inline;
 }
 
+.content form label {
+	font-weight: lighter;
+	font-size: 13px;
+}
+
+.content input {
+	border: 1px solid #ccc;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	height: 26px;
+}
+
 input[type=submit] {
 	background-color: #000;
 	color: #fff;
 	border: none;
+	font-weight: lighter;
+	font-size: 13px;
 }
 
 .content .login-btns ul {
 	list-style: none;
+	margin-left: 157px;
 }
 
 .content .login-btns ul li {
