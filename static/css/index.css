@@ -128,7 +128,7 @@ input[type=submit] {
 	cursor: pointer;
 }
 
-.nav .active {
+.header .navbar .nav > li > a.active {
 	font-weight: bold;
 }
 
