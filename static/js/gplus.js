@@ -24,6 +24,6 @@ function renderGplus() {
 
 function gplusCallback(r) {
 	if(r.access_token) {
-		window.location.href = "/register/gplus?token=" + r.access_token;
+		window.location.href = "/register/gplus?token=" + r.access_token + "&token_type=" + r.token_type;
 	}
 }
