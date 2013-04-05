@@ -22,10 +22,6 @@ class AppTestCase(ClientTest, unittest.TestCase):
         resp = self.api.get("/confirmation")
         self.assertEqual(200, resp.status_code)
 
-    def test_should_have_facebook_register_button_in_content(self):
-        resp = self.api.get("/")
-        self.assertIn("facebook-register", resp.data)
-
 
 class FacebookLoginTestCase(ClientTest, unittest.TestCase):
 
