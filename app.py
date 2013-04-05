@@ -28,11 +28,11 @@ def confirmation():
     return render_template("confirmation.html"), 200
 
 
-@app.route("/register/facebook", methods=["POST"])
+@app.route("/register/facebook")
 def facebook_register():
-    if not has_token(request.form):
+    if not has_token(request.args):
         return "Could not obtain access token from facebook.", 400
-    url = "https://graph.facebook.com/me?fields=first_name,last_name,email&access_token={0}".format(request.form["access_token"])
+    url = "https://graph.facebook.com/me?fields=first_name,last_name,email&access_token={0}".format(request.args["access_token"])
     response = requests.get(url)
     info = response.json()
     user = {"first_name": info["first_name"],

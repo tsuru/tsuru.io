@@ -53,8 +53,7 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
     def test_should_receive_facebook_data_and_store_on_database(self, mock):
         data = {"first_name": "First", "last_name": "Last", "email": "first@last.com"}
         self._mock_requests(mock, data)
-        request_data = {"access_token": "123awesometoken456"}
-        resp = self.api.post("/register/facebook", data=request_data)
+        resp = self.api.get("/register/facebook?access_token=123awesometoken456")
         self.assertEqual(302, resp.status_code)
         u = self.db.users.find_one(data)
         self.assertIsNotNone(u)
@@ -64,8 +63,7 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         mock.get.assert_called_once()
 
     def test_should_return_400_and_do_not_save_user_when_validation_fails(self):
-        data = {"access_token": ""}
-        resp = self.api.post("/register/facebook", data=data)
+        resp = self.api.get("/register/facebook?access_token=")
         self.assertEqual(400, resp.status_code)
         u = self.db.users.find_one({"first_name": "First"})
         self.assertIsNone(u)
