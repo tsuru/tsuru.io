@@ -148,6 +148,11 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         self.assertEqual(400, resp.status_code)
         self.assertEqual(u"Token is required.", resp.data)
 
+    def test_should_return_bad_request_when_token_type_is_missing(self):
+        resp = self.api.get("/register/gplus?token=mytoken")
+        self.assertEqual(400, resp.status_code)
+        self.assertEqual(u"Token is required.", resp.data)
+
     @patch("requests.get")
     def test_should_send_request_to_google_plus(self, mock):
         app.GOOGLE_USER_IP = "127.0.0.1"
