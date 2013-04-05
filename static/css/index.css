@@ -45,3 +45,11 @@ input[type=submit] {
 	color: #fff;
 	border: none;
 }
+
+.content .login-btns ul {
+	list-style: none;
+}
+
+.content .login-btns ul li {
+	margin: 20px 0;
+}
