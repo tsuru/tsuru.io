@@ -88,6 +88,8 @@ def gplus_register():
     user = {"first_name": info["given_name"],
             "last_name": info["family_name"],
             "email": info["email"]}
+    if g.db.users.find({"email": info["email"]}).count() > 0:
+        return render_template("confirmation.html", registered=True)
     g.db.users.insert(user)
     return render_template("confirmation.html", email=info["email"])
 
