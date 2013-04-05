@@ -1,3 +1,4 @@
+import requests
 import os
 import pymongo
 from flask import Flask, render_template, g, request
@@ -19,21 +20,24 @@ def confirmation():
     return render_template("confirmation.html"), 200
 
 
-@app.route("/login/facebook", methods=["POST"])
-def facebook_login():
-    if not is_login_valid(request.form):
-        return "Missing required fields for login.", 400
-    user = {"first_name": request.form["first_name"],
-            "last_name": request.form["last_name"]}
+@app.route("/register/facebook", methods=["POST"])
+def facebook_register():
+    if not has_token(request.form):
+        return "Could not obtain access token from facebook.", 400
+    url = "https://graph.facebook.com/me?fields=first_name,last_name,email&access_token={0}".format(request.form["access_token"])
+    response = requests.get(url)
+    info = response.json()
+    user = {"first_name": info["first_name"],
+            "last_name": info["last_name"],
+            "email": info["email"]}
     g.db.users.insert(user)
     return "", 201
 
 
-def is_login_valid(form):
-    if "first_name" not in form.keys() or "last_name" not in form.keys():
+def has_token(form):
+    if "access_token" not in form.keys():
         return False
-    if not form["first_name"] or form["first_name"] == "" or not form["last_name"] \
-       or form["last_name"] == "":
+    if not form["access_token"] or form["access_token"] == "":
         return False
     return True
 
