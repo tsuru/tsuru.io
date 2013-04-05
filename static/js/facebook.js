@@ -11,7 +11,7 @@ function login() {
             // cancelled
             // failure page
         }
-    });
+    }, {scope: 'email'});
 }
 
 window.fbAsyncInit = function() {
@@ -20,8 +20,7 @@ window.fbAsyncInit = function() {
         channelUrl : 'http://localhost:5000/channel.html', // Channel File
         status     : true, // check login status
         cookie     : true, // enable cookies to allow the server to access the session
-        xfbml      : true,  // parse XFBML
-        scope      : "user:email",
+        xfbml      : true  // parse XFBML
     });
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
