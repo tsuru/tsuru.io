@@ -2,26 +2,11 @@ function login() {
     FB.login(function(response) {
         if (response.authResponse) {
             // connected
-            // redirect
+            // post token to /register/facebook
         } else {
             // cancelled
             // failure page
         }
-    });
-}
-
-function testAPI() {
-    console.log('Welcome! Fetching your information.... ');
-    FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
-    });
-}
-
-function showLoginButtons() {
-    var fLogin = $("#facebook-login");
-    fLogin.css("display", "block");
-    fLogin.on("click", function(){
-        login();
     });
 }
 
@@ -31,7 +16,8 @@ window.fbAsyncInit = function() {
         channelUrl : 'http://localhost:5000/channel.html', // Channel File
         status     : true, // check login status
         cookie     : true, // enable cookies to allow the server to access the session
-        xfbml      : true  // parse XFBML
+        xfbml      : true,  // parse XFBML
+        scope      : "user:email",
     });
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
@@ -40,10 +26,8 @@ window.fbAsyncInit = function() {
             testAPI();
         } else if (response.status === 'not_authorized') {
             // not_authorized
-            showLoginButtons()
         } else {
             // not_logged_in
-            showLoginButtons()
         }
     });
 };
