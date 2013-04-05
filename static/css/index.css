@@ -75,6 +75,10 @@
 	font-size: 10px;
 }
 
+.content .about {
+	margin: 30px;
+}
+
 .thanks .share-btns {
 	list-style: none;
 	margin: 0;
