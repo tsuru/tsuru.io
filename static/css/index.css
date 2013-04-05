@@ -10,3 +10,19 @@
 	background-color: #e5e5e5;
 	height: 63px;
 }
+
+.header {
+	background: #000 url('/static/img/tsuru_maps.png');
+	color: #fff;
+	height: 582px;
+}
+
+.header .navbar-inner {
+	background: #000;
+	border: none;
+}
+
+.header .navbar .nav > li > a {
+	color: #fff;
+	text-shadow: none;
+}
