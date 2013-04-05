@@ -2,8 +2,9 @@
 {% block content %}
 <div class="thanks span6">
 	<h3>Thanks!</h3>
-	<p>Em breve você receberá novidades sobre o Tsuru. Para melhor ajudarmos, precisamos de mais algumas informações.</p>
-	<h2>Compartilhe</h4>
+	<p>You will get to try tsuru very soon. </p>
+	<p>Help us to know you better. Give some more information about you.</p>
+	<h2>Share with your friends</h4>
 	<ul class="share-btns">
 		<li>
 			<a href="#"><img src="/static/img/icone_facebook.png"></a>
@@ -20,18 +21,24 @@
 	<form action="" method="post" accept-charset="utf-8">
 		<div class="row">
 			<div class="span3">
-				<label for="work">O que faz?</label>
+				<label for="work">What do you do for a living?</label>
 				<select name="work">
-					<option value="developer">developer</option>
-					<option value="ops">ops</option>
-					<option value="cio">cio</option>
-					<option value="student">student</option>
+					<option value="cio">CIO</option>
+					<option value="cto">CTO</option>
+					<option value="dba">DBA</option>
+					<option value="developer" selected="selected">Developer</option>
+					<option value="manager">Project Manager</option>
+					<option value="manager">Researcher</option>
+					<option value="student">Student</option>
+					<option value="teacher">Teacher</option>
+					<option value="ops">Ops</option>
+					<option value="">Other</option>
 				</select>
 			</div>
 			<div class="span3">
-				<label for="name">Contry:</label>
+				<label for="name">Where do you live?</label>
 				<select name="contry">
-					<option value="" selected="selected">Other</option>
+					<option value="">Other</option>
 					<option value="United States">United States</option>
 					<option value="United Kingdom">United Kingdom</option>
 					<option value="Afghanistan">Afghanistan</option>
@@ -63,7 +70,7 @@
 					<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
 					<option value="Botswana">Botswana</option>
 					<option value="Bouvet Island">Bouvet Island</option>
-					<option value="Brazil">Brazil</option>
+					<option value="Brazil" selected="selected">Brazil</option>
 					<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
 					<option value="Brunei Darussalam">Brunei Darussalam</option>
 					<option value="Bulgaria">Bulgaria</option>
@@ -278,13 +285,15 @@
 		</div>
 		<div class="row">
 			<div class="span6">
-				<label for="organization">Organization:</label>
+				<label for="organization">What is your company name?</label>
 				<input type="text" organization="organization" value="" id="organization">
-				<label for="why"></label>
+				<label for="why">Why do you want to try tsuru?</label>
 				<select name="why">
-					<option value="option">deploy my apps</option>
-					<option value="option">build my own paas</option>
-					<option value="option">curiosity</option>
+					<option value="build">Build my own PaaS</option>
+					<option value="compare">Compare to other PaaS</option>
+					<option value="deploy" selected="selected">Deploy my apps</option>
+					<option value="curious">I'm just curious</option>
+					<option value="">Other</option>
 				</select>
 				<p><input type="submit" value="OK"></p>
 			</div>
