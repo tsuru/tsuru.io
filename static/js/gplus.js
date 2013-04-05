@@ -18,7 +18,9 @@ function renderGplus() {
 		'clientid': '489556242997.apps.googleusercontent.com',
 		'cookiepolicy': 'single_host_origin',
 		'requestvisibleactions': 'http://schemas.google.com/AddActivity',
-		'scope': 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login'
+		'scope': 'https://www.googleapis.com/auth/userinfo.email ' +
+		         'https://www.googleapis.com/auth/userinfo.profile ' +
+		         'https://www.googleapis.com/auth/plus.login'
 	});
 }
 
