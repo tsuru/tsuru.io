@@ -95,6 +95,8 @@ input[type=submit] {
 	border: none;
 	font-weight: lighter;
 	font-size: 13px;
+	padding: 6px 22px;
+	height: 32px;
 }
 
 .content .login-btns ul {
