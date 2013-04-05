@@ -52,6 +52,10 @@
 	font-weight: lighter;
 }
 
+.header .navbar .nav > li {
+	padding-right: 25px;
+}
+
 .content .title {
 	text-align: center;
 	margin-bottom: 30px;
@@ -110,4 +114,8 @@ input[type=submit] {
 
 .content .login-btns span {
 	cursor: pointer;
+}
+
+.nav .active {
+	font-weight: bold;
 }
