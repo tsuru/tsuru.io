@@ -79,6 +79,10 @@
 	margin: 30px;
 }
 
+.content .community {
+	margin: 30px;
+}
+
 .thanks .share-btns {
 	list-style: none;
 	margin: 0;
@@ -126,4 +130,8 @@ input[type=submit] {
 
 .nav .active {
 	font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
 }

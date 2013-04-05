@@ -30,9 +30,15 @@ def index():
 def confirmation():
     return render_template("confirmation.html"), 200
 
+
 @app.route("/software")
-def confirmation():
+def software():
     return render_template("software.html"), 200
+
+
+@app.route("/community")
+def community():
+    return render_template("community.html"), 200
 
 
 @app.route("/register/facebook")
