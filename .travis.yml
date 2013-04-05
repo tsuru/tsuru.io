@@ -1,6 +1,6 @@
 language: python
-install: pip install -qr requirements.txt
-script: python test_app.py
+script: make test
+services: mongodb
 notifications:
   irc:
     channels:
