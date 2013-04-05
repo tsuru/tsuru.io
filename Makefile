@@ -4,7 +4,7 @@ deps:
 test_deps:
 	@pip install -r test_requirements.txt
 
-test: deps test_deps
+test: test_deps
 	@python test_app.py
 
 run: deps
