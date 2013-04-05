@@ -39,7 +39,7 @@ def facebook_register():
             "last_name": info["last_name"],
             "email": info["email"]}
     g.db.users.insert(user)
-    return "", 201
+    return redirect(url_for("confirmation"))
 
 
 @app.route("/register/github", methods=["GET"])

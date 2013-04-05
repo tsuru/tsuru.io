@@ -55,7 +55,7 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         self._mock_requests(mock, data)
         request_data = {"access_token": "123awesometoken456"}
         resp = self.api.post("/register/facebook", data=request_data)
-        self.assertEqual(201, resp.status_code)
+        self.assertEqual(302, resp.status_code)
         u = self.db.users.find_one(data)
         self.assertIsNotNone(u)
         self.assertEqual(data["first_name"], u["first_name"])
