@@ -38,6 +38,36 @@ def facebook_register():
     return "", 201
 
 
+@app.route("/register/github", methods=["GET"])
+def github_register():
+    code = request.args.get("code")
+    if code is None:
+        return "Could not obtain code access to github.", 400
+    data = "client_id=706bfb0686350478f3cd&code={0}&client_secret=d56509a2914116dccb2ba12e92d83b0ab829e42c".format(code)
+    headers = {"Accept": "application/json"}
+    url = "https://github.com/login/oauth/access_token"
+    response = requests.post(url, data=data, headers=headers)
+    token = response.json().get("access_token")
+    if token is None or token == "":  # test me
+        return "Could not obtain access token from github.", 400
+    url = "https://api.github.com/user?access_token={0}".format(token)
+    response = requests.get(url, headers=headers)
+    info = response.json()
+    first_name, last_name = parse_github_name(info)
+    user = {"first_name": first_name,
+            "last_name": last_name,
+            "email": info["email"]}
+    g.db.users.insert(user)
+    return "", 201
+
+
+def parse_github_name(info):
+    splitted = info["name"].split(" ")
+    if len(splitted) > 1:
+        return splitted[0], splitted[-1]
+    return splitted[0], ""
+
+
 def has_token(form):
     if "access_token" not in form.keys():
         return False
