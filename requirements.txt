@@ -1,3 +1,4 @@
 Flask==0.9
 pymongo==2.5
 requests==1.2.0
+gunicorn==0.17.2
