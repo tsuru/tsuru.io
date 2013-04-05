@@ -177,6 +177,28 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         u = self.db.users.find_one({"email": "secret@company.com", "first_name": "Francisco", "last_name": "Souza"})
         self.assertIsNotNone(u)
 
+    @patch("requests.get")
+    @patch("flask.render_template")
+    def test_should_render_confirmation_template_with_email_in_context(self, render, get):
+        app.GOOGLE_USER_IP = "127.0.0.1"
+        app.GOOGLE_API_KEY = "key"
+        self.addCleanup(self.clean_api_client)
+        m = Mock()
+        m.json.return_value = {
+            "id": "1234",
+            "email": "secret@company.com",
+            "verified_email": True,
+            "given_name": "Francisco",
+            "family_name": "Souza",
+            "name": "Francisco Souza",
+            "gender": "male",
+        }
+        get.return_value = m
+        render.return_value = ""
+        reload(app)
+        resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
+        self.assertEqual(200, resp.status_code)
+        render.assert_called_with("confirmation.html", email="secret@company.com")
 
 class HelperTests(unittest.TestCase):
 

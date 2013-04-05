@@ -89,7 +89,7 @@ def gplus_register():
             "last_name": info["family_name"],
             "email": info["email"]}
     g.db.users.insert(user)
-    return ""
+    return render_template("confirmation.html", email=info["email"])
 
 
 def has_token(form):
