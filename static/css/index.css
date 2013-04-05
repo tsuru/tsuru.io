@@ -71,6 +71,10 @@
 	padding-bottom: 30px;
 }
 
+.content .legal-note {
+	font-size: 10px;
+}
+
 .thanks .share-btns {
 	list-style: none;
 	margin: 0;
