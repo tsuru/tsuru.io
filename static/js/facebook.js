@@ -2,14 +2,21 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+$(document).ready(function(){
+    registerButton()
+});
+
+function registerButton() {
+    $("#facebook-register").on("click", function(e) {
+        e.preventDefault();
+        login();
+    });
+}
+
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {
-            // connected
-            // post token to /register/facebook
-        } else {
-            // cancelled
-            // failure page
+            facebookCallback(response.authResponse.accessToken)
         }
     }, {scope: 'email'});
 }
@@ -25,7 +32,6 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             // connected
-            // no login buttons
         } else if (response.status === 'not_authorized') {
             // not_authorized
         } else {
@@ -33,6 +39,12 @@ window.fbAsyncInit = function() {
         }
     });
 };
+
+function facebookCallback(token) {
+	if(token) {
+		window.location.href = "/register/facebook?access_token=" + token;
+	}
+}
 
 // Load the SDK Asynchronously
 (function(d){
