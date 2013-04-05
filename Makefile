@@ -1,8 +1,8 @@
 deps:
-	@pip install -r requirements.txt
+	@pip install -qr requirements.txt
 
 test_deps:
-	@pip install -r test_requirements.txt
+	@pip install -qr test_requirements.txt
 
 test: test_deps
 	@python test_app.py
