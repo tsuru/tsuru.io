@@ -1,56 +1,27 @@
-<html>
-<head>
-	<link href="/static/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
-	<link href="/static/css/index.css" media="all" rel="stylesheet" type="text/css" />
-</head>
-<body>
-	<div class="header">
-		<div id="name" class="container">
-			<div class="navbar">
-				<div class="navbar-inner">
-					<ul class="nav">
-						<li><a href="">software</a></li>
-						<li><a href="">community</a></li>
-						<li><a href="">documentation</a></li>
-						<li><a href="">code</a></li>
-					</ul>
-				</div>
-			</div>
-			<h1>Tsuru</h1>
-			<p>open source platform as a service</p>
-		</div>
-	</div>
-	<div class="container">
-		<div class="content row">
-			<h2>Try tsuru</h2>
-			<div class="login-btns span6">
-				<ul>
-					<li>
-						<a href="#" id="facebook-login"><img src="/static/img/botao_facebook.png"></a>
-						<div id="fb-root"></div>
-					</li>
+{% extends "base.html" %}
+{% block content %}
+<div class="login-btns span6">
+	<ul>
+		<li>
+			<a href="#" id="facebook-login"><img src="/static/img/botao_facebook.png"></a>
+			<div id="fb-root"></div>
+		</li>
 
-					<li>
-						<a href="#"><img src="/static/img/botao_github.png"></a>
-					</li>
+		<li>
+			<a href="#"><img src="/static/img/botao_github.png"></a>
+		</li>
 
-					<li>
-						<a href="#"><img src="/static/img/botao_gplus.png"></a>
-					</li>
-				</ul>
-			</div>
-			<div class="login-form span6">
-				<form action="index_submit" method="get" accept-charset="utf-8">
-					<label for="first_name">First name</label><input type="text/submit/hidden/button" first_name="first_name" value="" id="first_name">
-					<label for="last_name">Last name</label><input type="text/submit/hidden/button" last_name="last_name" value="" id="last_name">
-					<label for="email">Email</label><input type="text/submit/hidden/button" email="email" value="" id="email">
-				<p><input type="submit" value="Continue &rarr;"></p>
-				</form>
-			</div>
-		</div>
-	</div>
-	<div class="footer"></div>
-<script type="text/javascript" src="/static/js/facebook.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-</body>
-</html>
+		<li>
+			<a href="#"><img src="/static/img/botao_gplus.png"></a>
+		</li>
+	</ul>
+</div>
+<div class="login-form span6">
+	<form action="index_submit" method="get" accept-charset="utf-8">
+		<label for="first_name">First name</label><input type="text/submit/hidden/button" first_name="first_name" value="" id="first_name">
+		<label for="last_name">Last name</label><input type="text/submit/hidden/button" last_name="last_name" value="" id="last_name">
+		<label for="email">Email</label><input type="text/submit/hidden/button" email="email" value="" id="email">
+	<p><input type="submit" value="Continue &rarr;"></p>
+	</form>
+</div>
+{% endblock %}

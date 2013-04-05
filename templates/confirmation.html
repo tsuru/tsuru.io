@@ -1,54 +1,27 @@
-<html>
-<head>
-
-	<link href="/static/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
-</head>
-<body>
-	<div class="container">
-		<div class="header row">
-			<div class="navbar">
-				<div class="navbar-inner">
-					<ul class="nav">
-						<li><a href="">software</a></li>
-						<li><a href="">community</a></li>
-						<li><a href="">documentation</a></li>
-						<li><a href="">code</a></li>
-					</ul>
-				</div>
-			</div>
-			<h1>Tsuru</h1>
-			<p>open source platform as a service</p>
-		</div>
-		<div class="content">
-			<h2>Try tsuru</h2>
-			<div class="thanks">
-				<h3>Thanks!</h3>
-				<p>Em breve você receberá novidades sobre o Tsuru. Para melhor ajudarmos, precisamos de mais algumas informações.</p>
-				<h2>Compartilhe</h4>
-			</div>
-			<div class="more-info">
-				<form action="" method="post" accept-charset="utf-8">
-					<label for="name">name</label>
-					<select name="some_name" id="some_name">
-						<option value="option">option</option>
-					</select>
-					<label for="name">name</label>
-					<select name="some_name" id="some_name">
-						<option value="option">option</option>
-					</select>
-					<label for="name">name</label>
-					<input type="text/submit/hidden/button" name="name" value="" id="name">
-					<label for="name">name</label>
-					<select name="some_name" id="some_name">
-						<option value="option">option</option>
-					</select>
-					<p><input type="submit" value="Continue &rarr;"></p>
-				</form>
-			</div>
-		</div>
-		<div class="footer"></div>
-	</div>
-<script type="text/javascript" src="/static/js/facebook.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<div class="thanks">
+	<h3>Thanks!</h3>
+	<p>Em breve você receberá novidades sobre o Tsuru. Para melhor ajudarmos, precisamos de mais algumas informações.</p>
+	<h2>Compartilhe</h4>
+</div>
+<div class="more-info">
+	<form action="" method="post" accept-charset="utf-8">
+		<label for="name">name</label>
+		<select name="some_name" id="some_name">
+			<option value="option">option</option>
+		</select>
+		<label for="name">name</label>
+		<select name="some_name" id="some_name">
+			<option value="option">option</option>
+		</select>
+		<label for="name">name</label>
+		<input type="text/submit/hidden/button" name="name" value="" id="name">
+		<label for="name">name</label>
+		<select name="some_name" id="some_name">
+			<option value="option">option</option>
+		</select>
+		<p><input type="submit" value="Continue &rarr;"></p>
+	</form>
+</div>
+{% endblock %}
