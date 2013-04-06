@@ -1,3 +1,4 @@
+import hashlib
 import unittest
 
 from pymongo import Connection
@@ -248,6 +249,12 @@ class HelperTestCase(unittest.TestCase):
         first, last = app.parse_github_name({"name": "First"})
         self.assertEqual(first, "First")
         self.assertEqual(last, "")
+
+    def test_sign(self):
+        app.SIGN_KEY = "123456"
+        email = "fss@corp.globo.com"
+        expected = hashlib.md5(email + app.SIGN_KEY).hexdigest()
+        self.assertEqual(expected, app.sign(email))
 
 
 if __name__ == "__main__":
