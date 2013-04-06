@@ -96,6 +96,11 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
     def setUpClass(cls):
         ClientTest.setUpClass()
         DatabaseTest.setUpClass()
+        app.SIGN_KEY = "key"
+
+    @classmethod
+    def tearDownClass(cls):
+        app.SIGN_KEY = None
 
     def tearDown(self):
         self.db.users.remove()
@@ -143,6 +148,22 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         u = self.db.users.find_one({"first_name": "Foo", "last_name": "Bar"})
         self.assertIsNotNone(u)
         self.assertEqual(u["email"], "test@test.com")
+
+    @patch("requests.post")
+    @patch("requests.get")
+    @patch("flask.render_template")
+    def test_should_render_confirmation_template_with_email_and_signature(self, render, mock_get, mock):
+        self._mock_requests(mock, mock_get,
+                            {"email": "test@test.com", "name": "Foo Bar"},
+                            {"access_token": "testtoken"})
+        render.return_value = ""
+        reload(app)
+        app.SIGN_KEY = "key"
+        resp = self.api.get("/register/github?code=code21")
+        self.assertEqual(200, resp.status_code)
+        render.assert_called_with("confirmation.html",
+                                  email="test@test.com",
+                                  signature=app.sign("test@test.com"))
 
 
 class GplusLoginTestCase(ClientTest, unittest.TestCase):

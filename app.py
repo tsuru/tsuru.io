@@ -85,7 +85,7 @@ def github_register():
             "last_name": last_name,
             "email": info["email"]}
     g.db.users.insert(user)
-    return render_template("confirmation.html", email=info["email"])
+    return render_template("confirmation.html", email=info["email"], signature=sign(info["email"]))
 
 
 def parse_github_name(info):
