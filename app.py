@@ -110,7 +110,8 @@ def gplus_register():
     if g.db.users.find({"email": info["email"]}).count() > 0:
         return render_template("confirmation.html", registered=True)
     g.db.users.insert(user)
-    return render_template("confirmation.html", email=info["email"])
+    return render_template("confirmation.html", email=info["email"],
+                           signature=sign(info["email"]))
 
 
 def has_token(form):

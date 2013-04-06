@@ -136,6 +136,11 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         cls.conn = Connection(host, port)
         cls.db = cls.conn[app.MONGO_DATABASE_NAME]
         ClientTest.setUpClass()
+        app.SIGN_KEY = "key"
+
+    @classmethod
+    def tearDownClass(cls):
+        app.SIGN_KEY = None
 
     def tearDown(self):
         self.db.users.remove()
@@ -197,9 +202,12 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         get.return_value = m
         render.return_value = ""
         reload(app)
+        app.SIGN_KEY = "key"
         resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
         self.assertEqual(200, resp.status_code)
-        render.assert_called_with("confirmation.html", email="secret@company.com")
+        render.assert_called_with("confirmation.html",
+                                  email="secret@company.com",
+                                  signature=app.sign("secret@company.com"))
 
     @patch("requests.get")
     @patch("flask.render_template")
