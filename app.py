@@ -7,7 +7,7 @@ import hashlib
 import requests
 import os
 import pymongo
-from flask import Flask, render_template, g, request, redirect, url_for
+from flask import Flask, render_template, g, request
 
 app = Flask(__name__)
 MONGO_URI = os.environ.get("MONGO_URI", "localhost:27017")
@@ -32,7 +32,7 @@ def sign(email):
 @app.route("/")
 def index():
     return render_template("index.html", facebook_app_id=FACEBOOK_APP_ID,
-                                         github_client_id=GITHUB_CLIENT_ID), 200
+                           github_client_id=GITHUB_CLIENT_ID), 200
 
 
 @app.route("/confirmation")
@@ -54,7 +54,8 @@ def community():
 def facebook_register():
     if not has_token(request.args):
         return "Could not obtain access token from facebook.", 400
-    url = "https://graph.facebook.com/me?fields=first_name,last_name,email&access_token={0}".format(request.args["access_token"])
+    url = "https://graph.facebook.com/me?fields=first_name,last_name,email&access_token={0}"
+    url = url.format(request.args["access_token"])
     response = requests.get(url)
     info = response.json()
     user = {"first_name": info["first_name"],
