@@ -42,6 +42,11 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
     def setUpClass(cls):
         ClientTest.setUpClass()
         DatabaseTest.setUpClass()
+        app.SIGN_KEY = "key"
+
+    @classmethod
+    def tearDownClass(cls):
+        app.SIGN_KEY = None
 
     def tearDown(self):
         self.db.users.remove()
@@ -63,6 +68,20 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         self.assertEqual(data["last_name"], u["last_name"])
         self.assertEqual(data["email"], u["email"])
         mock.get.assert_called_once()
+
+    @patch("requests.get")
+    @patch("flask.render_template")
+    def test_should_render_confirmation_template_with_email_and_signature(self, render, get):
+        data = {"first_name": "First", "last_name": "Last", "email": "first@last.com"}
+        self._mock_requests(get, data)
+        render.return_value = ""
+        reload(app)
+        app.SIGN_KEY = "key"
+        resp = self.api.get("/register/facebook?access_token=123awesometoken456")
+        self.assertEqual(200, resp.status_code)
+        render.assert_called_with("confirmation.html",
+                                  email="first@last.com",
+                                  signature=app.sign("first@last.com"))
 
     def test_should_return_400_and_do_not_save_user_when_validation_fails(self):
         resp = self.api.get("/register/facebook?access_token=")
