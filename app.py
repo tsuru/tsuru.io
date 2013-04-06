@@ -24,7 +24,7 @@ SIGN_KEY = os.environ.get("SIGN_KEY")
 
 
 def sign(email):
-    h = hashlib.md5(email)
+    h = hashlib.sha1(email)
     h.update(SIGN_KEY)
     return h.hexdigest()
 

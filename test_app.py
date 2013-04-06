@@ -253,7 +253,7 @@ class HelperTestCase(unittest.TestCase):
     def test_sign(self):
         app.SIGN_KEY = "123456"
         email = "fss@corp.globo.com"
-        expected = hashlib.md5(email + app.SIGN_KEY).hexdigest()
+        expected = hashlib.sha1(email + app.SIGN_KEY).hexdigest()
         self.assertEqual(expected, app.sign(email))
 
 
