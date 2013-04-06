@@ -1,6 +1,9 @@
 Tsuru beta registration
 =======================
 
+.. image:: https://secure.travis-ci.org/globocom/tsuru-beta-registration.png
+   :target: http://travis-ci.org/globocom/tsuru-beta-registration
+
 Coming soon...
 
 Configuration
