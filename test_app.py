@@ -224,7 +224,7 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         self.assertEqual(200, resp.status_code)
         render.assert_called_with("confirmation.html", registered=True)
 
-class HelperTests(unittest.TestCase):
+class HelperTestCase(unittest.TestCase):
 
     def test_has_token_should_check_for_access_token(self):
         is_valid = app.has_token({"access_token": "123token"})
