@@ -23,7 +23,7 @@ GITHUB_CLIENT_SECRET = os.environ.get("GITHUB_CLIENT_SECRET", "")
 FACEBOOK_APP_ID = os.environ.get("FACEBOOK_APP_ID", "")
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 GOOGLE_USER_IP = os.environ.get("GOOGLE_USER_IP")
-GOOGLE_OAUTH_ENDPOINT = os.environ.get("GOOGLE_OAUTH_ENDPOINT", "https://www.googleapis.com/oauth2/v2")
+GOOGLE_OAUTH_ENDPOINT = "https://www.googleapis.com/oauth2/v2"
 SIGN_KEY = os.environ.get("SIGN_KEY")
 
 
