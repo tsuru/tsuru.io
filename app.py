@@ -134,7 +134,8 @@ def before_request():
 
 @app.teardown_request
 def teardown_request(exception):
-    g.conn.close()
+    if hasattr(g, "conn"):
+        g.conn.close()
 
 
 def connect_db():
