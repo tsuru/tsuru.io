@@ -3,10 +3,11 @@
 # license that can be found in the LICENSE file.
 
 import hashlib
-
-import requests
 import os
+
 import pymongo
+import requests
+
 from flask import Flask, render_template, g, request
 
 app = Flask(__name__)
