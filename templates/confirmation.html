@@ -4,10 +4,10 @@
 	<h2 class="title">Try tsuru</h2>
 </div>
 <div class="thanks span6">
-	<h3>Thanks!</h3>
-	<p>You will get to try tsuru very soon. </p>
-	<p>Help us to know you better. Give some more information about you.</p>
-	<h2>Share with your friends</h4>
+	<h3>{% trans %}Thanks!{% endtrans %}</h3>
+	<p>{% trans %}You will get to try tsuru very soon. {% endtrans %}</p>
+	<p>{% trans %}Help us to know you better. Give some more information about you.{% endtrans %}</p>
+	<h2>{% trans %}Share with your friends{% endtrans %}</h4>
 	<ul class="share-btns">
 		<li>
 			<a href="#"><img src="/static/img/icone_facebook.png"></a>
@@ -27,24 +27,24 @@
 		<input type="hidden" name="signature" value="{{signature}}">
 		<div class="row">
 			<div class="span3">
-				<label for="work">What do you do for a living?</label>
+				<label for="work">{% trans %}What do you do for a living?{% endtrans %}</label>
 				<select name="work">
 					<option value="cio">CIO</option>
 					<option value="cto">CTO</option>
 					<option value="dba">DBA</option>
-					<option value="developer" selected="selected">Developer</option>
-					<option value="manager">Project Manager</option>
-					<option value="researcher">Researcher</option>
-					<option value="student">Student</option>
-					<option value="teacher">Teacher</option>
-					<option value="ops">Ops</option>
-					<option value="">Other</option>
+					<option value="developer" selected="selected">{% trans %}Developer{% endtrans %}</option>
+					<option value="manager">{% trans %}Project Manager{% endtrans %}</option>
+					<option value="researcher">{% trans %}Researcher{% endtrans %}</option>
+					<option value="student">{% trans %}Student{% endtrans %}</option>
+					<option value="teacher">{% trans %}Teacher{% endtrans %}</option>
+					<option value="ops">{% trans %}Ops{% endtrans %}</option>
+					<option value="">{% trans %}Other{% endtrans %}</option>
 				</select>
 			</div>
 			<div class="span3">
-				<label for="name">Where do you live?</label>
+				<label for="name">{% trans %}Where do you live?{% endtrans %}</label>
 				<select name="country">
-					<option value="">Other</option>
+					<option value="">{% trans %}Other{% endtrans %}</option>
 					<option value="United States">United States</option>
 					<option value="United Kingdom">United Kingdom</option>
 					<option value="Afghanistan">Afghanistan</option>
@@ -291,15 +291,15 @@
 		</div>
 		<div class="row">
 			<div class="span6">
-				<label for="organization">What is your company name?</label>
+				<label for="organization">{% trans %}What is your company name?{% endtrans %}</label>
 				<input type="text" organization="organization" value="" id="organization">
-				<label for="why">Why do you want to try tsuru?</label>
+				<label for="why">{% trans %}Why do you want to try tsuru?{% endtrans %}</label>
 				<select name="why">
-					<option value="build">Build my own PaaS</option>
-					<option value="compare">Compare to other PaaS</option>
-					<option value="deploy" selected="selected">Deploy my apps</option>
-					<option value="curious">I'm just curious</option>
-					<option value="">Other</option>
+					<option value="build">{% trans %}Build my own PaaS{% endtrans %}</option>
+					<option value="compare">{% trans %}Compare to other PaaS{% endtrans %}</option>
+					<option value="deploy" selected="selected">{% trans %}Deploy my apps{% endtrans %}</option>
+					<option value="curious">{% trans %}I'm just curious{% endtrans %}</option>
+					<option value="">{% trans %}Other{% endtrans %}</option>
 				</select>
 				<p><input type="submit" value="OK"></p>
 			</div>
