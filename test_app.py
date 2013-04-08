@@ -93,7 +93,12 @@ class AppTestCase(ClientTest, unittest.TestCase):
         del os.environ["TSURU_S3_BUCKET"]
 
 
-class FacebookLoginTestCase(ClientTest, unittest.TestCase):
+class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        DatabaseTest.setUpClass()
+        ClientTest.setUpClass()
 
     def _mock_requests(self, mock, data):
         m = Mock()
@@ -114,10 +119,30 @@ class FacebookLoginTestCase(ClientTest, unittest.TestCase):
             "/register/facebook?access_token=123awesometoken456"
         )
         self.assertEqual(200, resp.status_code)
-        mock.get.assert_called_once()
         save_user.assert_called_with(data["first_name"],
                                      data["last_name"],
                                      data["email"])
+
+    @patch("requests.get")
+    @patch("flask.render_template")
+    def test_confirmation_template_with_email_and_signature(self, render, get):
+        data = {
+            "first_name": "First",
+            "last_name": "Last",
+            "email": "first@last.com"
+        }
+        self._mock_requests(get, data)
+        render.return_value = ""
+        reload(app)
+        app.SIGN_KEY = "key"
+        self.addCleanup(lambda: self.db.users.remove())
+        with patch("app.get_survey_form"):
+            resp = self.api.get(
+                "/register/facebook?access_token=123awesometoken456"
+            )
+            self.assertEqual(200, resp.status_code)
+            render.assert_called_with("confirmation.html",
+                                      form=app.get_survey_form(data["email"]))
 
     def test_return_400_and_not_save_user_when_validation_fails(self):
         resp = self.api.get("/register/facebook?access_token=")
@@ -174,6 +199,23 @@ class GithubLoginTestCase(ClientTest, unittest.TestCase):
         self.assertEqual(200, resp.status_code)
         save_user.assert_called_with("Foo", "Bar", "test@test.com")
 
+    @patch("requests.post")
+    @patch("requests.get")
+    @patch("flask.render_template")
+    def test_confirmation_with_email_and_sign(self, render, mock_get, mock):
+        self._mock_requests(mock, mock_get,
+                            {"email": "test@test.com", "name": "Foo Bar"},
+                            {"access_token": "testtoken"})
+        render.return_value = ""
+        reload(app)
+        app.SIGN_KEY = "key"
+        with patch("app.get_survey_form"):
+            resp = self.api.get("/register/github?code=code21")
+            self.assertEqual(200, resp.status_code)
+            render.assert_called_with("confirmation.html",
+                                      form=app.get_survey_form("test@test.com")
+                                      )
+
 
 class GplusLoginTestCase(ClientTest, unittest.TestCase):
 
@@ -222,6 +264,59 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         save_user.assert_called_with("Francisco", "Souza",
                                      "secret@company.com")
 
+    @patch("requests.get")
+    @patch("flask.render_template")
+    def test_confirmation_template_with_email_in_context(self, render, get):
+        app.GOOGLE_USER_IP = "127.0.0.1"
+        app.GOOGLE_API_KEY = "key"
+        self.addCleanup(self.clean_api_client)
+        m = Mock()
+        m.json.return_value = {
+            "id": "1234",
+            "email": "secret@company.com",
+            "verified_email": True,
+            "given_name": "Francisco",
+            "family_name": "Souza",
+            "name": "Francisco Souza",
+            "gender": "male",
+        }
+        get.return_value = m
+        render.return_value = ""
+        reload(app)
+        app.SIGN_KEY = "key"
+        with patch("app.get_survey_form"):
+            resp = self.api.get(
+                "/register/gplus?token=mytoken&token_type=Bearer"
+            )
+            self.assertEqual(200, resp.status_code)
+            render.assert_called_with("confirmation.html",
+                                      form=app.get_survey_form(
+                                      "secret@company.com"
+                                      ))
+
+    @patch("requests.get")
+    @patch("flask.render_template")
+    def test_form_when_user_is_already_registered(self, render, get):
+        app.GOOGLE_USER_IP = "127.0.0.1"
+        app.GOOGLE_API_KEY = "key"
+        self.addCleanup(self.clean_api_client)
+        m = Mock()
+        m.json.return_value = {
+            "id": "1234",
+            "email": "secret@company.com",
+            "verified_email": True,
+            "given_name": "Francisco",
+            "family_name": "Souza",
+            "name": "Francisco Souza",
+            "gender": "male",
+        }
+        get.return_value = m
+        render.return_value = ""
+        reload(app)
+        resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
+        self.assertEqual(200, resp.status_code)
+        render.assert_called_with("confirmation.html", registered=True)
+
 
 class HelperTestCase(DatabaseTest, unittest.TestCase):
 
@@ -261,16 +356,17 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
         render.return_value = "template rendered"
         reload(app)
         app.SIGN_KEY = "123456"
-        with app.app.test_request_context("/"):
-            app.before_request()
-            content, status = app.save_user("Francisco", "Souza",
-                                            "fss@corp.globo.com")
-            app.teardown_request(None)
-        self.assertEqual("template rendered", content)
-        self.assertEqual(200, status)
-        render.assert_called_with("confirmation.html",
-                                  email="fss@corp.globo.com",
-                                  signature=app.sign("fss@corp.globo.com"))
+        with patch("app.get_survey_form"):
+            with app.app.test_request_context("/"):
+                app.before_request()
+                content, status = app.save_user("Francisco", "Souza",
+                                                "fss@corp.globo.com")
+                app.teardown_request(None)
+            self.assertEqual("template rendered", content)
+            self.assertEqual(200, status)
+            render.assert_called_with("confirmation.html",
+                                      form=app.get_survey_form(
+                                      "fss@corp.globo.com"))
         u = self.db.users.find_one({
             "email": "fss@corp.globo.com",
             "first_name": "Francisco",
@@ -304,6 +400,42 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
         result = app.get_locale()
         self.assertEqual("en", result)
         request.accept_languages.best_match.assert_called_with(["pt", "en"])
+
+    @patch("flask.render_template")
+    def test_save_user_should_pass_form_to_template(self, mock):
+        reload(app)
+        app.SIGN_KEY = "test_key"
+        with patch("app.get_survey_form"):
+            with app.app.test_request_context("/"):
+                app.before_request()
+                app.save_user("First", "Last", "first@last.com")
+                app.teardown_request(None)
+            mock.assert_called_with("confirmation.html",
+                                    form=app.get_survey_form("first@last.com"))
+        app.SIGN_KEY = None
+
+    @patch("forms.SurveyForm")
+    def test_get_survey_form_should_return_form(self, mock):
+        app.SIGN_KEY = "test_key"
+        app.get_survey_form("test@test.com")
+        mock.assert_called_once()
+        app.SIGN_KEY = None
+
+    @patch("forms.SurveyForm")
+    def test_get_survey_form_should_initializa_email_field(self, mock):
+        app.SIGN_KEY = "test_key"
+        email = "test@test.com"
+        form = app.get_survey_form(email)
+        self.assertEqual(email, form.email)
+        app.SIGN_KEY = None
+
+    @patch("forms.SurveyForm")
+    def test_get_survey_form_should_initialize_signature_field(self, mock):
+        app.SIGN_KEY = "test_key"
+        email = "test@test.com"
+        form = app.get_survey_form(email)
+        self.assertEqual(app.sign(email), form.signature)
+        app.SIGN_KEY = None
 
 
 class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):

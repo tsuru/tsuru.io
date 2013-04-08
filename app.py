@@ -54,8 +54,15 @@ def save_user(first_name, last_name, email):
     if g.db.users.find({"email": email}).count() > 0:
         return render_template("confirmation.html", registered=True), 200
     g.db.users.insert(user)
-    return render_template("confirmation.html", email=email,
-                           signature=sign(email)), 200
+    return render_template("confirmation.html",
+                           form=get_survey_form(email)), 200
+
+
+def get_survey_form(email):
+    form = forms.SurveyForm()
+    form.email = email
+    form.signature = sign(email)
+    return form
 
 
 def _index(form):
