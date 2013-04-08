@@ -60,8 +60,8 @@ def save_user(first_name, last_name, email):
 
 def get_survey_form(email):
     form = forms.SurveyForm()
-    form.email = email
-    form.signature = sign(email)
+    form.email.data = email
+    form.signature.data = sign(email)
     return form
 
 

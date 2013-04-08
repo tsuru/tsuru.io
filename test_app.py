@@ -432,7 +432,7 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
         app.SIGN_KEY = "test_key"
         email = "test@test.com"
         form = app.get_survey_form(email)
-        self.assertEqual(email, form.email)
+        self.assertEqual(email, form.email.data)
         app.SIGN_KEY = None
 
     @patch("forms.SurveyForm")
@@ -440,7 +440,7 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
         app.SIGN_KEY = "test_key"
         email = "test@test.com"
         form = app.get_survey_form(email)
-        self.assertEqual(app.sign(email), form.signature)
+        self.assertEqual(app.sign(email), form.signature.data)
         app.SIGN_KEY = None
 
 
