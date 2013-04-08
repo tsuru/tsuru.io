@@ -59,9 +59,15 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @patch("requests.get")
     def test_should_receive_facebook_data_and_store_on_database(self, mock):
-        data = {"first_name": "First", "last_name": "Last", "email": "first@last.com"}
+        data = {
+            "first_name": "First",
+            "last_name": "Last",
+            "email": "first@last.com"
+        }
         self._mock_requests(mock, data)
-        resp = self.api.get("/register/facebook?access_token=123awesometoken456")
+        resp = self.api.get(
+            "/register/facebook?access_token=123awesometoken456"
+        )
         self.assertEqual(200, resp.status_code)
         u = self.db.users.find_one(data)
         self.assertIsNotNone(u)
@@ -72,19 +78,25 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @patch("requests.get")
     @patch("flask.render_template")
-    def test_should_render_confirmation_template_with_email_and_signature(self, render, get):
-        data = {"first_name": "First", "last_name": "Last", "email": "first@last.com"}
+    def test_confirmation_template_with_email_and_signature(self, render, get):
+        data = {
+            "first_name": "First",
+            "last_name": "Last",
+            "email": "first@last.com"
+        }
         self._mock_requests(get, data)
         render.return_value = ""
         reload(app)
         app.SIGN_KEY = "key"
-        resp = self.api.get("/register/facebook?access_token=123awesometoken456")
+        resp = self.api.get(
+            "/register/facebook?access_token=123awesometoken456"
+        )
         self.assertEqual(200, resp.status_code)
         render.assert_called_with("confirmation.html",
                                   email="first@last.com",
                                   signature=app.sign("first@last.com"))
 
-    def test_should_return_400_and_do_not_save_user_when_validation_fails(self):
+    def test_return_400_and_not_save_user_when_validation_fails(self):
         resp = self.api.get("/register/facebook?access_token=")
         self.assertEqual(400, resp.status_code)
         u = self.db.users.find_one({"first_name": "First"})
@@ -129,7 +141,7 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @patch("requests.post")
     @patch("requests.get")
-    def test_should_exchange_code_for_github_access_token(self, mock_get, mock):
+    def test_exchange_code_for_github_access_token(self, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
@@ -153,7 +165,7 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
     @patch("requests.post")
     @patch("requests.get")
     @patch("flask.render_template")
-    def test_should_render_confirmation_template_with_email_and_signature(self, render, mock_get, mock):
+    def test_confirmation_with_email_and_sign(self, render, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
@@ -204,6 +216,7 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
     def test_should_send_request_to_google_plus(self, mock):
         app.GOOGLE_USER_IP = "127.0.0.1"
         app.GOOGLE_API_KEY = "key"
+        app.SIGN_KEY = "key"
         self.addCleanup(self.clean_api_client)
         m = Mock()
         m.json.return_value = {
@@ -218,15 +231,23 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         mock.return_value = m
         resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
         self.assertEqual(200, resp.status_code)
-        url = "%s/userinfo?key=%s&userIp=%s" % (app.GOOGLE_OAUTH_ENDPOINT, app.GOOGLE_API_KEY, app.GOOGLE_USER_IP)
+        url = "{0}/userinfo?key={1}&userIp={2}".format(
+            app.GOOGLE_OAUTH_ENDPOINT,
+            app.GOOGLE_API_KEY,
+            app.GOOGLE_USER_IP
+        )
         headers = {"Authorization": "Bearer mytoken"}
         mock.assert_called_with(url, headers=headers)
-        u = self.db.users.find_one({"email": "secret@company.com", "first_name": "Francisco", "last_name": "Souza"})
+        u = self.db.users.find_one({
+            "email": "secret@company.com",
+            "first_name": "Francisco",
+            "last_name": "Souza"
+        })
         self.assertIsNotNone(u)
 
     @patch("requests.get")
     @patch("flask.render_template")
-    def test_should_render_confirmation_template_with_email_in_context(self, render, get):
+    def test_confirmation_template_with_email_in_context(self, render, get):
         app.GOOGLE_USER_IP = "127.0.0.1"
         app.GOOGLE_API_KEY = "key"
         self.addCleanup(self.clean_api_client)
@@ -252,7 +273,7 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
 
     @patch("requests.get")
     @patch("flask.render_template")
-    def test_should_not_display_the_form_when_user_is_already_registered(self, render, get):
+    def test_form_when_user_is_already_registered(self, render, get):
         app.GOOGLE_USER_IP = "127.0.0.1"
         app.GOOGLE_API_KEY = "key"
         self.addCleanup(self.clean_api_client)
@@ -268,7 +289,11 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         }
         get.return_value = m
         render.return_value = ""
-        self.db.users.insert({"email": "secret@company.com", "first_name": "Francisco", "last_name": "Souza"})
+        self.db.users.insert({
+            "email": "secret@company.com",
+            "first_name": "Francisco",
+            "last_name": "Souza"
+        })
         reload(app)
         resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
         self.assertEqual(200, resp.status_code)
@@ -291,7 +316,9 @@ class HelperTestCase(unittest.TestCase):
         self.assertEqual(last, "Last")
 
     def test_parse_github_name_splits_correctly_with_more_than_two_names(self):
-        first, last = app.parse_github_name({"name": "First Lots Of Other Names Last"})
+        first, last = app.parse_github_name(
+            {"name": "First Lots Of Other Names Last"}
+        )
         self.assertEqual(first, "First")
         self.assertEqual(last, "Last")
 

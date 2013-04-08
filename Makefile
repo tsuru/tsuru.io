@@ -6,6 +6,7 @@ test_deps:
 
 test: test_deps
 	@python test_app.py
+	@flake8 .
 
 run: deps
 	@python app.py

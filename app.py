@@ -76,7 +76,8 @@ def survey():
 def facebook_register():
     if not has_token(request.args):
         return "Could not obtain access token from facebook.", 400
-    url = "https://graph.facebook.com/me?fields=first_name,last_name,email&access_token={0}"
+    url = "https://graph.facebook.com/me?"
+    url += "fields=first_name,last_name,email&access_token={0}"
     url = url.format(request.args["access_token"])
     response = requests.get(url)
     info = response.json()
@@ -84,7 +85,11 @@ def facebook_register():
             "last_name": info["last_name"],
             "email": info["email"]}
     g.db.users.insert(user)
-    return render_template("confirmation.html", email=info["email"], signature=sign(info["email"]))
+    return render_template(
+        "confirmation.html",
+        email=info["email"],
+        signature=sign(info["email"])
+    )
 
 
 @app.route("/register/github")
@@ -92,7 +97,11 @@ def github_register():
     code = request.args.get("code")
     if code is None:
         return "Could not obtain code access to github.", 400
-    data = "client_id={0}&code={1}&client_secret={2}".format(GITHUB_CLIENT_ID, code, GITHUB_CLIENT_SECRET)
+    data = "client_id={0}&code={1}&client_secret={2}".format(
+        GITHUB_CLIENT_ID,
+        code,
+        GITHUB_CLIENT_SECRET
+    )
     headers = {"Accept": "application/json"}
     url = "https://github.com/login/oauth/access_token"
     response = requests.post(url, data=data, headers=headers)
@@ -107,7 +116,11 @@ def github_register():
             "last_name": last_name,
             "email": info["email"]}
     g.db.users.insert(user)
-    return render_template("confirmation.html", email=info["email"], signature=sign(info["email"]))
+    return render_template(
+        "confirmation.html",
+        email=info["email"],
+        signature=sign(info["email"])
+    )
 
 
 def parse_github_name(info):
@@ -124,7 +137,11 @@ def gplus_register():
     if token is None or token_type is None:
         return "Token is required.", 400
     headers = {"Authorization": "%s %s" % (token_type, token)}
-    url = "%s/userinfo?key=%s&userIp=%s" % (GOOGLE_OAUTH_ENDPOINT, GOOGLE_API_KEY, GOOGLE_USER_IP)
+    url = "{0}/userinfo?key={1}&userIp={2}".format(
+        GOOGLE_OAUTH_ENDPOINT,
+        GOOGLE_API_KEY,
+        GOOGLE_USER_IP
+    )
     resp = requests.get(url, headers=headers)
     info = resp.json()
     user = {"first_name": info["given_name"],
