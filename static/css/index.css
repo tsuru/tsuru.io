@@ -116,16 +116,25 @@ input[type=submit] {
 }
 
 .content .or {
-	background: url(../img/or_bg.png) no-repeat;
+	background: url(../img/or_bg.png) no-repeat 0 8px;
 	height: 300px;
 }
 
 .content .login-btns ul {
+	margin-left: 42px;
 	list-style: none;
 }
 
 .content .login-btns ul li {
-	margin: 5px 0 76px;
+	margin: 15px 0 64px;
+}
+
+.content .login-form .input-medium {
+	width: 135px;
+}
+
+.content .login-form .input-xlarge {
+	width: 295px;
 }
 
 .content .login-btns span {
