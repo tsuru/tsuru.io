@@ -39,18 +39,14 @@ class SurveyForm(wtf.Form):
         ("", gettext("Other"))
     ]
     work = wtforms.SelectField(gettext(u"What do you do for a living?"),
-                               choices=choices,
-                               validators=[validators.DataRequired()])
+                               choices=choices)
     country = wtforms.SelectField(gettext(u"Where do you live?"),
-                                  choices=country_choices,
-                                  validators=[validators.DataRequired()])
-    organization = wtforms.TextField(gettext(u"What is your company name?"),
-                                     validators=[validators.DataRequired()])
+                                  choices=country_choices)
+    organization = wtforms.TextField(gettext(u"What is your company name?"))
     choices = [("build", gettext("Build my own PaaS")),
                ("compare", gettext("Compare to other PaaS")),
                ("deploy", gettext("Deploy my apps")),
                ("curious", gettext("I'm just curious")),
                ("", gettext("Other"))]
     why = wtforms.SelectField(gettext(u"Why do you want to try tsuru?"),
-                              choices=choices,
-                              validators=[validators.DataRequired()])
+                              choices=choices)
