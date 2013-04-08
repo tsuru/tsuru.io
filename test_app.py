@@ -85,20 +85,7 @@ class AppTestCase(ClientTest, unittest.TestCase):
                                   form=m)
 
 
-class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
-
-    @classmethod
-    def setUpClass(cls):
-        ClientTest.setUpClass()
-        DatabaseTest.setUpClass()
-        app.SIGN_KEY = "key"
-
-    @classmethod
-    def tearDownClass(cls):
-        app.SIGN_KEY = None
-
-    def tearDown(self):
-        self.db.users.remove()
+class FacebookLoginTestCase(ClientTest, unittest.TestCase):
 
     def _mock_requests(self, mock, data):
         m = Mock()
@@ -106,49 +93,27 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         mock.return_value = m
 
     @patch("requests.get")
-    def test_should_receive_facebook_data_and_store_on_database(self, mock):
+    @patch("app.save_user")
+    def test_should_receive_facebook_data_and_store_on_database(self, save_user, mock):
         data = {
             "first_name": "First",
             "last_name": "Last",
             "email": "first@last.com"
         }
         self._mock_requests(mock, data)
+        save_user.return_value = ""
         resp = self.api.get(
             "/register/facebook?access_token=123awesometoken456"
         )
         self.assertEqual(200, resp.status_code)
-        u = self.db.users.find_one(data)
-        self.assertIsNotNone(u)
-        self.assertEqual(data["first_name"], u["first_name"])
-        self.assertEqual(data["last_name"], u["last_name"])
-        self.assertEqual(data["email"], u["email"])
         mock.get.assert_called_once()
-
-    @patch("requests.get")
-    @patch("flask.render_template")
-    def test_confirmation_template_with_email_and_signature(self, render, get):
-        data = {
-            "first_name": "First",
-            "last_name": "Last",
-            "email": "first@last.com"
-        }
-        self._mock_requests(get, data)
-        render.return_value = ""
-        reload(app)
-        app.SIGN_KEY = "key"
-        resp = self.api.get(
-            "/register/facebook?access_token=123awesometoken456"
-        )
-        self.assertEqual(200, resp.status_code)
-        render.assert_called_with("confirmation.html",
-                                  email="first@last.com",
-                                  signature=app.sign("first@last.com"))
+        save_user.assert_called_with(data["first_name"],
+                                     data["last_name"],
+                                     data["email"])
 
     def test_return_400_and_not_save_user_when_validation_fails(self):
         resp = self.api.get("/register/facebook?access_token=")
         self.assertEqual(400, resp.status_code)
-        u = self.db.users.find_one({"first_name": "First"})
-        self.assertIsNone(u)
 
 
 class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
