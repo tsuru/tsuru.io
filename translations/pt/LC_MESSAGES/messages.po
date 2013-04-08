@@ -20,96 +20,96 @@ msgstr ""
 
 #: forms.py:9
 msgid "First name"
-msgstr ""
+msgstr "Nome"
 
 #: forms.py:11
 msgid "Last name"
-msgstr ""
+msgstr "Sobrenome"
 
 #: forms.py:14
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: forms.py:26 templates/confirmation.html:35
 msgid "Developer"
-msgstr ""
+msgstr "Desenvolvedor"
 
 #: forms.py:26 templates/confirmation.html:36
 msgid "Project Manager"
-msgstr ""
+msgstr "Gerente de projeto"
 
 #: forms.py:27 templates/confirmation.html:37
 msgid "Researcher"
-msgstr ""
+msgstr "Pesquisador"
 
 #: forms.py:27 templates/confirmation.html:38
 msgid "Student"
-msgstr ""
+msgstr "Estudante"
 
 #: forms.py:28
 msgid "Tearcher"
-msgstr ""
+msgstr "Professor"
 
 #: forms.py:28 templates/confirmation.html:40
 msgid "Ops"
-msgstr ""
+msgstr "Infra/Operação"
 
 #: forms.py:28 forms.py:41 templates/confirmation.html:41
 #: templates/confirmation.html:47 templates/confirmation.html:302
 msgid "Other"
-msgstr ""
+msgstr "Outro"
 
 #: forms.py:29 templates/confirmation.html:30
 msgid "What do you do for a living?"
-msgstr ""
+msgstr "Qual é a sua profissão?"
 
 #: forms.py:32 templates/confirmation.html:45
 msgid "Where do you live?"
-msgstr ""
+msgstr "Onde você mora?"
 
 #: forms.py:35 templates/confirmation.html:294
 msgid "What is your company name?"
-msgstr ""
+msgstr "Qual é o nome da empresa que você trabalha?"
 
 #: forms.py:37 templates/confirmation.html:298
 msgid "Build my own PaaS"
-msgstr ""
+msgstr "Montar meu PaaS"
 
 #: forms.py:38 templates/confirmation.html:299
 msgid "Compare to other PaaS"
-msgstr ""
+msgstr "Comparar com outros PaaS"
 
 #: forms.py:39 templates/confirmation.html:300
 msgid "Deploy my apps"
-msgstr ""
+msgstr "Fazer deploy das minhas apps"
 
 #: forms.py:40 templates/confirmation.html:301
 msgid "I'm just curious"
-msgstr ""
+msgstr "Apenas curiosidade"
 
 #: forms.py:42 templates/confirmation.html:296
 msgid "Why do you want to try tsuru?"
-msgstr ""
+msgstr "Por que você quer usar o tsuru?"
 
 #: templates/confirmation.html:7
 msgid "Thanks!"
-msgstr ""
+msgstr "Obrigado!"
 
 #: templates/confirmation.html:8
 msgid "You will get to try tsuru very soon. "
-msgstr ""
+msgstr "Você poderá usar o tsuru em breve. "
 
 #: templates/confirmation.html:9
 msgid "Help us to know you better. Give some more information about you."
-msgstr ""
+msgstr "Ajude-nos a conhecê-lo melhor. Responda algumas informações sobre você."
 
 #: templates/confirmation.html:10
 msgid "Share with your friends"
-msgstr ""
+msgstr "Compartilhe com seus amigos"
 
 #: templates/confirmation.html:39
 msgid "Teacher"
-msgstr ""
+msgstr "Professor"
 
 #~ msgid ""
 #~ "\n"
@@ -137,7 +137,7 @@ msgstr ""
 #~ "\n"
 #~ "\t<p>We're working hard hoping to get a seat for all of you.</p>\n"
 #~ "\n"
-#~ "\t<p>Tsuru team.</p>\n"
+#~ "\t<p>Tsuru teGam.</p>\n"
 #~ "\t"
 #~ msgstr ""
 
