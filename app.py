@@ -43,6 +43,15 @@ def sign(email):
     return h.hexdigest()
 
 
+def save_user(first_name, last_name, email):
+    user = {"first_name": first_name, "last_name": last_name, "email": email}
+    if g.db.users.find({"email": email}).count() > 0:
+        return render_template("confirmation.html", registered=True), 200
+    g.db.users.insert(user)
+    return render_template("confirmation.html", email=email,
+                           signature=sign(email)), 200
+
+
 @app.route("/")
 def index():
     return render_template("index.html", facebook_app_id=FACEBOOK_APP_ID,

@@ -317,7 +317,7 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         render.assert_called_with("confirmation.html", registered=True)
 
 
-class HelperTestCase(unittest.TestCase):
+class HelperTestCase(DatabaseTest, unittest.TestCase):
 
     def test_has_token_should_check_for_access_token(self):
         is_valid = app.has_token({"access_token": "123token"})
@@ -349,6 +349,47 @@ class HelperTestCase(unittest.TestCase):
         email = "fss@corp.globo.com"
         expected = hashlib.sha1(email + app.SIGN_KEY).hexdigest()
         self.assertEqual(expected, app.sign(email))
+
+    @patch("flask.render_template")
+    def test_save_user(self, render):
+        render.return_value = "template rendered"
+        reload(app)
+        app.SIGN_KEY = "123456"
+        with app.app.test_request_context("/"):
+            app.before_request()
+            content, status = app.save_user("Francisco", "Souza",
+                                            "fss@corp.globo.com")
+            app.teardown_request(None)
+        self.assertEqual("template rendered", content)
+        self.assertEqual(200, status)
+        render.assert_called_with("confirmation.html",
+                                  email="fss@corp.globo.com",
+                                  signature=app.sign("fss@corp.globo.com"))
+        u = self.db.users.find_one({
+            "email": "fss@corp.globo.com",
+            "first_name": "Francisco",
+            "last_name": "Souza",
+        })
+        self.assertIsNotNone(u)
+
+    @patch("flask.render_template")
+    def test_save_user_duplicate(self, render):
+        self.db.users.insert({
+            "email": "fss@corp.globo.com",
+            "first_name": "Chico",
+            "last_name": "Souza",
+        })
+        render.return_value = "another template rendered"
+        reload(app)
+        with app.app.test_request_context("/"):
+            app.before_request()
+            content, status = app.save_user("Francisco", "Souza",
+                                            "fss@corp.globo.com")
+            app.teardown_request(None)
+        self.assertEqual("another template rendered", content)
+        self.assertEqual(200, status)
+        render.assert_called_with("confirmation.html",
+                                  registered=True)
 
 
 class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
