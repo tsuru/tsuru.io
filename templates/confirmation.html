@@ -29,19 +29,21 @@
 		{{ form.email }}
 		{{ form.signature }}
 		<div class="row">
-			<div class="span3">
+			<div class="span3 control-group{% if form.work.errors %} error{% endif %}">
 				{{ form.work.label }}
 				{{ form.work }}
 			</div>
-			<div class="span3">
+			<div class="span3 control-group{% if form.country.errors %} error{% endif %}">
 				{{ form.country.label }}
 				{{ form.country }}
 			</div>
 		</div>
 		<div class="row">
-			<div class="span6">
+			<div class="span6 control-group{% if form.organization.errors %} error{% endif %}">
 				{{ form.organization.label }}
 				{{ form.organization }}
+			</div>
+			<div class="span6 control-group{% if form.why.errors %} error{% endif %}">
 				{{ form.why.label }}
 				{{ form.why }}
 			</div>
