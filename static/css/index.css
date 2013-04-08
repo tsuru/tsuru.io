@@ -67,6 +67,7 @@
 
 .content p {
 	font-size: 13px;
+	font-weight: lighter;
 }
 
 .content .msg {
@@ -76,7 +77,9 @@
 }
 
 .content .legal-note {
-	font-size: 10px;
+	font-size: 13px;
+	font-weight: lighter;
+	font-style: italic;
 }
 
 .thanks .share-btns {
@@ -113,11 +116,10 @@ input[type=submit] {
 
 .content .login-btns ul {
 	list-style: none;
-	margin-left: 157px;
 }
 
 .content .login-btns ul li {
-	margin: 20px 0;
+	margin: 5px 0 76px;
 }
 
 .content .login-btns span {
