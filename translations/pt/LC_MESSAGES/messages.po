@@ -26,7 +26,7 @@ msgstr "Sobrenome"
 
 #: forms.py:14
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: forms.py:29 templates/confirmation.html:35
 msgid "Developer"
@@ -34,7 +34,7 @@ msgstr "Desenvolvedor"
 
 #: forms.py:30 templates/confirmation.html:36
 msgid "Project Manager"
-msgstr "Gerente de projeto"
+msgstr "Gerente de projetos"
 
 #: forms.py:31 templates/confirmation.html:37
 msgid "Researcher"
@@ -63,11 +63,11 @@ msgstr "Qual é a sua profissão?"
 
 #: forms.py:40 templates/confirmation.html:45
 msgid "Where do you live?"
-msgstr "Onde você mora?"
+msgstr "De onde você é?"
 
 #: forms.py:43 templates/confirmation.html:294
 msgid "What is your company name?"
-msgstr "Qual é o nome da empresa que você trabalha?"
+msgstr "Onde você trabalha?"
 
 #: forms.py:45 templates/confirmation.html:298
 msgid "Build my own PaaS"
