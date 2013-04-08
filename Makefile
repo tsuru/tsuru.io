@@ -5,7 +5,7 @@ test_deps:
 	@pip install -qr test_requirements.txt
 
 test: test_deps
-	@nosetests -s --with-coverage --cover-erase --cover-package=app --cover-package=forms --cover-min-percentage=100 --cover-branches
+	@nosetests -s --with-coverage --cover-erase --cover-package=app --cover-package=forms --cover-min-percentage=95 --cover-branches
 	@flake8 .
 
 run: deps
