@@ -38,6 +38,12 @@ class AppTestCase(ClientTest, unittest.TestCase):
     def tearDownClass(cls):
         app.SIGN_KEY = None
 
+    def test_index_should_redirect_to_try(self):
+        resp = self.api.get("/")
+        self.assertEqual(301, resp.status_code)
+        self.assertTrue(resp.headers["Location"].endswith("/try"),
+                        resp.headers["Location"])
+
     def test_should_get_index_and_be_success(self):
         resp = self.api.get("/try")
         self.assertEqual(200, resp.status_code)

@@ -8,7 +8,7 @@ import os
 import pymongo
 import requests
 
-from flask import Flask, render_template, g, request
+from flask import Flask, render_template, g, request, redirect, url_for
 from flask_s3 import FlaskS3
 from flaskext.babel import Babel
 
@@ -70,8 +70,13 @@ def _index(form):
                            github_client_id=GITHUB_CLIENT_ID, form=form), 200
 
 
-@app.route("/try")
+@app.route("/")
 def index():
+    return redirect(url_for("try_tsuru"), code=301)
+
+
+@app.route("/try")
+def try_tsuru():
     return _index(forms.SignupForm())
 
 
