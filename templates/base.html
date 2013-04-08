@@ -1,11 +1,11 @@
 <html>
 <head>
-	<title>try tsuru</title>
+	<title>{% trans %}try tsuru{% endtrans %}</title>
 	<link href="{{url_for("static", filename="css/bootstrap.css")}}" media="all" rel="stylesheet" type="text/css">
 	<link href="{{url_for("static", filename="css/index.css")}}" media="all" rel="stylesheet" type="text/css">
 	<meta property="og:url" content="http://try.tsuru.io">
 	<meta property="og:image" content="{{url_for("static", filename="img/logo_tsuru.png")}}">
-	<meta property="og:description" content="try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS. #paas #opensource #golang" />
+	<meta property="og:description" content="{% trans %}try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS. #paas #opensource #golang{% endtrans %}" />
 </head>
 <body>
 	<div class="header">
@@ -16,7 +16,7 @@
 				</div>
 				<div class="span10">
 					<h1>TSURU</h1>
-					<p>open source platform as a service</p>
+					<p>{% trans %}open source platform as a service{% endtrans %}</p>
 				</div>
 			</div>
 		</div>
@@ -26,10 +26,10 @@
 					<div class="navbar">
 						<div class="navbar-inner">
 							<ul class="nav">
-								<li><a href="/" class="active">Try</a></li>
-								<li><a href="/community">Community</a></li>
-								<li><a href="http://docs.tsuru.io/en/latest/">Documentation</a></li>
-								<li><a href="https://github.com/globocom/tsuru">Code</a></li>
+								<li><a href="/" class="active">{% trans %}Try{% endtrans %}</a></li>
+								<li><a href="/community">{% trans %}Community{% endtrans %}</a></li>
+								<li><a href="http://docs.tsuru.io/en/latest/">{% trans %}Documentation{% endtrans %}</a></li>
+								<li><a href="https://github.com/globocom/tsuru">{% trans %}Code{% endtrans %}</a></li>
 								<li><a href="/software">Software</a></li>
 							</ul>
 						</div>
