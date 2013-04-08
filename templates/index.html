@@ -28,17 +28,21 @@
 </div>
 <div class="login-form span6">
 	<form action="index_submit" method="post" accept-charset="utf-8">
+		{{ form.csrf_token }}
 		<div class="row">
 			<div class="span3">
-				<label for="first_name">First name</label><input type="text" first_name="first_name" value="" id="first_name">
+				{{form.first_name.label}}
+				{{form.first_name}}
 			</div>
 			<div class="span3">
-				<label for="last_name">Last name</label><input type="text" last_name="last_name" value="" id="last_name">
+				{{form.last_name.label}}
+				{{form.last_name}}
 			</div>
 		</div>
 		<div class="row">
 			<div class="span6">
-				<label for="email">Email</label><input type="text" email="email" value="" id="email">
+				{{form.email.label}}
+				{{form.email}}
 			</div>
 		</div>
 		<p><input type="submit" value="Submit"></p>
