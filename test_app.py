@@ -11,6 +11,7 @@ class ClientTest(object):
 
     @classmethod
     def setUpClass(self):
+        app.app.config['TESTING'] = True
         self.api = app.app.test_client()
 
 
@@ -304,6 +305,22 @@ class HelperTestCase(unittest.TestCase):
         email = "fss@corp.globo.com"
         expected = hashlib.sha1(email + app.SIGN_KEY).hexdigest()
         self.assertEqual(expected, app.sign(email))
+
+
+class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
+
+    def test_save(self):
+        data = {
+            "email": "some@email.com",
+            "work": "work",
+            "country": "china",
+            "organization": "organization",
+            "why": "why",
+        }
+        resp = self.api.post("/survey", data=data)
+        self.assertEqual(201, resp.status_code)
+        s = self.db.survey.find_one({"email": "some@email.com"})
+        self.assertIsNotNone(s)
 
 
 if __name__ == "__main__":

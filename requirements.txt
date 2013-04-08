@@ -1,5 +1,5 @@
 Flask==0.9
-flask-csrf==0.9.2
+git+http://github.com/sjl/flask-csrf.git
 pymongo==2.5
 requests==1.2.0
 gunicorn==0.17.2

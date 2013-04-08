@@ -54,6 +54,19 @@ def community():
     return render_template("community.html"), 200
 
 
+@app.route("/survey", methods=["POST"])
+def survey():
+    survey = {
+        "email": request.form["email"],
+        "work": request.form["work"],
+        "country": request.form["country"],
+        "organization": request.form["organization"],
+        "why": request.form["why"],
+    }
+    g.db.survey.insert(survey)
+    return "", 201
+
+
 @app.route("/register/facebook")
 def facebook_register():
     if not has_token(request.args):
