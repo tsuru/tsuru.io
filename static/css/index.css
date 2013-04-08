@@ -148,3 +148,10 @@ input[type=submit] {
 a:hover {
     text-decoration: none;
 }
+
+.footer .span12 {
+	font-size: 13px;
+	font-weight: lighter;
+	letter-spacing: .5px;
+	margin-top: 20px;
+}
