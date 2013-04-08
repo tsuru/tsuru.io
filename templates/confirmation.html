@@ -6,7 +6,9 @@
 <div class="thanks span6">
 	<h3>{% trans %}Thanks!{% endtrans %}</h3>
 	<p>{% trans %}You will get to try tsuru very soon. {% endtrans %}</p>
+	{% if not registered %}
 	<p>{% trans %}Help us to know you better. Give some more information about you.{% endtrans %}</p>
+	{% endif %}
 	<h2>{% trans %}Share with your friends{% endtrans %}</h4>
 	<ul class="share-btns">
 		<li>
