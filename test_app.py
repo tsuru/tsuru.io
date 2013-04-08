@@ -169,23 +169,6 @@ class GithubLoginTestCase(ClientTest, unittest.TestCase):
 
 class GplusLoginTestCase(ClientTest, unittest.TestCase):
 
-    @classmethod
-    def setUpClass(cls):
-        mongo_uri_port = app.MONGO_URI.split(":")
-        host = mongo_uri_port[0]
-        port = int(mongo_uri_port[1])
-        cls.conn = Connection(host, port)
-        cls.db = cls.conn[app.MONGO_DATABASE_NAME]
-        ClientTest.setUpClass()
-        app.SIGN_KEY = "key"
-
-    @classmethod
-    def tearDownClass(cls):
-        app.SIGN_KEY = None
-
-    def tearDown(self):
-        self.db.users.remove()
-
     def clean_api_client(self):
         app.GOOGLE_USER_IP = None
         app.GOOGLE_API_KEY = None
@@ -201,7 +184,8 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         self.assertEqual(u"Token is required.", resp.data)
 
     @patch("requests.get")
-    def test_should_send_request_to_google_plus(self, mock):
+    @patch("app.save_user")
+    def test_should_send_request_to_google_plus(self, save_user, mock):
         app.GOOGLE_USER_IP = "127.0.0.1"
         app.GOOGLE_API_KEY = "key"
         app.SIGN_KEY = "key"
@@ -217,6 +201,7 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
             "gender": "male",
         }
         mock.return_value = m
+        save_user.return_value = ""
         resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
         self.assertEqual(200, resp.status_code)
         url = "{0}/userinfo?key={1}&userIp={2}".format(
@@ -226,66 +211,8 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         )
         headers = {"Authorization": "Bearer mytoken"}
         mock.assert_called_with(url, headers=headers)
-        u = self.db.users.find_one({
-            "email": "secret@company.com",
-            "first_name": "Francisco",
-            "last_name": "Souza"
-        })
-        self.assertIsNotNone(u)
-
-    @patch("requests.get")
-    @patch("flask.render_template")
-    def test_confirmation_template_with_email_in_context(self, render, get):
-        app.GOOGLE_USER_IP = "127.0.0.1"
-        app.GOOGLE_API_KEY = "key"
-        self.addCleanup(self.clean_api_client)
-        m = Mock()
-        m.json.return_value = {
-            "id": "1234",
-            "email": "secret@company.com",
-            "verified_email": True,
-            "given_name": "Francisco",
-            "family_name": "Souza",
-            "name": "Francisco Souza",
-            "gender": "male",
-        }
-        get.return_value = m
-        render.return_value = ""
-        reload(app)
-        app.SIGN_KEY = "key"
-        resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
-        self.assertEqual(200, resp.status_code)
-        render.assert_called_with("confirmation.html",
-                                  email="secret@company.com",
-                                  signature=app.sign("secret@company.com"))
-
-    @patch("requests.get")
-    @patch("flask.render_template")
-    def test_form_when_user_is_already_registered(self, render, get):
-        app.GOOGLE_USER_IP = "127.0.0.1"
-        app.GOOGLE_API_KEY = "key"
-        self.addCleanup(self.clean_api_client)
-        m = Mock()
-        m.json.return_value = {
-            "id": "1234",
-            "email": "secret@company.com",
-            "verified_email": True,
-            "given_name": "Francisco",
-            "family_name": "Souza",
-            "name": "Francisco Souza",
-            "gender": "male",
-        }
-        get.return_value = m
-        render.return_value = ""
-        self.db.users.insert({
-            "email": "secret@company.com",
-            "first_name": "Francisco",
-            "last_name": "Souza"
-        })
-        reload(app)
-        resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
-        self.assertEqual(200, resp.status_code)
-        render.assert_called_with("confirmation.html", registered=True)
+        save_user.assert_called_with("Francisco", "Souza",
+                                     "secret@company.com")
 
 
 class HelperTestCase(DatabaseTest, unittest.TestCase):
