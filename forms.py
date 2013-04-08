@@ -22,21 +22,35 @@ class SignupForm(wtf.Form):
 
 class SurveyForm(wtf.Form):
     email = wtforms.HiddenField(u"email",
-                                validators=[validators.Email()])
-    signature = wtforms.HiddenField(u"signature")
-    choices = [("cio", "CIO"), ("cto", "CTO"), ("dba", "DBA"),
-               ("developer", "Developer"), ("manager", "Project Manager"),
-               ("researcher", "Researcher"), ("student", "Student"),
-               ("teacher", "Tearcher"), ("ops", "Ops"), ("", "Other")]
-    work = wtforms.SelectField(u"What do you do for a living?",
-                               choices=choices)
-    country = wtforms.SelectField(u"Where do you live?",
-                                  choices=country_choices)
-    organization = wtforms.TextField(u"What is your company name?")
-    choices = [("build", "Build my own PaaS"),
-               ("compare", "Compare to other PaaS"),
-               ("deploy", "Deploy my apps"),
-               ("curious", "I'm just curious"),
-               ("", "Other")]
-    why = wtforms.SelectField(u"Why do you want to try tsuru?",
-                              choices=choices)
+                                validators=[validators.DataRequired(),
+                                            validators.Email()])
+    signature = wtforms.HiddenField(u"signature",
+                                    validators=[validators.DataRequired()])
+    choices = [
+        ("cio", "CIO"),
+        ("cto", "CTO"),
+        ("dba", "DBA"),
+        ("developer", gettext("Developer")),
+        ("manager", gettext("Project Manager")),
+        ("researcher", gettext("Researcher")),
+        ("student", gettext("Student")),
+        ("teacher", gettext("Teacher")),
+        ("ops", gettext("Ops")),
+        ("", gettext("Other"))
+    ]
+    work = wtforms.SelectField(gettext(u"What do you do for a living?"),
+                               choices=choices,
+                               validators=[validators.DataRequired()])
+    country = wtforms.SelectField(gettext(u"Where do you live?"),
+                                  choices=country_choices,
+                                  validators=[validators.DataRequired()])
+    organization = wtforms.TextField(gettext(u"What is your company name?"),
+                                     validators=[validators.DataRequired()])
+    choices = [("build", gettext("Build my own PaaS")),
+               ("compare", gettext("Compare to other PaaS")),
+               ("deploy", gettext("Deploy my apps")),
+               ("curious", gettext("I'm just curious")),
+               ("", gettext("Other"))]
+    why = wtforms.SelectField(gettext(u"Why do you want to try tsuru?"),
+                              choices=choices,
+                              validators=[validators.DataRequired()])

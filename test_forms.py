@@ -32,7 +32,7 @@ class SurveyFormTestCase(unittest.TestCase):
         expected = [("cio", "CIO"), ("cto", "CTO"), ("dba", "DBA"),
                     ("developer", "Developer"), ("manager", "Project Manager"),
                     ("researcher", "Researcher"), ("student", "Student"),
-                    ("teacher", "Tearcher"), ("ops", "Ops"), ("", "Other")]
+                    ("teacher", "Teacher"), ("ops", "Ops"), ("", "Other")]
         choices = forms.SurveyForm.work.kwargs["choices"]
         self.assertListEqual(expected, choices)
 
