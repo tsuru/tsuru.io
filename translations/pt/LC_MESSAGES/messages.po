@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-08 17:54-0300\n"
+"POT-Creation-Date: 2013-04-08 17:59-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -91,7 +91,6 @@ msgid "Why do you want to try tsuru?"
 msgstr "Por que você quer usar o tsuru?"
 
 #: templates/base.html:3
-#, fuzzy
 msgid "try tsuru"
 msgstr "Experimente o tsuru"
 
@@ -236,4 +235,18 @@ msgstr ""
 "do programa beta, assim como não nos obriga a te escolher para o mesmo. "
 "Isso é simplesmente uma maneira de selecionarmos um conjunto de pessoas "
 "legais(você!) que queiram testar o tsuru.io."
+
+#: templates/software.html:4
+msgid "About tsuru"
+msgstr "Sobre o tsuru"
+
+#: templates/software.html:7
+msgid ""
+"tsuru is an open source polyglot cloud application platform. With tsuru, "
+"you don’t need to think about servers at all. You can write apps in the "
+"programming language of your choice, back it with add-on resources such "
+"as SQL and NoSQL databases, memcached, redis, and many others. You manage"
+" your app using the tsuru command-line tool and you deploy code using the"
+" Git revision control system, all running on the tsuru infrastructure."
+msgstr ""
 
