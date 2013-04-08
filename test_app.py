@@ -289,6 +289,14 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
         render.assert_called_with("confirmation.html",
                                   registered=True)
 
+    @patch("flask.request")
+    def test_get_locale(self, request):
+        request.accept_languages.best_match.return_value = "en"
+        reload(app)
+        result = app.get_locale()
+        self.assertEqual("en", result)
+        request.accept_languages.best_match.assert_called_with(["pt", "en"])
+
 
 class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
