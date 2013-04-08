@@ -100,6 +100,11 @@ def community():
 
 @app.route("/survey", methods=["POST"])
 def survey():
+    if not forms.SurveyForm(request.form).validate():
+        return "Invalid email.", 400
+    if sign(request.form["email"]) != request.form["signature"]:
+        msg = "Signatures doesn't matches. You're probably doing something nasty."
+        return msg, 400
     survey = {
         "email": request.form["email"],
         "work": request.form["work"],
@@ -108,7 +113,7 @@ def survey():
         "why": request.form["why"],
     }
     g.db.survey.insert(survey)
-    return "", 201
+    return render_template("confirmation.html", registered=True), 201
 
 
 @app.route("/register/facebook")

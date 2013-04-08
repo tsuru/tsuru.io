@@ -447,19 +447,71 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
 class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @classmethod
-    def setUpClass(self):
+    def setUpClass(cls):
         ClientTest.setUpClass()
         DatabaseTest.setUpClass()
 
+    @classmethod
+    def tearDownClass(cls):
+        app.SIGN_KEY = None
+
     def test_save(self):
+        reload(app)  # this unmocks render_template
+        app.SIGN_KEY = "sig_key"
         data = {
-            "email": "some@email.com",
-            "work": "work",
-            "country": "china",
+            "email": "test@test.me",
+            "signature": app.sign("test@test.me"),
+            "work": "student",
+            "country": "Brazil",
             "organization": "organization",
-            "why": "why",
+            "why": "deploy",
         }
         resp = self.api.post("/survey", data=data)
         self.assertEqual(201, resp.status_code)
-        s = self.db.survey.find_one({"email": "some@email.com"})
+        s = self.db.survey.find_one({"email": data["email"]})
         self.assertIsNotNone(s)
+
+    def test_should_return_400_when_data_is_invalid(self):
+        data = {
+            "email": "invalid email",
+            "signature": app.sign("some@email.com"),
+            "work": "ops",
+            "country": "Brazil",
+            "organization": "organization",
+            "why": "compare",
+        }
+        app.SIGN_KEY = "sig_key"
+        resp = self.api.post("/survey", data=data)
+        self.assertEqual(400, resp.status_code)
+
+    def test_should_should_return_400_when_signatures_doesnt_match(self):
+        app.SIGN_KEY = "sig_key"
+        data = {
+            "email": "email@test.com",
+            "signature": app.sign("some@email.com"),
+            "work": "ops",
+            "country": "Brazil",
+            "organization": "organization",
+            "why": "compare",
+        }
+        resp = self.api.post("/survey", data=data)
+        self.assertEqual(400, resp.status_code)
+        expected = "Signatures doesn't matches. You're probably doing something nasty."
+        self.assertEqual(expected, resp.data)
+
+    @patch("flask.render_template")
+    def test_should_render_confirmation_template_with_registered_true(self, render):
+        render.return_value = ""
+        reload(app)
+        app.SIGN_KEY = "sig_key"
+        data = {
+            "email": "some@email.com",
+            "signature": app.sign("some@email.com"),
+            "work": "ops",
+            "country": "Brazil",
+            "organization": "organization",
+            "why": "compare",
+        }
+        resp = self.api.post("/survey", data=data)
+        self.assertEqual(201, resp.status_code)
+        render.assert_called_once_with("confirmation.html", registered=True)
