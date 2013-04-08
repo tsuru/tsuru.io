@@ -7,6 +7,12 @@ from wtforms import validators
 import forms
 
 
+class SurveyFormTestCase(unittest.TestCase):
+
+    def test_should_be_a_wtform(self):
+        assert issubclass(forms.SurveyForm, wtf.Form)
+
+
 class SignupFormTestCase(unittest.TestCase):
 
     def test_should_be_a_wtform(self):
@@ -23,7 +29,7 @@ class SignupFormTestCase(unittest.TestCase):
     def test_first_name_should_be_mandatory(self):
         field = forms.SignupForm.first_name
         self.assertIsInstance(field.kwargs["validators"][0],
-                              validators.Required)
+                              validators.DataRequired)
 
     def test_last_name_should_be_text_field(self):
         field = forms.SignupForm.last_name
@@ -36,7 +42,7 @@ class SignupFormTestCase(unittest.TestCase):
     def test_last_name_should_be_mandatory(self):
         field = forms.SignupForm.last_name
         self.assertIsInstance(field.kwargs["validators"][0],
-                              validators.Required)
+                              validators.DataRequired)
 
     def test_email_should_be_text_field(self):
         field = forms.SignupForm.email
@@ -49,7 +55,7 @@ class SignupFormTestCase(unittest.TestCase):
     def test_email_should_be_mandatory(self):
         field = forms.SignupForm.email
         self.assertIsInstance(field.kwargs["validators"][0],
-                              validators.Required)
+                              validators.DataRequired)
 
     def test_email_should_require_valid_email(self):
         field = forms.SignupForm.email
