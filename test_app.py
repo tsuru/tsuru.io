@@ -116,20 +116,7 @@ class FacebookLoginTestCase(ClientTest, unittest.TestCase):
         self.assertEqual(400, resp.status_code)
 
 
-class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
-
-    @classmethod
-    def setUpClass(cls):
-        ClientTest.setUpClass()
-        DatabaseTest.setUpClass()
-        app.SIGN_KEY = "key"
-
-    @classmethod
-    def tearDownClass(cls):
-        app.SIGN_KEY = None
-
-    def tearDown(self):
-        self.db.users.remove()
+class GithubLoginTestCase(ClientTest, unittest.TestCase):
 
     def _mock_requests(self, mock_post, mock_get, data_get, data_post):
         m = Mock()
@@ -141,10 +128,12 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @patch("requests.post")
     @patch("requests.get")
-    def test_should_request_be_success_and_redirect(self, mock_get, mock):
+    @patch("app.save_user")
+    def test_should_request_be_success_and_redirect(self, save_user, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
+        save_user.return_value = ""
         resp = self.api.get("/register/github?code=coolcode")
         self.assertEqual(200, resp.status_code)
 
@@ -154,10 +143,12 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @patch("requests.post")
     @patch("requests.get")
-    def test_exchange_code_for_github_access_token(self, mock_get, mock):
+    @patch("app.save_user")
+    def test_exchange_code_for_github_access_token(self, save_user, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
+        save_user.return_value = ""
         resp = self.api.get("/register/github?code=code21")
         self.assertEqual(200, resp.status_code)
         self.assertEqual(1, mock.call_count)
@@ -165,31 +156,15 @@ class GithubLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
     @patch("requests.post")
     @patch("requests.get")
-    def test_should_store_user_in_database(self, mock_get, mock):
+    @patch("app.save_user")
+    def test_should_store_user_in_database(self, save_user, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
+        save_user.return_value = ""
         resp = self.api.get("/register/github?code=code21")
         self.assertEqual(200, resp.status_code)
-        u = self.db.users.find_one({"first_name": "Foo", "last_name": "Bar"})
-        self.assertIsNotNone(u)
-        self.assertEqual(u["email"], "test@test.com")
-
-    @patch("requests.post")
-    @patch("requests.get")
-    @patch("flask.render_template")
-    def test_confirmation_with_email_and_sign(self, render, mock_get, mock):
-        self._mock_requests(mock, mock_get,
-                            {"email": "test@test.com", "name": "Foo Bar"},
-                            {"access_token": "testtoken"})
-        render.return_value = ""
-        reload(app)
-        app.SIGN_KEY = "key"
-        resp = self.api.get("/register/github?code=code21")
-        self.assertEqual(200, resp.status_code)
-        render.assert_called_with("confirmation.html",
-                                  email="test@test.com",
-                                  signature=app.sign("test@test.com"))
+        save_user.assert_called_with("Foo", "Bar", "test@test.com")
 
 
 class GplusLoginTestCase(ClientTest, unittest.TestCase):
