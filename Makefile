@@ -13,3 +13,6 @@ run: deps
 
 extract: deps
 	@pybabel extract -F babel.cfg -o messages.pot .
+
+catalog-pt: deps
+	@pybabel init -i messages.pot -d translations -l pt
