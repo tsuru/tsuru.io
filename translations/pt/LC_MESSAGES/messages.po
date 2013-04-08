@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-08 17:09-0300\n"
+"POT-Creation-Date: 2013-04-08 17:17-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -106,6 +106,10 @@ msgstr "Ajude-nos a conhecê-lo melhor. Responda algumas informações sobre voc
 msgid "Share with your friends"
 msgstr "Compartilhe com seus amigos"
 
+#: templates/index.html:4
+msgid "Try tsuru"
+msgstr "Teste o tsuru"
+
 #: templates/index.html:7
 msgid ""
 "A few days ago when we've got some <a "
@@ -124,7 +128,7 @@ msgstr ""
 "target=\"_blank\">fama</a>, várias pessoas nos perguntaram como testar de"
 " maneira rápida o tsuru antes de ter que fazer uma instalação completa da"
 " solução. Dentro de algumas semanas, estamos planejando lançar uma cloud "
-"pública com o Tsuru para que você possa ver como é fácil gerenciar suas "
+"pública com o tsuru para que você possa ver como é fácil gerenciar suas "
 "aplicações com o que nós acreditamos ser a melhor solução de plataforma "
 "como serviço open source do planeta."
 
@@ -142,7 +146,7 @@ msgid ""
 "to be one of the first to try it out for free."
 msgstr ""
 "Cadastre-se no formulário ao lado para saber das novidades e ter a "
-"oportunidade de ser um dos primeiros a testar gratuitamente o Tsuru."
+"oportunidade de ser um dos primeiros a testar gratuitamente o tsuru."
 
 #: templates/index.html:11
 msgid "We're working hard hoping to get a seat for all of you."
@@ -161,6 +165,11 @@ msgstr "Enviar"
 #: templates/index.html:51
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
-"and does not obligate us to select you."
+"and does not obligate us to select you. It’s simply a way for us to "
+"assemble a pool of cool people(you!) who wants to try out tsuru.io, the "
+"open source polyglot platform as a service."
 msgstr ""
-
+"Nota legal: o envio desse formulário não está te obrigando a participar "
+"do programa beta, assim como não nos obriga a te escolher para o mesmo. "
+"Isso é simplesmente uma maneira de selecionarmos um conjunto de pessoas "
+"legais(você!) que queiram testar o tsuru.io."
