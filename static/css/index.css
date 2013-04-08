@@ -115,6 +115,11 @@ input[type=submit] {
 	height: 32px;
 }
 
+.content .or {
+	background: url(/static/img/or_bg.png) no-repeat;
+	height: 300px;
+}
+
 .content .login-btns ul {
 	list-style: none;
 }
