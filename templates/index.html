@@ -34,17 +34,17 @@
 	<form action="{{url_for("signup")}}" method="post" accept-charset="utf-8">
 		{{ form.csrf_token }}
 		<div class="row">
-			<div class="span2">
+			<div class="span2 control-group{% if form.first_name.errors %} error{% endif %}">
 				{{ form.first_name.label }}
 				{{ form.first_name(class_='input-medium') }}
 			</div>
-			<div class="span2">
+			<div class="span2 control-group{% if form.last_name.errors %} error{% endif %}">
 				{{ form.last_name.label }}
 				{{ form.last_name(class_='input-medium') }}
 			</div>
 		</div>
 		<div class="row">
-			<div class="span4">
+			<div class="span4 control-group{% if form.email.errors %} error{% endif %}">
 				{{ form.email.label }}
 				{{ form.email(class_='input-xlarge') }}
 			</div>
