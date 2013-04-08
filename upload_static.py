@@ -19,4 +19,6 @@ all_files = flask_s3._gather_files(app.app, False)
 conn = S3Connection(os.environ.get("TSURU_S3_ACCESS_KEY_ID"),
                     os.environ.get("TSURU_S3_SECRET_KEY"))
 bucket = conn.get_bucket(os.environ.get("TSURU_S3_BUCKET"))
+print "Uploading static files to S3... ",
 flask_s3._upload_files(app.app, all_files, bucket)
+print "ok"
