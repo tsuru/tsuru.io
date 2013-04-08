@@ -26,8 +26,8 @@
 					<div class="navbar">
 						<div class="navbar-inner">
 							<ul class="nav">
-								<li><a href="/" class="active">{% trans %}Try{% endtrans %}</a></li>
-								<li><a href="/community">{% trans %}Community{% endtrans %}</a></li>
+								<li><a href="{{url_for("try_tsuru")}}" class="active">{% trans %}Try{% endtrans %}</a></li>
+								<li><a href="{{url_for("community")}}">{% trans %}Community{% endtrans %}</a></li>
 								<li><a href="http://docs.tsuru.io/en/latest/">{% trans %}Documentation{% endtrans %}</a></li>
 								<li><a href="https://github.com/globocom/tsuru">{% trans %}Code{% endtrans %}</a></li>
 								<li><a href="{{url_for("about")}}">About</a></li>
