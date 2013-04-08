@@ -11,7 +11,7 @@ class ClientTest(object):
 
     @classmethod
     def setUpClass(self):
-        app.app.config['TESTING'] = True
+        app.app.config["CSRF_ENABLED"] = False
         self.api = app.app.test_client()
 
 
