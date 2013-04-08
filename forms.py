@@ -22,10 +22,18 @@ class SurveyForm(wtf.Form):
                                             validators.Email()])
     signature = wtforms.HiddenField(u"signature",
                                     validators=[validators.DataRequired()])
-    choices = [("cio", "CIO"), ("cto", "CTO"), ("dba", "DBA"),
-               ("developer", gettext("Developer")), ("manager", gettext("Project Manager")),
-               ("researcher", gettext("Researcher")), ("student", gettext("Student")),
-               ("teacher", gettext("Tearcher")), ("ops", gettext("Ops")), ("", gettext("Other"))]
+    choices = [
+        ("cio", "CIO"),
+        ("cto", "CTO"),
+        ("dba", "DBA"),
+        ("developer", gettext("Developer")),
+        ("manager", gettext("Project Manager")),
+        ("researcher", gettext("Researcher")),
+        ("student", gettext("Student")),
+        ("teacher", gettext("Tearcher")),
+        ("ops", gettext("Ops")),
+        ("", gettext("Other"))
+    ]
     work = wtforms.SelectField(gettext(u"What do you do for a living?"),
                                choices=choices,
                                validators=[validators.DataRequired()])
