@@ -25,6 +25,10 @@ class DatabaseTest(object):
         cls.conn = Connection(host, port)
         cls.db = cls.conn[app.MONGO_DATABASE_NAME]
 
+    @classmethod
+    def tearDownClass(cls):
+        cls.conn.drop_database(app.MONGO_DATABASE_NAME)
+
 
 class AppTestCase(ClientTest, unittest.TestCase):
 
