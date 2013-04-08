@@ -292,6 +292,11 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
 
 class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 
+    @classmethod
+    def setUpClass(self):
+        ClientTest.setUpClass()
+        DatabaseTest.setUpClass()
+
     def test_save(self):
         data = {
             "email": "some@email.com",
