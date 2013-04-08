@@ -10,10 +10,15 @@ import requests
 
 from flask import Flask, render_template, g, request
 from flaskext import csrf
+from flaskext.babel import Babel
+
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "secret")
+
+Babel(app)
 csrf.csrf(app)
+
 MONGO_URI = os.environ.get("MONGO_URI", "localhost:27017")
 MONGO_USER = os.environ.get("MONGO_USER", "")
 MONGO_PASSWORD = os.environ.get("MONGO_PASSWORD", "")
