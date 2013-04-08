@@ -94,7 +94,7 @@ class FacebookLoginTestCase(ClientTest, unittest.TestCase):
 
     @patch("requests.get")
     @patch("app.save_user")
-    def test_should_receive_facebook_data_and_store_on_database(self, save_user, mock):
+    def test_should_store_facebook_data_on_database(self, save_user, mock):
         data = {
             "first_name": "First",
             "last_name": "Last",
@@ -129,7 +129,7 @@ class GithubLoginTestCase(ClientTest, unittest.TestCase):
     @patch("requests.post")
     @patch("requests.get")
     @patch("app.save_user")
-    def test_should_request_be_success_and_redirect(self, save_user, mock_get, mock):
+    def test_should_return_200_with_code(self, save_user, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
@@ -144,7 +144,7 @@ class GithubLoginTestCase(ClientTest, unittest.TestCase):
     @patch("requests.post")
     @patch("requests.get")
     @patch("app.save_user")
-    def test_exchange_code_for_github_access_token(self, save_user, mock_get, mock):
+    def test_get_access_token_from_github(self, save_user, mock_get, mock):
         self._mock_requests(mock, mock_get,
                             {"email": "test@test.com", "name": "Foo Bar"},
                             {"access_token": "testtoken"})
