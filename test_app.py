@@ -1,4 +1,5 @@
 import hashlib
+import os
 import unittest
 
 import werkzeug
@@ -83,6 +84,13 @@ class AppTestCase(ClientTest, unittest.TestCase):
                                   facebook_app_id=app.FACEBOOK_APP_ID,
                                   github_client_id=app.GITHUB_CLIENT_ID,
                                   form=m)
+
+    def test_bucket_support(self):
+        os.environ["TSURU_S3_BUCKET"] = "mybucket"
+        self.addCleanup(reload, app)
+        reload(app)
+        self.assertEqual("mybucket", app.app.config["S3_BUCKET_NAME"])
+        del os.environ["TSURU_S3_BUCKET"]
 
 
 class FacebookLoginTestCase(ClientTest, unittest.TestCase):

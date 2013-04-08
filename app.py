@@ -9,6 +9,7 @@ import pymongo
 import requests
 
 from flask import Flask, render_template, g, request
+from flask_s3 import FlaskS3
 from flaskext.babel import Babel
 
 import forms
@@ -16,6 +17,10 @@ import forms
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "secret")
+bucket = os.environ.get("TSURU_S3_BUCKET")
+if bucket:
+    app.config["S3_BUCKET_NAME"] = bucket
+    FlaskS3(app)
 
 babel = Babel(app)
 
