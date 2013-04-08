@@ -1,21 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="span12 msg">
-    <h2 class="title">Community</h2>
+	<h2 class="title">{% trans %}Community{% endtrans %}</h2>
 </div>
 <div class="span12">
-    <div class="span12">
-        <h3>Mailing List</h3>
-        <p><a href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-users">General List</a></p>
-        <p><a href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-dev">Development List</a></p>
-    </div>
-    <div class="span12">
-        <h3>IRC</h3>
-        <p>#tsuru on Freenode <a href="http://webchat.freenode.net/">Pop In</a> (via browser client)</p>
-    </div>
-    <div class="span12">
-        <h3>Social Networks</h3>
-        <p>Twitter: <a href="https://twitter.com/tsurupaas">@tsurupaas</a></p>
-    </div>
+	<div class="span12">
+		<h3>{% trans %}Mailing List{% endtrans %}</h3>
+		<p><a href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-users">{% trans %}General List{% endtrans %}</a></p>
+		<p><a href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-dev">{% trans %}Development List{% endtrans %}</a></p>
+	</div>
+	<div class="span12">
+		<h3>IRC</h3>
+		<p>{% trans %}#tsuru on Freenode <a href="http://webchat.freenode.net/">Pop In</a> (via browser client){% endtrans %}</p>
+	</div>
+	<div class="span12">
+		<h3>{% trans %}Social Networks{% endtrans %}</h3>
+		<p>Twitter: <a href="https://twitter.com/tsurupaas">@tsurupaas</a></p>
+		<p>Google+: <a href="https://plus.google.com/118205831863820582274">Tsuru</a></p>
+	</div>
 </div>
 {% endblock %}

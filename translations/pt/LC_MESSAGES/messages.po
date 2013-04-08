@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-08 17:34-0300\n"
+"POT-Creation-Date: 2013-04-08 17:54-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: forms.py:13 templates/index.html:36
+#: forms.py:13 templates/index.html:38
 msgid "First name"
 msgstr "Nome"
 
-#: forms.py:15 templates/index.html:40
+#: forms.py:15 templates/index.html:42
 msgid "Last name"
 msgstr "Sobrenome"
 
-#: forms.py:18 templates/index.html:46
+#: forms.py:18 templates/index.html:48
 msgid "Email"
 msgstr "E-mail"
 
@@ -111,7 +111,7 @@ msgstr "plataforma como serviço open source"
 msgid "Try"
 msgstr "Experimente"
 
-#: templates/base.html:30
+#: templates/base.html:30 templates/community.html:4
 msgid "Community"
 msgstr "Comunidade"
 
@@ -122,6 +122,30 @@ msgstr "Documentação"
 #: templates/base.html:32
 msgid "Code"
 msgstr "Código"
+
+#: templates/community.html:8
+msgid "Mailing List"
+msgstr "Listas de discussão"
+
+#: templates/community.html:9
+msgid "General List"
+msgstr "Lista de usuários"
+
+#: templates/community.html:10
+msgid "Development List"
+msgstr "Lista de desenvolvimento"
+
+#: templates/community.html:14
+msgid ""
+"#tsuru on Freenode <a href=\"http://webchat.freenode.net/\">Pop In</a> "
+"(via browser client)"
+msgstr ""
+"#tsuru no Freenode <a href=\"http://webchat.freenode.net/\">Pop-up</a> "
+"(para acesso através do navegador)"
+
+#: templates/community.html:17
+msgid "Social Networks"
+msgstr "Redes sociais"
 
 #: templates/confirmation.html:4 templates/index.html:4
 msgid "Try tsuru"
@@ -147,8 +171,7 @@ msgstr "Compartilhe com seus amigos"
 msgid ""
 "try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
 " Source Polyglot PaaS "
-msgstr ""
-"visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
+msgstr "visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
 
 #: templates/index.html:7
 msgid ""
@@ -198,11 +221,11 @@ msgstr ""
 msgid "Tsuru team"
 msgstr "Equipe Tsuru"
 
-#: templates/index.html:50
+#: templates/index.html:52
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/index.html:51
+#: templates/index.html:53
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
 "and does not obligate us to select you. It’s simply a way for us to "
