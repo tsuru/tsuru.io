@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-04-08 15:07-0300\n"
+"POT-Creation-Date: 2013-04-08 16:02-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -30,64 +29,64 @@ msgstr "Sobrenome"
 msgid "Email"
 msgstr "Email"
 
-#: forms.py:26 templates/confirmation.html:35
+#: forms.py:29 templates/confirmation.html:35
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: forms.py:26 templates/confirmation.html:36
+#: forms.py:30 templates/confirmation.html:36
 msgid "Project Manager"
 msgstr "Gerente de projeto"
 
-#: forms.py:27 templates/confirmation.html:37
+#: forms.py:31 templates/confirmation.html:37
 msgid "Researcher"
 msgstr "Pesquisador"
 
-#: forms.py:27 templates/confirmation.html:38
+#: forms.py:32 templates/confirmation.html:38
 msgid "Student"
 msgstr "Estudante"
 
-#: forms.py:28
+#: forms.py:33
 msgid "Tearcher"
 msgstr "Professor"
 
-#: forms.py:28 templates/confirmation.html:40
+#: forms.py:34 templates/confirmation.html:40
 msgid "Ops"
 msgstr "Infra/Operação"
 
-#: forms.py:28 forms.py:41 templates/confirmation.html:41
+#: forms.py:35 forms.py:49 templates/confirmation.html:41
 #: templates/confirmation.html:47 templates/confirmation.html:302
 msgid "Other"
 msgstr "Outro"
 
-#: forms.py:29 templates/confirmation.html:30
+#: forms.py:37 templates/confirmation.html:30
 msgid "What do you do for a living?"
 msgstr "Qual é a sua profissão?"
 
-#: forms.py:32 templates/confirmation.html:45
+#: forms.py:40 templates/confirmation.html:45
 msgid "Where do you live?"
 msgstr "Onde você mora?"
 
-#: forms.py:35 templates/confirmation.html:294
+#: forms.py:43 templates/confirmation.html:294
 msgid "What is your company name?"
 msgstr "Qual é o nome da empresa que você trabalha?"
 
-#: forms.py:37 templates/confirmation.html:298
+#: forms.py:45 templates/confirmation.html:298
 msgid "Build my own PaaS"
 msgstr "Montar meu PaaS"
 
-#: forms.py:38 templates/confirmation.html:299
+#: forms.py:46 templates/confirmation.html:299
 msgid "Compare to other PaaS"
 msgstr "Comparar com outros PaaS"
 
-#: forms.py:39 templates/confirmation.html:300
+#: forms.py:47 templates/confirmation.html:300
 msgid "Deploy my apps"
 msgstr "Fazer deploy das minhas apps"
 
-#: forms.py:40 templates/confirmation.html:301
+#: forms.py:48 templates/confirmation.html:301
 msgid "I'm just curious"
 msgstr "Apenas curiosidade"
 
-#: forms.py:42 templates/confirmation.html:296
+#: forms.py:50 templates/confirmation.html:296
 msgid "Why do you want to try tsuru?"
 msgstr "Por que você quer usar o tsuru?"
 
@@ -111,33 +110,63 @@ msgstr "Compartilhe com seus amigos"
 msgid "Teacher"
 msgstr "Professor"
 
-#~ msgid ""
-#~ "\n"
-#~ "\t<h2 class=\"title\">Try tsuru</h2>\n"
-#~ "\t<p>A few days ago when we've "
-#~ "got some <a "
-#~ "href=\"https://news.ycombinator.com/item?id=5436648\" "
-#~ "target=\"_blank\">attention</a> in the <a "
-#~ "href=\"http://www.wired.com/wiredenterprise/2013/03/tsuru/\" "
-#~ "target=\"_blank\">news</a>, we were asked to"
-#~ " provide a simple way to try "
-#~ "out tsuru. So in a few weeks, "
-#~ "we're planning to launch a public "
-#~ "cloud PaaS powered by tsuru for "
-#~ "you to test what we believe to "
-#~ "be the best open source platform "
-#~ "as a service in the world.</p>\n"
-#~ "\t<p>Better all, it will be "
-#~ "<b>entirely free</b> during all the "
-#~ "private beta testing period.</p>\n"
-#~ "\t<p>Use the form below to stay"
-#~ " connected with us and to get a"
-#~ " chance to be one of the first"
-#~ " to try it out for free.</p>\n"
-#~ "\n"
-#~ "\t<p>We're working hard hoping to get a seat for all of you.</p>\n"
-#~ "\n"
-#~ "\t<p>Tsuru teGam.</p>\n"
-#~ "\t"
-#~ msgstr ""
+#: templates/index.html:7
+msgid "A few days ago when we've got some "
+msgstr ""
+
+#: templates/index.html:7
+msgid "attention"
+msgstr ""
+
+#: templates/index.html:7
+msgid " in the "
+msgstr ""
+
+#: templates/index.html:7
+msgid "news"
+msgstr ""
+
+#: templates/index.html:7
+msgid ""
+"we were asked to provide a simple way to try out tsuru. So in a few "
+"weeks, we're planning to launch a public cloud PaaS powered by tsuru for "
+"you to test what we believe to be the best open source platform as a "
+"service in the world."
+msgstr ""
+
+#: templates/index.html:8
+msgid "Better all, it will be "
+msgstr ""
+
+#: templates/index.html:8
+msgid "entirely free"
+msgstr "totalmente grátis"
+
+#: templates/index.html:8
+msgid " during all the private beta testing period."
+msgstr ""
+
+#: templates/index.html:9
+msgid ""
+"Use the form below to stay connected with us and to get a chance to be "
+"one of the first to try it out for free."
+msgstr ""
+
+#: templates/index.html:11
+msgid "We're working hard hoping to get a seat for all of you."
+msgstr ""
+
+#: templates/index.html:13
+msgid "Tsuru team"
+msgstr "Equipe Tsuru"
+
+#: templates/index.html:50
+msgid "Submit"
+msgstr ""
+
+#: templates/index.html:51
+msgid ""
+"Legal Note: submitting this form does not obligate you to participate, "
+"and does not obligate us to select you."
+msgstr ""
 

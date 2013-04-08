@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-04-08 15:07-0300\n"
+"POT-Creation-Date: 2013-04-08 16:02-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,64 +29,64 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: forms.py:26 templates/confirmation.html:35
+#: forms.py:29 templates/confirmation.html:35
 msgid "Developer"
 msgstr ""
 
-#: forms.py:26 templates/confirmation.html:36
+#: forms.py:30 templates/confirmation.html:36
 msgid "Project Manager"
 msgstr ""
 
-#: forms.py:27 templates/confirmation.html:37
+#: forms.py:31 templates/confirmation.html:37
 msgid "Researcher"
 msgstr ""
 
-#: forms.py:27 templates/confirmation.html:38
+#: forms.py:32 templates/confirmation.html:38
 msgid "Student"
 msgstr ""
 
-#: forms.py:28
+#: forms.py:33
 msgid "Tearcher"
 msgstr ""
 
-#: forms.py:28 templates/confirmation.html:40
+#: forms.py:34 templates/confirmation.html:40
 msgid "Ops"
 msgstr ""
 
-#: forms.py:28 forms.py:41 templates/confirmation.html:41
+#: forms.py:35 forms.py:49 templates/confirmation.html:41
 #: templates/confirmation.html:47 templates/confirmation.html:302
 msgid "Other"
 msgstr ""
 
-#: forms.py:29 templates/confirmation.html:30
+#: forms.py:37 templates/confirmation.html:30
 msgid "What do you do for a living?"
 msgstr ""
 
-#: forms.py:32 templates/confirmation.html:45
+#: forms.py:40 templates/confirmation.html:45
 msgid "Where do you live?"
 msgstr ""
 
-#: forms.py:35 templates/confirmation.html:294
+#: forms.py:43 templates/confirmation.html:294
 msgid "What is your company name?"
 msgstr ""
 
-#: forms.py:37 templates/confirmation.html:298
+#: forms.py:45 templates/confirmation.html:298
 msgid "Build my own PaaS"
 msgstr ""
 
-#: forms.py:38 templates/confirmation.html:299
+#: forms.py:46 templates/confirmation.html:299
 msgid "Compare to other PaaS"
 msgstr ""
 
-#: forms.py:39 templates/confirmation.html:300
+#: forms.py:47 templates/confirmation.html:300
 msgid "Deploy my apps"
 msgstr ""
 
-#: forms.py:40 templates/confirmation.html:301
+#: forms.py:48 templates/confirmation.html:301
 msgid "I'm just curious"
 msgstr ""
 
-#: forms.py:42 templates/confirmation.html:296
+#: forms.py:50 templates/confirmation.html:296
 msgid "Why do you want to try tsuru?"
 msgstr ""
 
@@ -108,5 +108,65 @@ msgstr ""
 
 #: templates/confirmation.html:39
 msgid "Teacher"
+msgstr ""
+
+#: templates/index.html:7
+msgid "A few days ago when we've got some "
+msgstr ""
+
+#: templates/index.html:7
+msgid "attention"
+msgstr ""
+
+#: templates/index.html:7
+msgid " in the "
+msgstr ""
+
+#: templates/index.html:7
+msgid "news"
+msgstr ""
+
+#: templates/index.html:7
+msgid ""
+"we were asked to provide a simple way to try out tsuru. So in a few "
+"weeks, we're planning to launch a public cloud PaaS powered by tsuru for "
+"you to test what we believe to be the best open source platform as a "
+"service in the world."
+msgstr ""
+
+#: templates/index.html:8
+msgid "Better all, it will be "
+msgstr ""
+
+#: templates/index.html:8
+msgid "entirely free"
+msgstr ""
+
+#: templates/index.html:8
+msgid " during all the private beta testing period."
+msgstr ""
+
+#: templates/index.html:9
+msgid ""
+"Use the form below to stay connected with us and to get a chance to be "
+"one of the first to try it out for free."
+msgstr ""
+
+#: templates/index.html:11
+msgid "We're working hard hoping to get a seat for all of you."
+msgstr ""
+
+#: templates/index.html:13
+msgid "Tsuru team"
+msgstr ""
+
+#: templates/index.html:50
+msgid "Submit"
+msgstr ""
+
+#: templates/index.html:51
+msgid ""
+"Legal Note: submitting this form does not obligate you to participate, "
+"and does not obligate us to select you."
 msgstr ""
 

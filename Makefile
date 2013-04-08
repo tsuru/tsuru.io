@@ -16,3 +16,9 @@ extract: deps
 
 catalog-pt: deps
 	@pybabel init -i messages.pot -d translations -l pt
+
+update-catalog: deps
+	@pybabel update -i messages.pot -d translations
+
+compile-trans: deps
+	@pybabel compile -d translations
