@@ -45,7 +45,7 @@ msgid "Student"
 msgstr "Estudante"
 
 #: forms.py:33
-msgid "Tearcher"
+msgid "Teacher"
 msgstr "Professor"
 
 #: forms.py:34 templates/confirmation.html:40
