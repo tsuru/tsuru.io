@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="span12 msg">
+	{% trans %}
 	<h2 class="title">Try tsuru</h2>
 	<p>A few days ago when we've got some <a href="https://news.ycombinator.com/item?id=5436648" target="_blank">attention</a> in the <a href="http://www.wired.com/wiredenterprise/2013/03/tsuru/" target="_blank">news</a>, we were asked to provide a simple way to try out tsuru. So in a few weeks, we're planning to launch a public cloud PaaS powered by tsuru for you to test what we believe to be the best open source platform as a service in the world.</p>
 	<p>Better all, it will be <b>entirely free</b> during all the private beta testing period.</p>
@@ -9,6 +10,7 @@
 	<p>We're working hard hoping to get a seat for all of you.</p>
 
 	<p>Tsuru team.</p>
+	{% endtrans %}
 </div>
 <div class="login-btns span6">
 	<ul>
