@@ -2,15 +2,18 @@ import wtforms
 from flask.ext import wtf
 from wtforms import validators
 from countries import country_choices
+from flaskext.babel import gettext
 
 
 class SignupForm(wtf.Form):
-    first_name = wtforms.TextField(u"First name",
+    first_name = wtforms.TextField(gettext(u"First name"),
                                    validators=[validators.DataRequired()])
-    last_name = wtforms.TextField(u"Last name",
+    last_name = wtforms.TextField(gettext(u"Last name"),
                                   validators=[validators.DataRequired()])
-    email = wtforms.TextField(u"Email", validators=[validators.DataRequired(),
-                                                    validators.Email()])
+    email = wtforms.TextField(
+        gettext(u"Email"),
+        validators=[validators.DataRequired(), validators.Email()]
+    )
 
 
 class SurveyForm(wtf.Form):
