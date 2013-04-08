@@ -9,7 +9,7 @@ test: test_deps
 	@flake8 .
 
 run: deps
-	@python app.py
+	@gunicorn -b 127.0.0.1:8888 app:app
 
 extract: deps
 	@pybabel extract -F babel.cfg -o messages.pot .

@@ -177,7 +177,3 @@ def connect_db():
     port = int(mongo_uri_port[1])
     conn = pymongo.Connection(host, port)
     return conn, conn[MONGO_DATABASE_NAME]
-
-
-if __name__ == "__main__":
-    app.run()
