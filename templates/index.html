@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="span12 msg">
-	<h2 class="title">Try tsuru</h2>
+	<h2 class="title">{% trans %}Try tsuru{% endtrans %}</h2>
 </div>
 <div class="span4">
 	<p>{% trans %}A few days ago when we've got some <a href="https://news.ycombinator.com/item?id=5436648" target="_blank">attention</a> in the <a href="http://www.wired.com/wiredenterprise/2013/03/tsuru/" target="_blank">news</a>, we were asked to provide a simple way to try out tsuru. So in a few weeks, we're planning to launch a public cloud PaaS powered by tsuru for you to test what we believe to be the best open source platform as a service in the world.{% endtrans %}</p>
@@ -50,7 +50,7 @@
 			</div>
 		</div>
 		<p><input type="submit" value="{% trans %}Submit{% endtrans %}"></p>
-		<p class="legal-note">{% trans %}Legal Note: submitting this form does not obligate you to participate, and does not obligate us to select you.{% endtrans %}</p>
+		<p class="legal-note">{% trans %}Legal Note: submitting this form does not obligate you to participate, and does not obligate us to select you. It’s simply a way for us to assemble a pool of cool people(you!) who wants to try out tsuru.io, the open source polyglot platform as a service.{% endtrans %}</p>
 	</form>
 </div>
 {% endblock %}
