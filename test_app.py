@@ -32,6 +32,19 @@ class AppTestCase(ClientTest, unittest.TestCase):
         resp = self.api.get("/")
         self.assertEqual(200, resp.status_code)
 
+    @patch("flask.render_template")
+    @patch("forms.SignupForm")
+    def test_index_should_render_template_context(self, form, render):
+        m = Mock()
+        form.return_value = m
+        render.return_value = ""
+        reload(app)
+        self.api.get("/")
+        render.assert_called_with("index.html",
+                                  facebook_app_id=app.FACEBOOK_APP_ID,
+                                  github_client_id=app.GITHUB_CLIENT_ID,
+                                  form=m)
+
     def test_should_get_confirmation_and_be_success(self):
         resp = self.api.get("/confirmation")
         self.assertEqual(200, resp.status_code)

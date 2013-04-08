@@ -12,6 +12,8 @@ from flask import Flask, render_template, g, request
 from flaskext import csrf
 from flaskext.babel import Babel
 
+import forms
+
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "secret")
@@ -41,7 +43,8 @@ def sign(email):
 @app.route("/")
 def index():
     return render_template("index.html", facebook_app_id=FACEBOOK_APP_ID,
-                           github_client_id=GITHUB_CLIENT_ID), 200
+                           github_client_id=GITHUB_CLIENT_ID,
+                           form=forms.SignupForm()), 200
 
 
 @app.route("/confirmation")
