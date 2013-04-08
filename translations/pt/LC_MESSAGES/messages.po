@@ -93,7 +93,7 @@ msgstr "Por que você quer usar o tsuru?"
 #: templates/base.html:3
 #, fuzzy
 msgid "try tsuru"
-msgstr "Teste o tsuru"
+msgstr "Experimente o tsuru"
 
 #: templates/base.html:8
 msgid ""
@@ -109,7 +109,7 @@ msgstr "plataforma como serviço open source"
 
 #: templates/base.html:29
 msgid "Try"
-msgstr ""
+msgstr "Experimente"
 
 #: templates/base.html:30
 msgid "Community"
@@ -125,7 +125,7 @@ msgstr "Código"
 
 #: templates/confirmation.html:4 templates/index.html:4
 msgid "Try tsuru"
-msgstr "Teste o tsuru"
+msgstr "Experimente o tsuru"
 
 #: templates/confirmation.html:7
 msgid "Thanks!"
