@@ -39,7 +39,7 @@ class AppTestCase(ClientTest, unittest.TestCase):
         app.SIGN_KEY = None
 
     def test_should_get_index_and_be_success(self):
-        resp = self.api.get("/")
+        resp = self.api.get("/try")
         self.assertEqual(200, resp.status_code)
 
     @patch("flask.render_template")
@@ -49,7 +49,7 @@ class AppTestCase(ClientTest, unittest.TestCase):
         form.return_value = m
         render.return_value = ""
         reload(app)
-        self.api.get("/")
+        self.api.get("/try")
         render.assert_called_with("index.html",
                                   facebook_app_id=app.FACEBOOK_APP_ID,
                                   github_client_id=app.GITHUB_CLIENT_ID,

@@ -70,7 +70,7 @@ def _index(form):
                            github_client_id=GITHUB_CLIENT_ID, form=form), 200
 
 
-@app.route("/")
+@app.route("/try")
 def index():
     return _index(forms.SignupForm())
 
