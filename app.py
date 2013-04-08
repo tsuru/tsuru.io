@@ -17,7 +17,8 @@ import forms
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "secret")
 
-Babel(app)
+babel = Babel(app)
+csrf.csrf(app)
 
 MONGO_URI = os.environ.get("MONGO_URI", "localhost:27017")
 MONGO_USER = os.environ.get("MONGO_USER", "")
@@ -30,6 +31,11 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 GOOGLE_USER_IP = os.environ.get("GOOGLE_USER_IP")
 GOOGLE_OAUTH_ENDPOINT = "https://www.googleapis.com/oauth2/v2"
 SIGN_KEY = os.environ.get("SIGN_KEY")
+
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(['pt', 'en'])
 
 
 def sign(email):
