@@ -116,7 +116,7 @@ input[type=submit] {
 }
 
 .content .or {
-	background: url(/static/img/or_bg.png) no-repeat;
+	background: url(../img/or_bg.png) no-repeat;
 	height: 300px;
 }
 
