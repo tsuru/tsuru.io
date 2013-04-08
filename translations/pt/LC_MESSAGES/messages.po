@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-08 17:24-0300\n"
+"POT-Creation-Date: 2013-04-08 17:34-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -123,6 +123,10 @@ msgstr "Documentação"
 msgid "Code"
 msgstr "Código"
 
+#: templates/confirmation.html:4 templates/index.html:4
+msgid "Try tsuru"
+msgstr "Teste o tsuru"
+
 #: templates/confirmation.html:7
 msgid "Thanks!"
 msgstr "Obrigado!"
@@ -139,9 +143,12 @@ msgstr "Ajude-nos a conhecê-lo melhor. Responda algumas informações sobre voc
 msgid "Share with your friends"
 msgstr "Compartilhe com seus amigos"
 
-#: templates/index.html:4
-msgid "Try tsuru"
-msgstr "Teste o tsuru"
+#: templates/confirmation.html:19
+msgid ""
+"try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
+" Source Polyglot PaaS "
+msgstr ""
+"visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
 
 #: templates/index.html:7
 msgid ""

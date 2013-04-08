@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="span12 msg">
-	<h2 class="title">Try tsuru</h2>
+	<h2 class="title">{% trans %}Try tsuru{% endtrans %}</h2>
 </div>
 <div class="thanks span6">
 	<h3>{% trans %}Thanks!{% endtrans %}</h3>
@@ -16,7 +16,7 @@
 			<a href="https://plus.google.com/share?url=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_gplus.png")}}"></a>
 		</li>
 		<li>
-			<a href="http://twitter.com/share?text=try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS %23opensource %23golang :&url=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_twitter.png")}}"></a>
+			<a href="http://twitter.com/share?text={% trans %}try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS {% endtrans %}%23opensource %23golang:&url=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_twitter.png")}}"></a>
 		</li>
 	</ul>
 </div>
