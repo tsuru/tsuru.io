@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-04-08 11:44-0300\n"
+"POT-Creation-Date: 2013-04-08 15:07-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -18,26 +18,126 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: templates/index.html:4
-msgid ""
-"\n"
-"\t<h2 class=\"title\">Try tsuru</h2>\n"
-"\t<p>A few days ago when we've got some <a "
-"href=\"https://news.ycombinator.com/item?id=5436648\" "
-"target=\"_blank\">attention</a> in the <a "
-"href=\"http://www.wired.com/wiredenterprise/2013/03/tsuru/\" "
-"target=\"_blank\">news</a>, we were asked to provide a simple way to try "
-"out tsuru. So in a few weeks, we're planning to launch a public cloud "
-"PaaS powered by tsuru for you to test what we believe to be the best open"
-" source platform as a service in the world.</p>\n"
-"\t<p>Better all, it will be <b>entirely free</b> during all the private "
-"beta testing period.</p>\n"
-"\t<p>Use the form below to stay connected with us and to get a chance to "
-"be one of the first to try it out for free.</p>\n"
-"\n"
-"\t<p>We're working hard hoping to get a seat for all of you.</p>\n"
-"\n"
-"\t<p>Tsuru team.</p>\n"
-"\t"
+#: forms.py:9
+msgid "First name"
 msgstr ""
+
+#: forms.py:11
+msgid "Last name"
+msgstr ""
+
+#: forms.py:14
+msgid "Email"
+msgstr ""
+
+#: forms.py:26 templates/confirmation.html:35
+msgid "Developer"
+msgstr ""
+
+#: forms.py:26 templates/confirmation.html:36
+msgid "Project Manager"
+msgstr ""
+
+#: forms.py:27 templates/confirmation.html:37
+msgid "Researcher"
+msgstr ""
+
+#: forms.py:27 templates/confirmation.html:38
+msgid "Student"
+msgstr ""
+
+#: forms.py:28
+msgid "Tearcher"
+msgstr ""
+
+#: forms.py:28 templates/confirmation.html:40
+msgid "Ops"
+msgstr ""
+
+#: forms.py:28 forms.py:41 templates/confirmation.html:41
+#: templates/confirmation.html:47 templates/confirmation.html:302
+msgid "Other"
+msgstr ""
+
+#: forms.py:29 templates/confirmation.html:30
+msgid "What do you do for a living?"
+msgstr ""
+
+#: forms.py:32 templates/confirmation.html:45
+msgid "Where do you live?"
+msgstr ""
+
+#: forms.py:35 templates/confirmation.html:294
+msgid "What is your company name?"
+msgstr ""
+
+#: forms.py:37 templates/confirmation.html:298
+msgid "Build my own PaaS"
+msgstr ""
+
+#: forms.py:38 templates/confirmation.html:299
+msgid "Compare to other PaaS"
+msgstr ""
+
+#: forms.py:39 templates/confirmation.html:300
+msgid "Deploy my apps"
+msgstr ""
+
+#: forms.py:40 templates/confirmation.html:301
+msgid "I'm just curious"
+msgstr ""
+
+#: forms.py:42 templates/confirmation.html:296
+msgid "Why do you want to try tsuru?"
+msgstr ""
+
+#: templates/confirmation.html:7
+msgid "Thanks!"
+msgstr ""
+
+#: templates/confirmation.html:8
+msgid "You will get to try tsuru very soon. "
+msgstr ""
+
+#: templates/confirmation.html:9
+msgid "Help us to know you better. Give some more information about you."
+msgstr ""
+
+#: templates/confirmation.html:10
+msgid "Share with your friends"
+msgstr ""
+
+#: templates/confirmation.html:39
+msgid "Teacher"
+msgstr ""
+
+#~ msgid ""
+#~ "\n"
+#~ "\t<h2 class=\"title\">Try tsuru</h2>\n"
+#~ "\t<p>A few days ago when we've "
+#~ "got some <a "
+#~ "href=\"https://news.ycombinator.com/item?id=5436648\" "
+#~ "target=\"_blank\">attention</a> in the <a "
+#~ "href=\"http://www.wired.com/wiredenterprise/2013/03/tsuru/\" "
+#~ "target=\"_blank\">news</a>, we were asked to"
+#~ " provide a simple way to try "
+#~ "out tsuru. So in a few weeks, "
+#~ "we're planning to launch a public "
+#~ "cloud PaaS powered by tsuru for "
+#~ "you to test what we believe to "
+#~ "be the best open source platform "
+#~ "as a service in the world.</p>\n"
+#~ "\t<p>Better all, it will be "
+#~ "<b>entirely free</b> during all the "
+#~ "private beta testing period.</p>\n"
+#~ "\t<p>Use the form below to stay"
+#~ " connected with us and to get a"
+#~ " chance to be one of the first"
+#~ " to try it out for free.</p>\n"
+#~ "\n"
+#~ "\t<p>We're working hard hoping to get a seat for all of you.</p>\n"
+#~ "\n"
+#~ "\t<p>Tsuru team.</p>\n"
+#~ "\t"
+#~ msgstr ""
 

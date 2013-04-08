@@ -26,7 +26,7 @@ class SurveyForm(wtf.Form):
                ("developer", gettext("Developer")), ("manager", gettext("Project Manager")),
                ("researcher", gettext("Researcher")), ("student", gettext("Student")),
                ("teacher", gettext("Tearcher")), ("ops", gettext("Ops")), ("", gettext("Other"))]
-    work = wtforms.SelectField(gettext(u"What do you do for a living?"),)
+    work = wtforms.SelectField(gettext(u"What do you do for a living?"),
                                choices=choices,
                                validators=[validators.DataRequired()])
     country = wtforms.SelectField(gettext(u"Where do you live?"),
