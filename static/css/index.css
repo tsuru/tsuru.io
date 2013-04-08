@@ -4,7 +4,7 @@
 }
 
 .header {
-	background: #000 url('/static/img/tsuru_maps.png') no-repeat fixed -530px -830px;
+	background: #000 url('../img/tsuru_maps.png') no-repeat fixed -530px -830px;
 	color: #fff;
 }
 

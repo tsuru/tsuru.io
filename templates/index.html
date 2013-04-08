@@ -15,16 +15,16 @@
 <div class="login-btns span3">
 	<ul>
 		<li>
-			<a href="#" id="facebook-register"><img src="/static/img/botao_facebook.png"></a>
+			<a href="#" id="facebook-register"><img src="{{url_for("static", filename="img/botao_facebook.png")}}"></a>
 			<div id="fb-root"></div>
 		</li>
 
 		<li>
-            <a href="https://github.com/login/oauth/authorize?client_id={{ github_client_id }}&scope=user:email"><img src="/static/img/botao_github.png"></a>
+			<a href="https://github.com/login/oauth/authorize?client_id={{ github_client_id }}&scope=user:email"><img src="{{url_for("static", filename="img/botao_github.png")}}"></a>
 		</li>
 
 		<li>
-			<span id="signinButton"><img src="/static/img/botao_gplus.png"></span>
+			<span id="signinButton"><img src="{{url_for("static", filename="img/botao_gplus.png")}}"></span>
 		</li>
 	</ul>
 </div>
