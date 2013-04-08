@@ -17,10 +17,11 @@ import forms
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "secret")
+app.config["DEBUG"] = int(os.environ.get("BETA_DEBUG", 1)) != 0
+
 bucket = os.environ.get("TSURU_S3_BUCKET")
-if bucket:
-    app.config["S3_BUCKET_NAME"] = bucket
-    FlaskS3(app)
+app.config["S3_BUCKET_NAME"] = bucket
+FlaskS3(app)
 
 babel = Babel(app)
 
