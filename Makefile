@@ -5,7 +5,7 @@ test_deps:
 	@pip install -qr test_requirements.txt
 
 test: test_deps
-	@python test_app.py
+	@nosetests
 	@flake8 .
 
 run: deps

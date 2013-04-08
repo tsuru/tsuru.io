@@ -348,7 +348,3 @@ class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         self.assertEqual(201, resp.status_code)
         s = self.db.survey.find_one({"email": "some@email.com"})
         self.assertIsNotNone(s)
-
-
-if __name__ == "__main__":
-    unittest.main()
