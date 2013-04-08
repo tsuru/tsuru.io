@@ -40,7 +40,11 @@ SIGN_KEY = os.environ.get("SIGN_KEY")
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(['pt', 'en'])
+    if request.cookies.get('language'):
+        languages = [request.cookies.get('language')]
+    else:
+        languages = ['pt', 'en']
+    return request.accept_languages.best_match(languages)
 
 
 def sign(email):

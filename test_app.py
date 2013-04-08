@@ -402,10 +402,20 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
     @patch("flask.request")
     def test_get_locale(self, request):
         request.accept_languages.best_match.return_value = "en"
+        request.cookies = {}
         reload(app)
         result = app.get_locale()
         self.assertEqual("en", result)
         request.accept_languages.best_match.assert_called_with(["pt", "en"])
+
+    @patch("flask.request")
+    def test_get_locale_from_cookie(self, request):
+        request.accept_languages.best_match.return_value = "pt"
+        request.cookies = {"language": "pt"}
+        reload(app)
+        result = app.get_locale()
+        self.assertEqual("pt", result)
+        request.accept_languages.best_match.assert_called_with(["pt"])
 
     @patch("flask.render_template")
     def test_save_user_should_pass_form_to_template(self, mock):
