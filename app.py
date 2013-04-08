@@ -88,9 +88,9 @@ def signup():
     return _index(f)
 
 
-@app.route("/software")
-def software():
-    return render_template("software.html"), 200
+@app.route("/about")
+def about():
+    return render_template("about.html"), 200
 
 
 @app.route("/community")
