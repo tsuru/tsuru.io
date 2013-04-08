@@ -35,18 +35,18 @@
 		{{ form.csrf_token }}
 		<div class="row">
 			<div class="span2">
-				{{form.first_name.label}}
-				{{form.first_name}}
+				{{ form.first_name.label }}
+				{{ form.first_name(class_='input-medium') }}
 			</div>
 			<div class="span2">
-				{{form.last_name.label}}
-				{{form.last_name}}
+				{{ form.last_name.label }}
+				{{ form.last_name(class_='input-medium') }}
 			</div>
 		</div>
 		<div class="row">
 			<div class="span4">
-				{{form.email.label}}
-				{{form.email}}
+				{{ form.email.label }}
+				{{ form.email(class_='input-xlarge') }}
 			</div>
 		</div>
 		<p><input type="submit" value="Submit"></p>
