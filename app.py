@@ -96,15 +96,7 @@ def facebook_register():
     url = url.format(request.args["access_token"])
     response = requests.get(url)
     info = response.json()
-    user = {"first_name": info["first_name"],
-            "last_name": info["last_name"],
-            "email": info["email"]}
-    g.db.users.insert(user)
-    return render_template(
-        "confirmation.html",
-        email=info["email"],
-        signature=sign(info["email"])
-    )
+    return save_user(info["first_name"], info["last_name"], info["email"])
 
 
 @app.route("/register/github")
@@ -127,15 +119,7 @@ def github_register():
     response = requests.get(url, headers=headers)
     info = response.json()
     first_name, last_name = parse_github_name(info)
-    user = {"first_name": first_name,
-            "last_name": last_name,
-            "email": info["email"]}
-    g.db.users.insert(user)
-    return render_template(
-        "confirmation.html",
-        email=info["email"],
-        signature=sign(info["email"])
-    )
+    return save_user(first_name, last_name, info["email"])
 
 
 def parse_github_name(info):
@@ -159,14 +143,7 @@ def gplus_register():
     )
     resp = requests.get(url, headers=headers)
     info = resp.json()
-    user = {"first_name": info["given_name"],
-            "last_name": info["family_name"],
-            "email": info["email"]}
-    if g.db.users.find({"email": info["email"]}).count() > 0:
-        return render_template("confirmation.html", registered=True)
-    g.db.users.insert(user)
-    return render_template("confirmation.html", email=info["email"],
-                           signature=sign(info["email"]))
+    return save_user(info["given_name"], info["family_name"], info["email"])
 
 
 def has_token(form):
