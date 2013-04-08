@@ -1,6 +1,7 @@
 import hashlib
 import unittest
 
+import werkzeug
 from pymongo import Connection
 from mock import patch, Mock
 
@@ -32,6 +33,10 @@ class DatabaseTest(object):
 
 class AppTestCase(ClientTest, unittest.TestCase):
 
+    @classmethod
+    def tearDownClass(cls):
+        app.SIGN_KEY = None
+
     def test_should_get_index_and_be_success(self):
         resp = self.api.get("/")
         self.assertEqual(200, resp.status_code)
@@ -49,9 +54,35 @@ class AppTestCase(ClientTest, unittest.TestCase):
                                   github_client_id=app.GITHUB_CLIENT_ID,
                                   form=m)
 
-    def test_should_get_confirmation_and_be_success(self):
-        resp = self.api.get("/confirmation")
+    @patch("app.save_user")
+    def test_signup(self, save):
+        d = {"first_name": "Francisco", "last_name": "Souza",
+             "email": "fss@corp.globo.com"}
+        save.return_value = "user saved"
+        app.SIGN_KEY = "key"
+        resp = self.api.post("/signup", data=d)
         self.assertEqual(200, resp.status_code)
+        self.assertEqual("user saved", resp.data)
+        save.assert_called_with("Francisco", "Souza",
+                                "fss@corp.globo.com")
+
+    @patch("flask.render_template")
+    @patch("forms.SignupForm")
+    def test_signup_invalid_data(self, form, render):
+        m = Mock()
+        m.validate.return_value = False
+        form.return_value = m
+        render.return_value = "validation failed"
+        d = {"first_name": "", "last_name": "", "email": "fss@corp.globo.com"}
+        reload(app)
+        resp = self.api.post("/signup", data=d)
+        self.assertEqual(200, resp.status_code)
+        self.assertEqual("validation failed", resp.data)
+        form.assert_called_with(werkzeug.ImmutableMultiDict(d))
+        render.assert_called_with("index.html",
+                                  facebook_app_id=app.FACEBOOK_APP_ID,
+                                  github_client_id=app.GITHUB_CLIENT_ID,
+                                  form=m)
 
 
 class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):

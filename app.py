@@ -52,16 +52,22 @@ def save_user(first_name, last_name, email):
                            signature=sign(email)), 200
 
 
+def _index(form):
+    return render_template("index.html", facebook_app_id=FACEBOOK_APP_ID,
+                           github_client_id=GITHUB_CLIENT_ID, form=form), 200
+
+
 @app.route("/")
 def index():
-    return render_template("index.html", facebook_app_id=FACEBOOK_APP_ID,
-                           github_client_id=GITHUB_CLIENT_ID,
-                           form=forms.SignupForm()), 200
+    return _index(forms.SignupForm())
 
 
-@app.route("/confirmation")
-def confirmation():
-    return render_template("confirmation.html"), 200
+@app.route("/signup", methods=["POST"])
+def signup():
+    f = forms.SignupForm(request.form)
+    if f.validate():
+        return save_user(f.first_name.data, f.last_name.data, f.email.data)
+    return _index(f)
 
 
 @app.route("/software")
