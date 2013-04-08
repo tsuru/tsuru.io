@@ -12,40 +12,41 @@
 	<h2>{% trans %}Share with your friends{% endtrans %}</h4>
 	<ul class="share-btns">
 		<li>
-			<a href="http://www.facebook.com/share.php?u=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_facebook.png")}}"></a>
+		<a href="http://www.facebook.com/share.php?u=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_facebook.png")}}"></a>
 		</li>
 		<li>
-			<a href="https://plus.google.com/share?url=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_gplus.png")}}"></a>
+		<a href="https://plus.google.com/share?url=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_gplus.png")}}"></a>
 		</li>
 		<li>
-			<a href="http://twitter.com/share?text={% trans %}try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS {% endtrans %}%23opensource %23golang:&url=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_twitter.png")}}"></a>
+		<a href="http://twitter.com/share?text={% trans %}try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS {% endtrans %}%23opensource %23golang:&url=http://try.tsuru.io"><img src="{{url_for("static", filename="img/icone_twitter.png")}}"></a>
 		</li>
 	</ul>
 </div>
 {% if not registered %}
 <div class="more-info span6">
 	<form action="/survey" method="post" accept-charset="utf-8">
-        {{ form.email }}
-        {{ form.signature }}
+		{{ form.csrf_token }}
+		{{ form.email }}
+		{{ form.signature }}
 		<div class="row">
 			<div class="span3">
-                {{ form.work.label }}
-                {{ form.work }}
-            </div>
+				{{ form.work.label }}
+				{{ form.work }}
+			</div>
 			<div class="span3">
-                {{ form.country.label }}
-                {{ form.country }}
-            </div>
-        </div>
+				{{ form.country.label }}
+				{{ form.country }}
+			</div>
+		</div>
 		<div class="row">
 			<div class="span6">
-                {{ form.organization.label }}
-                {{ form.organization }}
-                {{ form.why.label }}
-                {{ form.why }}
-            </div>
-        </div>
-        <input type="submit" value="submit" />
+				{{ form.organization.label }}
+				{{ form.organization }}
+				{{ form.why.label }}
+				{{ form.why }}
+			</div>
+		</div>
+		<input type="submit" value="submit" />
 	</form>
 </div>
 {% endif %}
