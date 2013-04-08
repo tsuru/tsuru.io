@@ -11,13 +11,11 @@ test: test_deps
 run: deps
 	@SIGN_KEY=1234 gunicorn -b 127.0.0.1:8888 app:app
 
-extract: deps
-	@pybabel extract -F babel.cfg -o messages.pot .
-
 catalog-pt: deps
 	@pybabel init -i messages.pot -d translations -l pt
 
 update-catalog: deps
+	@pybabel extract -F babel.cfg -o messages.pot .
 	@pybabel update -i messages.pot -d translations
 
 compile-trans: deps
