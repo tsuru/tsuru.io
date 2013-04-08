@@ -10,3 +10,6 @@ test: test_deps
 
 run: deps
 	@python app.py
+
+extract: deps
+	@pybabel extract -F babel.cfg -o messages.pot .

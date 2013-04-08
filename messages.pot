@@ -1,0 +1,42 @@
+# Translations template for PROJECT.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-04-08 11:44-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: templates/index.html:4
+msgid ""
+"\n"
+"\t<h2 class=\"title\">Try tsuru</h2>\n"
+"\t<p>A few days ago when we've got some <a "
+"href=\"https://news.ycombinator.com/item?id=5436648\" "
+"target=\"_blank\">attention</a> in the <a "
+"href=\"http://www.wired.com/wiredenterprise/2013/03/tsuru/\" "
+"target=\"_blank\">news</a>, we were asked to provide a simple way to try "
+"out tsuru. So in a few weeks, we're planning to launch a public cloud "
+"PaaS powered by tsuru for you to test what we believe to be the best open"
+" source platform as a service in the world.</p>\n"
+"\t<p>Better all, it will be <b>entirely free</b> during all the private "
+"beta testing period.</p>\n"
+"\t<p>Use the form below to stay connected with us and to get a chance to "
+"be one of the first to try it out for free.</p>\n"
+"\n"
+"\t<p>We're working hard hoping to get a seat for all of you.</p>\n"
+"\n"
+"\t<p>Tsuru team.</p>\n"
+"\t"
+msgstr ""
+
