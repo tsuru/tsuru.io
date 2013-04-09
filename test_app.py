@@ -334,6 +334,10 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
 
 class HelperTestCase(DatabaseTest, unittest.TestCase):
 
+    def test_has_token_without_access_token(self):
+        is_valid = app.has_token({})
+        self.assertFalse(is_valid)
+
     def test_has_token_should_check_for_access_token(self):
         is_valid = app.has_token({"access_token": "123token"})
         self.assertTrue(is_valid)
