@@ -38,12 +38,6 @@ class AppTestCase(ClientTest, unittest.TestCase):
     def tearDownClass(cls):
         app.SIGN_KEY = None
 
-    def test_index_should_redirect_to_try(self):
-        resp = self.api.get("/")
-        self.assertEqual(301, resp.status_code)
-        self.assertTrue(resp.headers["Location"].endswith("/try"),
-                        resp.headers["Location"])
-
     @patch("flask.render_template")
     def test_about(self, render):
         render.return_value = "about rendered"
@@ -59,6 +53,10 @@ class AppTestCase(ClientTest, unittest.TestCase):
         resp = self.api.get("/community")
         self.assertEqual("community rendered", resp.data)
         render.assert_called_with("community.html")
+
+    def test_should_get_index_and_be_success(self):
+        resp = self.api.get("/")
+        self.assertEqual(200, resp.status_code)
 
     @patch("flask.render_template")
     @patch("forms.SignupForm")

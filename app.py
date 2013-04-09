@@ -10,7 +10,7 @@ import pymongo
 import requests
 import werkzeug
 
-from flask import Flask, render_template, g, request, redirect, url_for
+from flask import Flask, render_template, g, request, url_for, redirect
 from flask_s3 import FlaskS3
 from flaskext.babel import Babel
 
@@ -85,19 +85,19 @@ def get_survey_form(email, f=None):
     return form
 
 
-def _index(form):
+def _try(form):
     return render_template("try.html", facebook_app_id=FACEBOOK_APP_ID,
                            github_client_id=GITHUB_CLIENT_ID, form=form), 200
 
 
 @app.route("/")
 def index():
-    return redirect(url_for("try_tsuru"), code=301)
+    return render_template("index.html"), 200
 
 
 @app.route("/try")
 def try_tsuru():
-    return _index(forms.SignupForm())
+    return _try(forms.SignupForm())
 
 
 @app.route("/signup", methods=["POST"])
@@ -105,7 +105,7 @@ def signup():
     f = forms.SignupForm(request.form)
     if f.validate():
         return save_user(f.first_name.data, f.last_name.data, f.email.data)
-    return _index(f)
+    return _try(f)
 
 
 @app.route("/about")

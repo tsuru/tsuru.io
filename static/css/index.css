@@ -60,6 +60,22 @@
 	margin-bottom: 30px;
 }
 
+.about {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+#index .title {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+#index p {
+	font-size: 13px;
+	font-weight: lighter;
+	letter-spacing: .5px;
+}
+
 .content .title {
 	text-align: center;
 	margin-bottom: 30px;
@@ -69,6 +85,57 @@
 	font-size: 13px;
 	font-weight: lighter;
 	letter-spacing: .5px;
+}
+
+#index .community {
+	padding: 30px 0 70px;
+	background-color: #EEEEEE;
+}
+
+#index .community ul {
+	list-style: none;
+	margin: 0;
+}
+
+#index .community li {
+	background-color: #333333;
+	color: #FFFFFF;
+	height: 160px;
+	width: 180px;
+	text-align: center;
+	float: left;
+	margin-right: 73px;
+}
+
+#index .community h3 {
+	font-weight: normal;
+	font-size: 18px;
+}
+
+#index .community a {
+	color: #fff;
+}
+
+#index .community a:hover {
+	color: #ccc;
+}
+#index .community li:last-child {
+	margin-right: 0;
+}
+
+#index .community .irc {
+	padding: 15px;
+}
+
+.community .title {
+	text-align: center;
+	margin-bottom: 40px;
+
+}
+
+.community .span2 > h3 {
+	font-size: 18px;
+	font-weight: 500;
 }
 
 .content .msg {
@@ -174,4 +241,64 @@ a:hover {
 
 .language-select a.active {
 	font-weight: bold;
+}
+
+.documentation {
+	margin: 70px 0 90px;
+}
+
+.documentation .title {
+	text-align: center;
+	margin-bottom: 35px;
+}
+
+.documentation .span4 {
+	text-align: center
+}
+
+.documentation a {
+	color: #9a9a9a;
+}
+
+.documentation a:hover {
+	color: #666;
+}
+
+.documentation h3 {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.more {
+	color: #e7e7e7;
+	background-color: #707070;
+	height: 90px;
+}
+
+.more h2 {
+	font-size: 22px;
+	float: left;
+	font-weight: normal;
+	line-height: 70px;
+}
+
+.more a {
+	font-size: 18px;
+	font-weight: normal;
+	color: #e7e7e7;
+}
+
+.more a:hover {
+	color: #fff;
+}
+
+.more ul {
+	margin: 0;
+	list-style: none;
+}
+
+.more li {
+	line-height: 93px;
+	float: left;
+	padding: 0 50px;
 }

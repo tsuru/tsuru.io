@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}{% trans %}Try{% endtrans %} | {{super()}}{% endblock %}
+
+{% block content %}
+<div id="index">
+    <div class="container about">
+        <div class="row">
+            <div class="span12">
+                <h2 class="title">{% trans %}About Tsuru{% endtrans %}</h2>
+                <p>{% trans %}Tsuru is an open source polyglot cloud application platform. With Tsuru, you don’t need to think about servers at all. You can write apps in the programming language of your choice, bind it with add-on resources such as SQL and NoSQL databases, memcached, redis, and many others. You manage your app using the Tsuru command-line tool and you deploy code using the Git revision control system, all running on the Tsuru infrastructure.{% endtrans %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="community">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h2 class="title">{% trans %}Community{% endtrans %}</h2>
+                </div>
+                <div class="span12">
+                    <ul>
+                        <li>
+                            <h3>{% trans %}Mailing List{% endtrans %}</h3>
+                            <p><a href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-users">+{% trans %}General List{% endtrans %}</a></p>
+                            <p><a href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-dev">+{% trans %}Development List{% endtrans %}</a></p>
+                        </li>
+                        <li>
+                            <h3>IRC</h3>
+                            <p class="irc">{% trans %}#tsuru on <a href="http://webchat.freenode.net/">Freenode</a>{% endtrans %}</p>
+                        </li>
+                        <li>
+                            <h3>Twitter</h3>
+                            <p>Siga <a href="https://twitter.com/tsurupaas">@tsurupaas</a></p>
+                        </li>
+                        <li>
+                            <h3>Googleplus</h3>
+                            <p>assine o g+ <a href="https://plus.google.com/118205831863820582274">tsurupaas</a></p>                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="documentation">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h2 class="title">{% trans %}Documentation{% endtrans %}</h2>
+                </div>
+                <div class="span4">
+                    <a href="">
+                        <h3>Build your own PaaS</h3>
+                        <p>Describes how to create a private PaaS service using Tsuru. It contains instuctions on how to build tsuru and some of its components from source.</p>
+                    </a>
+                </div>
+                <div class="span4">
+                    <a href="">
+                        <h3>Build your app in Tsuru</h3>
+                        <p>You manage your app using the Tsuru command-line tool and you deploy code using the Git revision control system, all running on the Tsuru infrastructure.</p>
+                    </a>
+                </div>
+                <div class="span4">
+                    <a href="">
+                        <h3>Build your service</h3>
+                        <p>This document is a hands-on guide to turning your existing cloud service into a Tsuru service.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="more">
+        <div class="container">
+            <h2>More documentation</h2>
+            <ul>
+                <li>
+                    <a href="">For Users</a>
+                </li>
+                <li>
+                    <a href="">For Tsuru Ops</a>
+                </li>
+                <li>
+                    <a href="">Contribution and Feedback</a>
+                </li>
+            </ul> 
+        </div>
+    </div>
+</div>
+{% endblock %}
