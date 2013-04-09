@@ -155,3 +155,19 @@ a:hover {
 	letter-spacing: .5px;
 	margin-top: 20px;
 }
+
+.navbar {
+	float: left;
+}
+
+.language-select {
+	float: right;
+	color: #fff;
+	margin: 23px 0;
+}
+
+.language-select a {
+	color: #fff;
+	font-weight: lighter;
+	padding: 10px 15px;
+}
