@@ -1159,7 +1159,7 @@ msgstr "Siga"
 
 #: templates/index.html:41
 msgid "Follow on g+ "
-msgstr "Siga no g+"
+msgstr "Siga no g+ "
 
 #: templates/index.html:56
 msgid "Build your own PaaS"
