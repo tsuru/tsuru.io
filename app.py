@@ -7,6 +7,7 @@ import os
 
 import pymongo
 import requests
+import werkzeug
 
 from flask import Flask, render_template, g, request, redirect, url_for
 from flask_s3 import FlaskS3
@@ -41,10 +42,11 @@ SIGN_KEY = os.environ.get("SIGN_KEY")
 @babel.localeselector
 def get_locale():
     if request.cookies.get('language'):
-        languages = [request.cookies.get('language')]
+        l = (request.cookies.get('language'), 1)
+        accept = werkzeug.datastructures.LanguageAccept([l])
     else:
-        languages = ['pt', 'en']
-    return request.accept_languages.best_match(languages)
+        accept = request.accept_languages
+    return accept.best_match(['pt', 'en'])
 
 
 def sign(email):
