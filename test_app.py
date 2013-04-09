@@ -44,9 +44,21 @@ class AppTestCase(ClientTest, unittest.TestCase):
         self.assertTrue(resp.headers["Location"].endswith("/try"),
                         resp.headers["Location"])
 
-    def test_should_get_index_and_be_success(self):
-        resp = self.api.get("/try")
-        self.assertEqual(200, resp.status_code)
+    @patch("flask.render_template")
+    def test_about(self, render):
+        render.return_value = "about rendered"
+        reload(app)
+        resp = self.api.get("/about")
+        self.assertEqual("about rendered", resp.data)
+        render.assert_called_with("about.html")
+
+    @patch("flask.render_template")
+    def test_community(self, render):
+        render.return_value = "community rendered"
+        reload(app)
+        resp = self.api.get("/community")
+        self.assertEqual("community rendered", resp.data)
+        render.assert_called_with("community.html")
 
     @patch("flask.render_template")
     @patch("forms.SignupForm")
