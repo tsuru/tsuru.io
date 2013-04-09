@@ -2,12 +2,16 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>{% block title %}tsuru{% endblock %}</title>
+	<title>{% block title %}Tsuru{% endblock %}</title>
 	<link href="{{url_for("static", filename="css/bootstrap.css")}}" media="all" rel="stylesheet" type="text/css">
 	<link href="{{url_for("static", filename="css/index.css")}}" media="all" rel="stylesheet" type="text/css">
-	<meta property="og:url" content="http://try.tsuru.io">
-	<meta property="og:image" content="{{url_for("static", filename="img/logo_tsuru.png")}}">
-	<meta property="og:description" content="{% trans %}try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS. #paas #opensource #golang{% endtrans %}">
+	<meta property="og:title" content="{% block og-title %}Tsuru{% endblock %}">
+	{% block og-url %}
+	<meta property="og:url" content="http://tsuru.io">
+	{% endblock %}
+	{% block og-desc %}
+	<meta property="og:description" content="{% trans %}Tsuru is an open source polyglot cloud application platform.{% endtrans %}">
+	{% endblock%}
 </head>
 <body>
 	<div class="header">

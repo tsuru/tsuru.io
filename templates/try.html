@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 {% block title %}{% trans %}Try{% endtrans %} | {{super()}}{% endblock %}
+{% block og-title %}{% trans %}Try{% endtrans %} | {{super()}}{% endblock %}
+
+{% block og-url %}
+<meta property="og:url" content="http://tsuru.io/try">
+{% endblock %}
+
+{% block og-desc %}
+<meta property="og:description" content="{% trans %}try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open Source Polyglot PaaS. #paas #opensource #golang{% endtrans %}">
+{% endblock %}
 
 {% block content %}
 <div class="container">

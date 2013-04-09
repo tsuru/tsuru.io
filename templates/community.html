@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block title %}{% trans %}Community{% endtrans %} | {{super()}}{% endblock %}
+{% block og-title %}{% trans %}Community{% endtrans %} | {{super()}}{% endblock %}
+
+{% block og-url %}
+<meta property="og:url" content="http://tsuru.io/community">
+{% endblock %}
 
 {% block content %}
 <div class="container">
