@@ -6,16 +6,16 @@ import wtforms
 from flask.ext import wtf
 from wtforms import validators
 from countries import country_choices
-from flaskext.babel import gettext
+from flaskext.babel import lazy_gettext
 
 
 class SignupForm(wtf.Form):
-    first_name = wtforms.TextField(gettext(u"First name"),
+    first_name = wtforms.TextField(lazy_gettext(u"First name"),
                                    validators=[validators.DataRequired()])
-    last_name = wtforms.TextField(gettext(u"Last name"),
+    last_name = wtforms.TextField(lazy_gettext(u"Last name"),
                                   validators=[validators.DataRequired()])
     email = wtforms.TextField(
-        gettext(u"Email"),
+        lazy_gettext(u"Email"),
         validators=[validators.DataRequired(), validators.Email()]
     )
 
@@ -30,23 +30,23 @@ class SurveyForm(wtf.Form):
         ("cio", "CIO"),
         ("cto", "CTO"),
         ("dba", "DBA"),
-        ("developer", gettext("Developer")),
-        ("manager", gettext("Project Manager")),
-        ("researcher", gettext("Researcher")),
-        ("student", gettext("Student")),
-        ("teacher", gettext("Teacher")),
-        ("ops", gettext("Ops")),
-        ("", gettext("Other"))
+        ("developer", lazy_gettext("Developer")),
+        ("manager", lazy_gettext("Project Manager")),
+        ("researcher", lazy_gettext("Researcher")),
+        ("student", lazy_gettext("Student")),
+        ("teacher", lazy_gettext("Teacher")),
+        ("ops", lazy_gettext("Ops")),
+        ("", lazy_gettext("Other"))
     ]
-    work = wtforms.SelectField(gettext(u"What do you do for a living?"),
+    work = wtforms.SelectField(lazy_gettext(u"What do you do for a living?"),
                                choices=choices)
-    country = wtforms.SelectField(gettext(u"Where do you live?"),
+    country = wtforms.SelectField(lazy_gettext(u"Where do you live?"),
                                   choices=country_choices)
-    organization = wtforms.TextField(gettext(u"What is your company name?"))
-    choices = [("build", gettext("Build my own PaaS")),
-               ("compare", gettext("Compare to other PaaS")),
-               ("deploy", gettext("Deploy my apps")),
-               ("curious", gettext("I'm just curious")),
-               ("", gettext("Other"))]
-    why = wtforms.SelectField(gettext(u"Why do you want to try tsuru?"),
+    organization = wtforms.TextField(lazy_gettext(u"What is your company name?"))
+    choices = [("build", lazy_gettext("Build my own PaaS")),
+               ("compare", lazy_gettext("Compare to other PaaS")),
+               ("deploy", lazy_gettext("Deploy my apps")),
+               ("curious", lazy_gettext("I'm just curious")),
+               ("", lazy_gettext("Other"))]
+    why = wtforms.SelectField(lazy_gettext(u"Why do you want to try tsuru?"),
                               choices=choices)
