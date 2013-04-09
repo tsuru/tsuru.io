@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-08 18:27-0300\n"
+"POT-Creation-Date: 2013-04-08 23:16-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -16,6 +16,962 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: countries.py:10 countries.py:241
+msgid "United States"
+msgstr ""
+
+#: countries.py:11 countries.py:240
+msgid "United Kingdom"
+msgstr ""
+
+#: countries.py:12
+msgid "Afghanistan"
+msgstr ""
+
+#: countries.py:13
+msgid "Albania"
+msgstr ""
+
+#: countries.py:14
+msgid "Algeria"
+msgstr ""
+
+#: countries.py:15
+msgid "American Samoa"
+msgstr ""
+
+#: countries.py:16
+msgid "Andorra"
+msgstr ""
+
+#: countries.py:17
+msgid "Angola"
+msgstr ""
+
+#: countries.py:18
+msgid "Anguilla"
+msgstr ""
+
+#: countries.py:19
+msgid "Antarctica"
+msgstr ""
+
+#: countries.py:20
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: countries.py:21
+msgid "Argentina"
+msgstr ""
+
+#: countries.py:22
+msgid "Armenia"
+msgstr ""
+
+#: countries.py:23
+msgid "Aruba"
+msgstr ""
+
+#: countries.py:24
+msgid "Australia"
+msgstr ""
+
+#: countries.py:25
+msgid "Austria"
+msgstr ""
+
+#: countries.py:26
+msgid "Azerbaijan"
+msgstr ""
+
+#: countries.py:27
+msgid "Bahamas"
+msgstr ""
+
+#: countries.py:28
+msgid "Bahrain"
+msgstr ""
+
+#: countries.py:29
+msgid "Bangladesh"
+msgstr ""
+
+#: countries.py:30
+msgid "Barbados"
+msgstr ""
+
+#: countries.py:31
+msgid "Belarus"
+msgstr ""
+
+#: countries.py:32
+msgid "Belgium"
+msgstr ""
+
+#: countries.py:33
+msgid "Belize"
+msgstr ""
+
+#: countries.py:34
+msgid "Benin"
+msgstr ""
+
+#: countries.py:35
+msgid "Bermuda"
+msgstr ""
+
+#: countries.py:36
+msgid "Bhutan"
+msgstr ""
+
+#: countries.py:37
+msgid "Bolivia"
+msgstr ""
+
+#: countries.py:38
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: countries.py:39
+msgid "Botswana"
+msgstr ""
+
+#: countries.py:40
+msgid "Bouvet Island"
+msgstr ""
+
+#: countries.py:41
+msgid "Brazil"
+msgstr ""
+
+#: countries.py:42
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: countries.py:43
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: countries.py:44
+msgid "Bulgaria"
+msgstr ""
+
+#: countries.py:45
+msgid "Burkina Faso"
+msgstr ""
+
+#: countries.py:46
+msgid "Burundi"
+msgstr ""
+
+#: countries.py:47
+msgid "Cambodia"
+msgstr ""
+
+#: countries.py:48
+msgid "Cameroon"
+msgstr ""
+
+#: countries.py:49
+msgid "Canada"
+msgstr ""
+
+#: countries.py:50
+msgid "Cape Verde"
+msgstr ""
+
+#: countries.py:51
+msgid "Cayman Islands"
+msgstr ""
+
+#: countries.py:52
+msgid "Central African Republic"
+msgstr ""
+
+#: countries.py:53
+msgid "Chad"
+msgstr ""
+
+#: countries.py:54
+msgid "Chile"
+msgstr ""
+
+#: countries.py:55
+msgid "Christmas Island"
+msgstr ""
+
+#: countries.py:56
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: countries.py:57
+msgid "Colombia"
+msgstr ""
+
+#: countries.py:58
+msgid "Comoros"
+msgstr ""
+
+#: countries.py:59
+msgid "Congo"
+msgstr ""
+
+#: countries.py:61
+msgid "Congo, The Democratic Republic of The"
+msgstr ""
+
+#: countries.py:62
+msgid "Cook Islands"
+msgstr ""
+
+#: countries.py:63
+msgid "Costa Rica"
+msgstr ""
+
+#: countries.py:64
+msgid "Cote D'ivoire"
+msgstr ""
+
+#: countries.py:65
+msgid "Croatia"
+msgstr ""
+
+#: countries.py:66
+msgid "Cuba"
+msgstr ""
+
+#: countries.py:67
+msgid "Cyprus"
+msgstr ""
+
+#: countries.py:68
+msgid "Czech Republic"
+msgstr ""
+
+#: countries.py:69
+msgid "Denmark"
+msgstr ""
+
+#: countries.py:70
+#, fuzzy
+msgid "Djibouti"
+msgstr "Sobre"
+
+#: countries.py:71
+msgid "Dominica"
+msgstr ""
+
+#: countries.py:72
+msgid "Dominican Republic"
+msgstr ""
+
+#: countries.py:73
+msgid "Ecuador"
+msgstr ""
+
+#: countries.py:74
+msgid "Egypt"
+msgstr ""
+
+#: countries.py:75
+msgid "El Salvador"
+msgstr ""
+
+#: countries.py:76
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: countries.py:77
+msgid "Eritrea"
+msgstr ""
+
+#: countries.py:78
+msgid "Estonia"
+msgstr ""
+
+#: countries.py:79
+msgid "Ethiopia"
+msgstr ""
+
+#: countries.py:80
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: countries.py:81
+msgid "Faroe Islands"
+msgstr ""
+
+#: countries.py:82
+msgid "Fiji"
+msgstr ""
+
+#: countries.py:83
+msgid "Finland"
+msgstr ""
+
+#: countries.py:84
+msgid "France"
+msgstr ""
+
+#: countries.py:85
+msgid "French Guiana"
+msgstr ""
+
+#: countries.py:86
+msgid "French Polynesia"
+msgstr ""
+
+#: countries.py:87
+msgid "French Southern Territories"
+msgstr ""
+
+#: countries.py:88
+msgid "Gabon"
+msgstr ""
+
+#: countries.py:89
+msgid "Gambia"
+msgstr ""
+
+#: countries.py:90
+msgid "Georgia"
+msgstr ""
+
+#: countries.py:91
+msgid "Germany"
+msgstr ""
+
+#: countries.py:92
+msgid "Ghana"
+msgstr ""
+
+#: countries.py:93
+msgid "Gibraltar"
+msgstr ""
+
+#: countries.py:94
+msgid "Greece"
+msgstr ""
+
+#: countries.py:95
+msgid "Greenland"
+msgstr ""
+
+#: countries.py:96
+msgid "Grenada"
+msgstr ""
+
+#: countries.py:97
+msgid "Guadeloupe"
+msgstr ""
+
+#: countries.py:98
+msgid "Guam"
+msgstr ""
+
+#: countries.py:99
+msgid "Guatemala"
+msgstr ""
+
+#: countries.py:100
+msgid "Guinea"
+msgstr ""
+
+#: countries.py:101
+msgid "Guinea-bissau"
+msgstr ""
+
+#: countries.py:102
+msgid "Guyana"
+msgstr ""
+
+#: countries.py:103
+msgid "Haiti"
+msgstr ""
+
+#: countries.py:105
+msgid "Heard Island and Mcdonald Islands"
+msgstr ""
+
+#: countries.py:106
+msgid "Holy See (Vatican City State)"
+msgstr ""
+
+#: countries.py:107
+msgid "Honduras"
+msgstr ""
+
+#: countries.py:108
+msgid "Hong Kong"
+msgstr ""
+
+#: countries.py:109
+msgid "Hungary"
+msgstr ""
+
+#: countries.py:110
+msgid "Iceland"
+msgstr ""
+
+#: countries.py:111
+msgid "India"
+msgstr ""
+
+#: countries.py:112
+msgid "Indonesia"
+msgstr ""
+
+#: countries.py:113
+msgid "Iran, Islamic Republic of"
+msgstr ""
+
+#: countries.py:114
+msgid "Iraq"
+msgstr ""
+
+#: countries.py:115
+msgid "Ireland"
+msgstr ""
+
+#: countries.py:116
+msgid "Israel"
+msgstr ""
+
+#: countries.py:117
+msgid "Italy"
+msgstr ""
+
+#: countries.py:118
+msgid "Jamaica"
+msgstr ""
+
+#: countries.py:119
+msgid "Japan"
+msgstr ""
+
+#: countries.py:120
+msgid "Jordan"
+msgstr ""
+
+#: countries.py:121
+msgid "Kazakhstan"
+msgstr ""
+
+#: countries.py:122
+msgid "Kenya"
+msgstr ""
+
+#: countries.py:123
+msgid "Kiribati"
+msgstr ""
+
+#: countries.py:125
+msgid "Korea, Democratic People's Republic of"
+msgstr ""
+
+#: countries.py:126
+msgid "Korea, Republic of"
+msgstr ""
+
+#: countries.py:127
+msgid "Kuwait"
+msgstr ""
+
+#: countries.py:128
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: countries.py:129
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: countries.py:130
+msgid "Latvia"
+msgstr ""
+
+#: countries.py:131
+msgid "Lebanon"
+msgstr ""
+
+#: countries.py:132
+msgid "Lesotho"
+msgstr ""
+
+#: countries.py:133
+msgid "Liberia"
+msgstr ""
+
+#: countries.py:134
+msgid "Libyan Arab Jamahiriya"
+msgstr ""
+
+#: countries.py:135
+msgid "Liechtenstein"
+msgstr ""
+
+#: countries.py:136
+msgid "Lithuania"
+msgstr ""
+
+#: countries.py:137
+msgid "Luxembourg"
+msgstr ""
+
+#: countries.py:138
+msgid "Macao"
+msgstr ""
+
+#: countries.py:140
+msgid "Macedonia, The Former Yugoslav Republic of"
+msgstr ""
+
+#: countries.py:141
+msgid "Madagascar"
+msgstr ""
+
+#: countries.py:142
+msgid "Malawi"
+msgstr ""
+
+#: countries.py:143
+msgid "Malaysia"
+msgstr ""
+
+#: countries.py:144
+msgid "Maldives"
+msgstr ""
+
+#: countries.py:145
+#, fuzzy
+msgid "Mali"
+msgstr "E-mail"
+
+#: countries.py:146
+#, fuzzy
+msgid "Malta"
+msgstr "E-mail"
+
+#: countries.py:147
+msgid "Marshall Islands"
+msgstr ""
+
+#: countries.py:148
+msgid "Martinique"
+msgstr ""
+
+#: countries.py:149
+msgid "Mauritania"
+msgstr ""
+
+#: countries.py:150
+msgid "Mauritius"
+msgstr ""
+
+#: countries.py:151
+msgid "Mayotte"
+msgstr ""
+
+#: countries.py:152
+msgid "Mexico"
+msgstr ""
+
+#: countries.py:153
+msgid "Micronesia, Federated States of"
+msgstr ""
+
+#: countries.py:154
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: countries.py:155
+msgid "Monaco"
+msgstr ""
+
+#: countries.py:156
+msgid "Mongolia"
+msgstr ""
+
+#: countries.py:157
+msgid "Montserrat"
+msgstr ""
+
+#: countries.py:158
+msgid "Morocco"
+msgstr ""
+
+#: countries.py:159
+msgid "Mozambique"
+msgstr ""
+
+#: countries.py:160
+msgid "Myanmar"
+msgstr ""
+
+#: countries.py:161
+msgid "Namibia"
+msgstr ""
+
+#: countries.py:162
+msgid "Nauru"
+msgstr ""
+
+#: countries.py:163
+msgid "Nepal"
+msgstr ""
+
+#: countries.py:164
+msgid "Netherlands"
+msgstr ""
+
+#: countries.py:165
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: countries.py:166
+msgid "New Caledonia"
+msgstr ""
+
+#: countries.py:167
+msgid "New Zealand"
+msgstr ""
+
+#: countries.py:168
+msgid "Nicaragua"
+msgstr ""
+
+#: countries.py:169
+msgid "Niger"
+msgstr ""
+
+#: countries.py:170
+msgid "Nigeria"
+msgstr ""
+
+#: countries.py:171
+msgid "Niue"
+msgstr ""
+
+#: countries.py:172
+msgid "Norfolk Island"
+msgstr ""
+
+#: countries.py:173
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: countries.py:174
+msgid "Norway"
+msgstr ""
+
+#: countries.py:175
+msgid "Oman"
+msgstr ""
+
+#: countries.py:176
+msgid "Pakistan"
+msgstr ""
+
+#: countries.py:177
+msgid "Palau"
+msgstr ""
+
+#: countries.py:178
+msgid "Palestinian Territory, Occupied"
+msgstr ""
+
+#: countries.py:179
+msgid "Panama"
+msgstr ""
+
+#: countries.py:180
+msgid "Papua New Guinea"
+msgstr ""
+
+#: countries.py:181
+msgid "Paraguay"
+msgstr ""
+
+#: countries.py:182
+msgid "Peru"
+msgstr ""
+
+#: countries.py:183
+msgid "Philippines"
+msgstr ""
+
+#: countries.py:184
+msgid "Pitcairn"
+msgstr ""
+
+#: countries.py:185
+msgid "Poland"
+msgstr ""
+
+#: countries.py:186
+msgid "Portugal"
+msgstr ""
+
+#: countries.py:187
+msgid "Puerto Rico"
+msgstr ""
+
+#: countries.py:188
+msgid "Qatar"
+msgstr ""
+
+#: countries.py:189
+msgid "Reunion"
+msgstr ""
+
+#: countries.py:190
+msgid "Romania"
+msgstr ""
+
+#: countries.py:191
+msgid "Russian Federation"
+msgstr ""
+
+#: countries.py:192
+msgid "Rwanda"
+msgstr ""
+
+#: countries.py:193
+msgid "Saint Helena"
+msgstr ""
+
+#: countries.py:194
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: countries.py:195
+msgid "Saint Lucia"
+msgstr ""
+
+#: countries.py:196
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: countries.py:197
+msgid "Saint Vincent and The Grenadines"
+msgstr ""
+
+#: countries.py:198
+msgid "Samoa"
+msgstr ""
+
+#: countries.py:199
+msgid "San Marino"
+msgstr ""
+
+#: countries.py:200
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: countries.py:201
+msgid "Saudi Arabia"
+msgstr ""
+
+#: countries.py:202
+msgid "Senegal"
+msgstr ""
+
+#: countries.py:203
+msgid "Serbia and Montenegro"
+msgstr ""
+
+#: countries.py:204
+msgid "Seychelles"
+msgstr ""
+
+#: countries.py:205
+msgid "Sierra Leone"
+msgstr ""
+
+#: countries.py:206
+msgid "Singapore"
+msgstr ""
+
+#: countries.py:207
+msgid "Slovakia"
+msgstr ""
+
+#: countries.py:208
+msgid "Slovenia"
+msgstr ""
+
+#: countries.py:209
+msgid "Solomon Islands"
+msgstr ""
+
+#: countries.py:210
+msgid "Somalia"
+msgstr ""
+
+#: countries.py:211
+msgid "South Africa"
+msgstr ""
+
+#: countries.py:213
+msgid "South Georgia and The South Sandwich Islands"
+msgstr ""
+
+#: countries.py:214
+msgid "Spain"
+msgstr ""
+
+#: countries.py:215
+msgid "Sri Lanka"
+msgstr ""
+
+#: countries.py:216
+msgid "Sudan"
+msgstr ""
+
+#: countries.py:217
+msgid "Suriname"
+msgstr ""
+
+#: countries.py:218
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: countries.py:219
+msgid "Swaziland"
+msgstr ""
+
+#: countries.py:220
+msgid "Sweden"
+msgstr ""
+
+#: countries.py:221
+msgid "Switzerland"
+msgstr ""
+
+#: countries.py:222
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: countries.py:223
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: countries.py:224
+msgid "Tajikistan"
+msgstr ""
+
+#: countries.py:225
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: countries.py:226
+msgid "Thailand"
+msgstr ""
+
+#: countries.py:227
+msgid "Timor-leste"
+msgstr ""
+
+#: countries.py:228
+msgid "Togo"
+msgstr ""
+
+#: countries.py:229
+msgid "Tokelau"
+msgstr ""
+
+#: countries.py:230
+msgid "Tonga"
+msgstr ""
+
+#: countries.py:231
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: countries.py:232
+msgid "Tunisia"
+msgstr ""
+
+#: countries.py:233
+msgid "Turkey"
+msgstr ""
+
+#: countries.py:234
+msgid "Turkmenistan"
+msgstr ""
+
+#: countries.py:235
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: countries.py:236
+msgid "Tuvalu"
+msgstr ""
+
+#: countries.py:237
+msgid "Uganda"
+msgstr ""
+
+#: countries.py:238
+msgid "Ukraine"
+msgstr ""
+
+#: countries.py:239
+msgid "United Arab Emirates"
+msgstr ""
+
+#: countries.py:243
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: countries.py:244
+msgid "Uruguay"
+msgstr ""
+
+#: countries.py:245
+msgid "Uzbekistan"
+msgstr ""
+
+#: countries.py:246
+msgid "Vanuatu"
+msgstr ""
+
+#: countries.py:247
+msgid "Venezuela"
+msgstr ""
+
+#: countries.py:248
+#, fuzzy
+msgid "Viet Nam"
+msgstr "Nome"
+
+#: countries.py:249
+msgid "Virgin Islands, British"
+msgstr ""
+
+#: countries.py:250
+msgid "Virgin Islands, U.S."
+msgstr ""
+
+#: countries.py:251
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: countries.py:252
+msgid "Western Sahara"
+msgstr ""
+
+#: countries.py:253
+msgid "Yemen"
+msgstr ""
+
+#: countries.py:254
+msgid "Zambia"
+msgstr ""
+
+#: countries.py:255
+msgid "Zimbabwe"
+msgstr ""
 
 #: forms.py:13 templates/index.html:38
 msgid "First name"
@@ -29,64 +985,63 @@ msgstr "Sobrenome"
 msgid "Email"
 msgstr "E-mail"
 
-#: forms.py:33 templates/confirmation.html:35
+#: forms.py:33
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: forms.py:34 templates/confirmation.html:36
+#: forms.py:34
 msgid "Project Manager"
 msgstr "Gerente de projetos"
 
-#: forms.py:35 templates/confirmation.html:37
+#: forms.py:35
 msgid "Researcher"
 msgstr "Pesquisador"
 
-#: forms.py:36 templates/confirmation.html:38
+#: forms.py:36
 msgid "Student"
 msgstr "Estudante"
 
-#: forms.py:37 templates/confirmation.html:39
+#: forms.py:37
 msgid "Teacher"
 msgstr "Professor"
 
-#: forms.py:38 templates/confirmation.html:40
+#: forms.py:38
 msgid "Ops"
 msgstr "Infra/Operação"
 
-#: forms.py:39 forms.py:53 templates/confirmation.html:41
-#: templates/confirmation.html:47 templates/confirmation.html:302
+#: forms.py:39 forms.py:50
 msgid "Other"
 msgstr "Outro"
 
-#: forms.py:41 templates/confirmation.html:30
+#: forms.py:41
 msgid "What do you do for a living?"
 msgstr "Qual é a sua profissão?"
 
-#: forms.py:44 templates/confirmation.html:45
+#: forms.py:43
 msgid "Where do you live?"
 msgstr "De onde você é?"
 
-#: forms.py:47 templates/confirmation.html:294
+#: forms.py:45
 msgid "What is your company name?"
 msgstr "Onde você trabalha?"
 
-#: forms.py:49 templates/confirmation.html:298
+#: forms.py:46
 msgid "Build my own PaaS"
 msgstr "Montar meu PaaS"
 
-#: forms.py:50 templates/confirmation.html:299
+#: forms.py:47
 msgid "Compare to other PaaS"
 msgstr "Comparar com outros PaaS"
 
-#: forms.py:51 templates/confirmation.html:300
+#: forms.py:48
 msgid "Deploy my apps"
 msgstr "Fazer deploy das minhas apps"
 
-#: forms.py:52 templates/confirmation.html:301
+#: forms.py:49
 msgid "I'm just curious"
 msgstr "Apenas curiosidade"
 
-#: forms.py:54 templates/confirmation.html:296
+#: forms.py:51
 msgid "Why do you want to try tsuru?"
 msgstr "Por que você quer usar o tsuru?"
 
@@ -122,43 +1077,43 @@ msgstr ""
 "visite try.tsuru.io para ter a chance de testar inteiramente gratis o "
 "novo PaaS Open Source. #paas #opensource #golang"
 
-#: templates/base.html:19
+#: templates/base.html:16
 msgid "open source platform as a service"
 msgstr "plataforma como serviço open source"
 
-#: templates/base.html:29
+#: templates/base.html:26
 msgid "Try"
 msgstr "Experimente"
 
-#: templates/base.html:30 templates/community.html:4
+#: templates/base.html:27 templates/community.html:4
 msgid "Community"
 msgstr "Comunidade"
 
-#: templates/base.html:31
+#: templates/base.html:28
 msgid "Documentation"
 msgstr "Documentação"
 
-#: templates/base.html:32
+#: templates/base.html:29
 msgid "Code"
 msgstr "Código"
 
-#: templates/base.html:33
+#: templates/base.html:30
 msgid "About"
 msgstr "Sobre"
 
-#: templates/community.html:8
+#: templates/community.html:7
 msgid "Mailing List"
 msgstr "Listas de discussão"
 
-#: templates/community.html:9
+#: templates/community.html:8
 msgid "General List"
 msgstr "Lista de usuários"
 
-#: templates/community.html:10
+#: templates/community.html:9
 msgid "Development List"
 msgstr "Lista de desenvolvimento"
 
-#: templates/community.html:14
+#: templates/community.html:13
 msgid ""
 "#tsuru on Freenode <a href=\"http://webchat.freenode.net/\">Pop In</a> "
 "(via browser client)"
@@ -166,7 +1121,7 @@ msgstr ""
 "#tsuru no Freenode <a href=\"http://webchat.freenode.net/\">Pop-up</a> "
 "(para acesso através do navegador)"
 
-#: templates/community.html:17
+#: templates/community.html:16
 msgid "Social Networks"
 msgstr "Redes sociais"
 
@@ -182,15 +1137,15 @@ msgstr "Obrigado!"
 msgid "You will get to try tsuru very soon. "
 msgstr "Você poderá usar o tsuru em breve. "
 
-#: templates/confirmation.html:9
+#: templates/confirmation.html:10
 msgid "Help us to know you better. Give some more information about you."
 msgstr "Ajude-nos a conhecê-lo melhor. Responda algumas informações sobre você."
 
-#: templates/confirmation.html:10
+#: templates/confirmation.html:12
 msgid "Share with your friends"
 msgstr "Compartilhe com seus amigos"
 
-#: templates/confirmation.html:19
+#: templates/confirmation.html:21
 msgid ""
 "try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
 " Source Polyglot PaaS "
@@ -249,11 +1204,12 @@ msgid "Submit"
 msgstr "Enviar"
 
 #: templates/index.html:53
+#, fuzzy
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
 "and does not obligate us to select you. It’s simply a way for us to "
-"assemble a pool of cool people(you!) who wants to try out tsuru.io, the "
-"open source polyglot platform as a service."
+"assemble a pool of cool people(you!) who wants to try out Tsuru, the open"
+" source polyglot platform as a service."
 msgstr ""
 "Nota legal: o envio desse formulário não está te obrigando a participar "
 "do programa beta, assim como não nos obriga a te escolher para o mesmo. "
