@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-08 23:24-0300\n"
+"POT-Creation-Date: 2013-04-08 23:32-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -1043,7 +1043,7 @@ msgstr "Apenas curiosidade"
 
 #: forms.py:51
 msgid "Why do you want to try tsuru?"
-msgstr "Por que você quer usar o tsuru?"
+msgstr "Por que você quer experimentar o tsuru?"
 
 #: templates/about.html:4
 msgid "About Tsuru"
@@ -1204,7 +1204,6 @@ msgid "Submit"
 msgstr "Enviar"
 
 #: templates/index.html:53
-#, fuzzy
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
 "and does not obligate us to select you. It’s simply a way for us to "
