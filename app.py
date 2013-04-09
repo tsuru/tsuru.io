@@ -109,7 +109,7 @@ def survey():
     if not forms.SurveyForm(request.form).validate():
         return "Invalid email.", 400
     if sign(request.form["email"]) != request.form["signature"]:
-        msg = "Signatures doesn't matches. You're probably doing something nasty."
+        msg = "Signatures don't match. You're probably doing something nasty."
         return msg, 400
     survey = {
         "email": request.form["email"],

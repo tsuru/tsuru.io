@@ -504,11 +504,12 @@ class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         }
         resp = self.api.post("/survey", data=data)
         self.assertEqual(400, resp.status_code)
-        expected = "Signatures doesn't matches. You're probably doing something nasty."
+        expected = ("Signatures don't match. "
+                    "You're probably doing something nasty.")
         self.assertEqual(expected, resp.data)
 
     @patch("flask.render_template")
-    def test_should_render_confirmation_template_with_registered_true(self, render):
+    def test_should_render_confirmation_template_registered(self, render):
         render.return_value = ""
         reload(app)
         app.SIGN_KEY = "sig_key"
