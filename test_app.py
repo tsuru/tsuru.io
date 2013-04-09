@@ -3,8 +3,8 @@ import os
 import unittest
 
 import werkzeug
-from pymongo import Connection
 from mock import patch, Mock
+from pymongo import Connection
 
 import app
 
@@ -268,7 +268,8 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
         headers = {"Authorization": "Bearer mytoken"}
         mock.assert_called_with(url, headers=headers)
         save_user.assert_called_with("Francisco", "Souza",
-                                     "secret@company.com")
+                                     "secret@company.com",
+                                     redirect_to="/")
 
     @patch("requests.get")
     @patch("flask.render_template")
@@ -301,8 +302,7 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
                                       ))
 
     @patch("requests.get")
-    @patch("flask.render_template")
-    def test_form_when_user_is_already_registered(self, render, get):
+    def test_form_when_user_is_already_registered(self, get):
         app.GOOGLE_USER_IP = "127.0.0.1"
         app.GOOGLE_API_KEY = "key"
         self.addCleanup(self.clean_api_client)
@@ -317,11 +317,9 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
             "gender": "male",
         }
         get.return_value = m
-        render.return_value = ""
-        reload(app)
         resp = self.api.get("/register/gplus?token=mytoken&token_type=Bearer")
-        self.assertEqual(200, resp.status_code)
-        render.assert_called_with("confirmation.html", registered=True)
+        self.assertEqual(302, resp.status_code)
+        self.assertEqual("http://localhost/", resp.headers["Location"])
 
 
 class HelperTestCase(DatabaseTest, unittest.TestCase):

@@ -62,9 +62,11 @@ def sign(email):
     return h.hexdigest()
 
 
-def save_user(first_name, last_name, email):
+def save_user(first_name, last_name, email, redirect_to=None):
     user = {"first_name": first_name, "last_name": last_name, "email": email}
     if g.db.users.find({"email": email}).count() > 0:
+        if redirect_to:
+            return redirect(redirect_to)
         return render_template("confirmation.html", registered=True), 200
     g.db.users.insert(user)
     return render_template("confirmation.html",
@@ -190,7 +192,8 @@ def gplus_register():
     )
     resp = requests.get(url, headers=headers)
     info = resp.json()
-    return save_user(info["given_name"], info["family_name"], info["email"])
+    return save_user(info["given_name"], info["family_name"],
+                     info["email"], redirect_to=url_for("index"))
 
 
 def has_token(form):
