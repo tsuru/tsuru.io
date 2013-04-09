@@ -186,6 +186,15 @@ class GithubLoginTestCase(ClientTest, unittest.TestCase):
         resp = self.api.get("/register/github?code=coolcode")
         self.assertEqual(200, resp.status_code)
 
+    @patch("requests.post")
+    @patch("requests.get")
+    def test_should_return_400_without_access_token(self, mock_get, mock):
+        self._mock_requests(mock, mock_get,
+                            {"email": "test@test.com", "name": "Foo Bar"},
+                            {"access_token": ""})
+        resp = self.api.get("/register/github?code=coolcode")
+        self.assertEqual(400, resp.status_code)
+
     def test_should_return_400_when_code_is_not_present(self):
         resp = self.api.get("/register/github")
         self.assertEqual(400, resp.status_code)

@@ -162,7 +162,7 @@ def github_register():
     url = "https://github.com/login/oauth/access_token"
     response = requests.post(url, data=data, headers=headers)
     token = response.json().get("access_token")
-    if token is None or token == "":  # test me
+    if token is None or token == "":
         return "Could not obtain access token from github.", 400
     url = "https://api.github.com/user?access_token={0}".format(token)
     response = requests.get(url, headers=headers)
