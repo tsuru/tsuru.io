@@ -5,6 +5,7 @@
 import copy
 import hashlib
 import os
+import sys
 
 import pymongo
 import requests
@@ -150,25 +151,29 @@ def facebook_register():
 
 @app.route("/register/github")
 def github_register():
-    code = request.args.get("code")
-    if code is None:
-        return "Could not obtain code access to github.", 400
-    data = "client_id={0}&code={1}&client_secret={2}".format(
-        GITHUB_CLIENT_ID,
-        code,
-        GITHUB_CLIENT_SECRET
-    )
-    headers = {"Accept": "application/json"}
-    url = "https://github.com/login/oauth/access_token"
-    response = requests.post(url, data=data, headers=headers)
-    token = response.json().get("access_token")
-    if token is None or token == "":
-        return "Could not obtain access token from github.", 400
-    url = "https://api.github.com/user?access_token={0}".format(token)
-    response = requests.get(url, headers=headers)
-    info = response.json()
-    first_name, last_name = parse_github_name(info)
-    return save_user(first_name, last_name, info["email"])
+    try:
+        code = request.args.get("code")
+        if code is None:
+            return "Could not obtain code access to github.", 400
+        data = "client_id={0}&code={1}&client_secret={2}".format(
+            GITHUB_CLIENT_ID,
+            code,
+            GITHUB_CLIENT_SECRET
+        )
+        headers = {"Accept": "application/json"}
+        url = "https://github.com/login/oauth/access_token"
+        response = requests.post(url, data=data, headers=headers)
+        token = response.json().get("access_token")
+        if token is None or token == "":
+            return "Could not obtain access token from github.", 400
+        url = "https://api.github.com/user?access_token={0}".format(token)
+        response = requests.get(url, headers=headers)
+        info = response.json()
+        first_name, last_name = parse_github_name(info)
+        return save_user(first_name, last_name, info["email"])
+    except Exception as e:
+        sys.stderr.write("%s\n" % e.args)
+        return redirect(url_for("try_tsuru"))
 
 
 def parse_github_name(info):
