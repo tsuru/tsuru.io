@@ -59,7 +59,7 @@ msgstr ""
 
 #: countries.py:20
 msgid "Antarctica"
-msgstr ""
+msgstr "Antártica"
 
 #: countries.py:21
 msgid "Antigua and Barbuda"
