@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% block title %}{% trans %}About{% endtrans %} | {{super()}}{% endblock %}
+
 {% block content %}
 <div class="span12 msg">
 	<h2 class="title">{% trans %}About Tsuru{% endtrans %}</h2>
