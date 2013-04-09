@@ -6,3 +6,4 @@ gunicorn==0.17.2
 Flask-Babel==0.8
 Flask-S3==0.1.4
 boto==2.8.0
+gevent==0.13.8
