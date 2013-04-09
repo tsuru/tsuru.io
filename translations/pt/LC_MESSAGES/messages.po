@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-09 00:10-0300\n"
+"POT-Creation-Date: 2013-04-09 10:25-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -969,15 +969,15 @@ msgstr "Zâmbia"
 msgid "Zimbabwe"
 msgstr "Zimbábue"
 
-#: forms.py:13 templates/index.html:38
+#: forms.py:13 templates/try.html:40
 msgid "First name"
 msgstr "Nome"
 
-#: forms.py:15 templates/index.html:42
+#: forms.py:15 templates/try.html:44
 msgid "Last name"
 msgstr "Sobrenome"
 
-#: forms.py:18 templates/index.html:48
+#: forms.py:18 templates/try.html:50
 msgid "Email"
 msgstr "E-mail"
 
@@ -1041,11 +1041,15 @@ msgstr "Apenas curiosidade"
 msgid "Why do you want to try tsuru?"
 msgstr "Por que você quer experimentar o tsuru?"
 
-#: templates/about.html:4
+#: templates/about.html:2 templates/base.html:32
+msgid "About"
+msgstr "Sobre"
+
+#: templates/about.html:6
 msgid "About Tsuru"
 msgstr "Sobre o Tsuru"
 
-#: templates/about.html:7
+#: templates/about.html:9
 msgid ""
 "Tsuru is an open source polyglot cloud application platform. With Tsuru, "
 "you don’t need to think about servers at all. You can write apps in the "
@@ -1061,11 +1065,7 @@ msgstr ""
 "outros. Você gerencia sua aplicação usando linha de comando e faz o "
 "deploy do seu código com o Git, tudo rodando na infra-estrutura do Tsuru."
 
-#: templates/base.html:3
-msgid "try tsuru"
-msgstr "Experimente o tsuru"
-
-#: templates/base.html:8
+#: templates/base.html:10
 msgid ""
 "try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
 " Source Polyglot PaaS. #paas #opensource #golang"
@@ -1073,43 +1073,39 @@ msgstr ""
 "visite try.tsuru.io para ter a chance de testar inteiramente gratis o "
 "novo PaaS Open Source. #paas #opensource #golang"
 
-#: templates/base.html:16
+#: templates/base.html:18
 msgid "open source platform as a service"
 msgstr "plataforma como serviço open source"
 
-#: templates/base.html:26
+#: templates/base.html:28 templates/try.html:2
 msgid "Try"
 msgstr "Experimente"
 
-#: templates/base.html:27 templates/community.html:4
+#: templates/base.html:29 templates/community.html:2 templates/community.html:6
 msgid "Community"
 msgstr "Comunidade"
 
-#: templates/base.html:28
+#: templates/base.html:30
 msgid "Documentation"
 msgstr "Documentação"
 
-#: templates/base.html:29
+#: templates/base.html:31
 msgid "Code"
 msgstr "Código"
 
-#: templates/base.html:30
-msgid "About"
-msgstr "Sobre"
-
-#: templates/community.html:7
+#: templates/community.html:9
 msgid "Mailing List"
 msgstr "Listas de discussão"
 
-#: templates/community.html:8
+#: templates/community.html:10
 msgid "General List"
 msgstr "Lista de usuários"
 
-#: templates/community.html:9
+#: templates/community.html:11
 msgid "Development List"
 msgstr "Lista de desenvolvimento"
 
-#: templates/community.html:13
+#: templates/community.html:15
 msgid ""
 "#tsuru on Freenode <a href=\"http://webchat.freenode.net/\">Pop In</a> "
 "(via browser client)"
@@ -1117,37 +1113,42 @@ msgstr ""
 "#tsuru no Freenode <a href=\"http://webchat.freenode.net/\">Pop-up</a> "
 "(para acesso através do navegador)"
 
-#: templates/community.html:16
+#: templates/community.html:18
 msgid "Social Networks"
 msgstr "Redes sociais"
 
-#: templates/confirmation.html:4 templates/index.html:4
+#: templates/confirmation.html:2
+msgid "Thank you"
+msgstr "Obrigado"
+
+#: templates/confirmation.html:2 templates/confirmation.html:6
+#: templates/try.html:6
 msgid "Try tsuru"
 msgstr "Experimente o tsuru"
 
-#: templates/confirmation.html:7
+#: templates/confirmation.html:9
 msgid "Thanks!"
 msgstr "Obrigado!"
 
-#: templates/confirmation.html:8
+#: templates/confirmation.html:10
 msgid "You will get to try tsuru very soon. "
 msgstr "Você poderá usar o tsuru em breve. "
 
-#: templates/confirmation.html:10
+#: templates/confirmation.html:12
 msgid "Help us to know you better. Give some more information about you."
 msgstr "Ajude-nos a conhecê-lo melhor. Responda algumas informações sobre você."
 
-#: templates/confirmation.html:12
+#: templates/confirmation.html:14
 msgid "Share with your friends"
 msgstr "Compartilhe com seus amigos"
 
-#: templates/confirmation.html:21
+#: templates/confirmation.html:23
 msgid ""
 "try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
 " Source Polyglot PaaS "
 msgstr "visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
 
-#: templates/index.html:7
+#: templates/try.html:9
 msgid ""
 "A few days ago when we've got some <a "
 "href=\"https://news.ycombinator.com/item?id=5436648\" "
@@ -1169,7 +1170,7 @@ msgstr ""
 "aplicações com o que nós acreditamos ser a melhor solução de plataforma "
 "como serviço open source do planeta."
 
-#: templates/index.html:8
+#: templates/try.html:10
 msgid ""
 "Better all, it will be <strong>entirely free</strong> during all the "
 "private beta testing period."
@@ -1177,7 +1178,7 @@ msgstr ""
 "E o melhor de tudo é que isso será <strong>inteiramente grátis</strong> "
 "durante todo o período de beta testing."
 
-#: templates/index.html:9
+#: templates/try.html:11
 msgid ""
 "Use the form in this page to stay connected with us and to get a chance "
 "to be one of the first to try it out for free."
@@ -1185,21 +1186,21 @@ msgstr ""
 "Cadastre-se no formulário ao lado para saber das novidades e ter a "
 "oportunidade de ser um dos primeiros a testar gratuitamente o tsuru."
 
-#: templates/index.html:11
+#: templates/try.html:13
 msgid "We're working hard hoping to get a seat for all of you."
 msgstr ""
 "Estamos trabalhando duro para conseguir reservar uma vaga para todos "
 "vocês."
 
-#: templates/index.html:13
+#: templates/try.html:15
 msgid "Tsuru team"
 msgstr "Equipe Tsuru"
 
-#: templates/index.html:52
+#: templates/try.html:54
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/index.html:53
+#: templates/try.html:55
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
 "and does not obligate us to select you. It’s simply a way for us to "
@@ -1210,4 +1211,7 @@ msgstr ""
 "do programa beta, assim como não nos obriga a te escolher para o mesmo. "
 "Isso é simplesmente uma maneira de selecionarmos um conjunto de pessoas "
 "legais(você!) que queiram testar o tsuru.io."
+
+#~ msgid "try tsuru"
+#~ msgstr "Experimente o tsuru"
 
