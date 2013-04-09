@@ -123,14 +123,15 @@
 	margin-right: 0;
 }
 
-#index .community .irc {
-	padding: 15px;
-}
-
 .community .title {
 	text-align: center;
 	margin-bottom: 40px;
+}
 
+.community .email p {
+	text-align: left;
+	margin-left: 30px;
+	line-height: 8px;
 }
 
 .community .span2 > h3 {
