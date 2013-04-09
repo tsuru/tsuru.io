@@ -314,7 +314,7 @@ a:hover {
 }
 
 .more a {
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: normal;
 	color: #e7e7e7;
 }
@@ -331,5 +331,18 @@ a:hover {
 .more li {
 	line-height: 93px;
 	float: left;
-	padding: 0 50px;
+	padding: 0 35px 0 70px;
+}
+
+.more .contribution {
+	background: url(/static/img/contribuition.png) no-repeat -2px 24px;
+	padding-left: 40px;
+}
+
+.more .ops {
+	background: url(/static/img/ops.png) no-repeat 26px 24px;
+}
+
+.more .users {
+	background: url(/static/img/user.png) no-repeat 32px 24px;
 }
