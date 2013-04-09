@@ -7,6 +7,7 @@
 from flaskext.babel import lazy_gettext as _
 
 country_choices = [
+    ("Brazil", _("Brazil")),
     ("United States", _("United States")),
     ("United Kingdom", _("United Kingdom")),
     ("Afghanistan", _("Afghanistan")),
@@ -38,7 +39,6 @@ country_choices = [
     ("Bosnia and Herzegovina", _("Bosnia and Herzegovina")),
     ("Botswana", _("Botswana")),
     ("Bouvet Island", _("Bouvet Island")),
-    ("Brazil", _("Brazil")),
     ("British Indian Ocean Territory", _("British Indian Ocean Territory")),
     ("Brunei Darussalam", _("Brunei Darussalam")),
     ("Bulgaria", _("Bulgaria")),
