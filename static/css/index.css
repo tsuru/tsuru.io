@@ -19,7 +19,16 @@
 .header h1 {
 	font-size: 70px;
 	font-weight: normal;
-	margin: 0 0 50px;
+	margin: 0;
+}
+
+.header h1 a {
+	display: block;
+	padding-bottom: 50px;
+}
+
+.header a {
+	color: #fff;
 }
 
 .header p {
