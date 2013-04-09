@@ -33,11 +33,13 @@
 							</ul>
 						</div>
 					</div>
+					{% block langselect %}
 					<div class="language-select">
 						<a href="en"{% if language == "en" %} class="active"{% endif %}>Eng</a> 
 						&middot; 
 						<a href="pt"{% if language == "pt" %} class="active"{% endif %}>Port</a>
 					</div>
+					{% endblock %}
 				</div>
 			</div>
 		</div>
