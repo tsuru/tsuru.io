@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-08 23:32-0300\n"
+"POT-Creation-Date: 2013-04-09 00:10-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -18,132 +18,132 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 
 #: countries.py:10
+msgid "Brazil"
+msgstr "Brasil"
+
+#: countries.py:11
 msgid "United States"
 msgstr "Estados Unidos"
 
-#: countries.py:11
+#: countries.py:12
 msgid "United Kingdom"
 msgstr "Reino Unido"
 
-#: countries.py:12
+#: countries.py:13
 msgid "Afghanistan"
 msgstr "Afeganistão"
 
-#: countries.py:13
+#: countries.py:14
 msgid "Albania"
 msgstr "Albânia"
 
-#: countries.py:14
+#: countries.py:15
 msgid "Algeria"
 msgstr "Algéria"
 
-#: countries.py:15
+#: countries.py:16
 msgid "American Samoa"
 msgstr "Samoa Americana"
 
-#: countries.py:16
+#: countries.py:17
 msgid "Andorra"
 msgstr ""
 
-#: countries.py:17
+#: countries.py:18
 msgid "Angola"
 msgstr ""
 
-#: countries.py:18
+#: countries.py:19
 msgid "Anguilla"
 msgstr ""
 
-#: countries.py:19
+#: countries.py:20
 msgid "Antarctica"
 msgstr ""
 
-#: countries.py:20
+#: countries.py:21
 msgid "Antigua and Barbuda"
 msgstr "Antígua e Barbuda"
 
-#: countries.py:21
+#: countries.py:22
 msgid "Argentina"
 msgstr ""
 
-#: countries.py:22
+#: countries.py:23
 msgid "Armenia"
 msgstr "Armênia"
 
-#: countries.py:23
+#: countries.py:24
 msgid "Aruba"
 msgstr ""
 
-#: countries.py:24
+#: countries.py:25
 msgid "Australia"
 msgstr "Austrália"
 
-#: countries.py:25
+#: countries.py:26
 msgid "Austria"
 msgstr "Áustria"
 
-#: countries.py:26
+#: countries.py:27
 msgid "Azerbaijan"
 msgstr "Azerbaijão"
 
-#: countries.py:27
+#: countries.py:28
 msgid "Bahamas"
 msgstr ""
 
-#: countries.py:28
+#: countries.py:29
 msgid "Bahrain"
 msgstr ""
 
-#: countries.py:29
+#: countries.py:30
 msgid "Bangladesh"
 msgstr ""
 
-#: countries.py:30
+#: countries.py:31
 msgid "Barbados"
 msgstr ""
 
-#: countries.py:31
+#: countries.py:32
 msgid "Belarus"
 msgstr ""
 
-#: countries.py:32
+#: countries.py:33
 msgid "Belgium"
 msgstr "Bélgica"
 
-#: countries.py:33
+#: countries.py:34
 msgid "Belize"
 msgstr ""
 
-#: countries.py:34
+#: countries.py:35
 msgid "Benin"
 msgstr ""
 
-#: countries.py:35
+#: countries.py:36
 msgid "Bermuda"
 msgstr ""
 
-#: countries.py:36
+#: countries.py:37
 msgid "Bhutan"
 msgstr "Butão"
 
-#: countries.py:37
+#: countries.py:38
 msgid "Bolivia"
 msgstr "Bolívia"
 
-#: countries.py:38
+#: countries.py:39
 msgid "Bosnia and Herzegovina"
 msgstr "Bósnia e Herzegovina"
 
-#: countries.py:39
+#: countries.py:40
 msgid "Botswana"
 msgstr ""
 
-#: countries.py:40
+#: countries.py:41
 msgid "Bouvet Island"
 msgstr "Ilha Bouvet"
-
-#: countries.py:41
-msgid "Brazil"
-msgstr "Brasil"
 
 #: countries.py:42
 msgid "British Indian Ocean Territory"
