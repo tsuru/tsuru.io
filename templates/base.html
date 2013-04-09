@@ -25,7 +25,7 @@
 					<div class="navbar">
 						<div class="navbar-inner">
 							<ul class="nav">
-								<li><a href="{{url_for("try_tsuru")}}" class="active">{% trans %}Try{% endtrans %}</a></li>
+								<li><a href="{{url_for("try_tsuru")}}">{% trans %}Try{% endtrans %}</a></li>
 								<li><a href="{{url_for("community")}}">{% trans %}Community{% endtrans %}</a></li>
 								<li><a href="http://docs.tsuru.io/en/latest/">{% trans %}Documentation{% endtrans %}</a></li>
 								<li><a href="https://github.com/globocom/tsuru">{% trans %}Code{% endtrans %}</a></li>
@@ -55,6 +55,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="{{url_for("static", filename="js/facebook.js")}}"></script>
 <script type="text/javascript" src="{{url_for("static", filename="js/gplus.js")}}"></script>
+<script type="text/javascript" src="{{url_for("static", filename="js/init.menu.js")}}"></script>
 <script>
 
 (function(global) {
