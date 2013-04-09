@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-09 15:29-0300\n"
+"POT-Creation-Date: 2013-04-09 16:03-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -1086,7 +1086,7 @@ msgstr "Experimente"
 msgid "Community"
 msgstr "Comunidade"
 
-#: templates/base.html:30 templates/index.html:48
+#: templates/base.html:30 templates/index.html:52
 msgid "Documentation"
 msgstr "Documentação"
 
@@ -1094,17 +1094,17 @@ msgstr "Documentação"
 msgid "Code"
 msgstr "Código"
 
-#: templates/community.html:11 templates/index.html:23
+#: templates/community.html:11 templates/index.html:24
 msgid "Mailing List"
 msgstr "Listas de discussão"
 
-#: templates/community.html:12 templates/index.html:24
+#: templates/community.html:12 templates/index.html:25
 msgid "General List"
-msgstr "Lista de usuários"
+msgstr "Usuários"
 
-#: templates/community.html:13 templates/index.html:25
+#: templates/community.html:13 templates/index.html:26
 msgid "Development List"
-msgstr "Lista de desenvolvimento"
+msgstr "Desenvolvimento"
 
 #: templates/community.html:17
 msgid ""
@@ -1149,24 +1149,23 @@ msgid ""
 " Source Polyglot PaaS "
 msgstr "visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
 
-#: templates/index.html:29
-#, fuzzy
-msgid "#tsuru on "
+#: templates/index.html:31
+msgid "#tsuru on"
 msgstr "canal #tsuru no"
 
-#: templates/index.html:33
+#: templates/index.html:36
 msgid "Follow"
 msgstr "Siga"
 
-#: templates/index.html:37
+#: templates/index.html:41
 msgid "Follow on g+ "
 msgstr "Siga no g+"
 
-#: templates/index.html:52
+#: templates/index.html:56
 msgid "Build your own PaaS"
 msgstr "Monte o seu próprio PaaS"
 
-#: templates/index.html:53
+#: templates/index.html:57
 msgid ""
 "Describes how to create a private PaaS service using Tsuru. It contains "
 "instuctions on how to build Tsuru and some of its components from source."
@@ -1175,11 +1174,11 @@ msgstr ""
 "como compilar o Tsuru e alguns dos seus componentes a partir do código "
 "fonte."
 
-#: templates/index.html:58
+#: templates/index.html:62
 msgid "Build your app in Tsuru"
 msgstr "Crie sua app no Tsuru"
 
-#: templates/index.html:59
+#: templates/index.html:63
 msgid ""
 "You manage your app using the Tsuru command-line tool and you deploy code"
 " using the Git revision control system, all running on the Tsuru "
@@ -1188,11 +1187,11 @@ msgstr ""
 "Você gerencia sua aplicação usando a linha de comando do Tsuru e faz o "
 "deploy do seu código com o Git, tudo rodando na infra-estrutura do Tsuru."
 
-#: templates/index.html:64
+#: templates/index.html:68
 msgid "Build your service"
 msgstr "Crie o seu serviço"
 
-#: templates/index.html:65
+#: templates/index.html:69
 msgid ""
 "Here you will find a hands-on guide to turning your existing cloud "
 "service into a Tsuru service."
@@ -1200,19 +1199,19 @@ msgstr ""
 "Aqui você vai encontrar um guia prático sobre como transformar um serviço"
 " já existente em um serviço do Tsuru."
 
-#: templates/index.html:73
+#: templates/index.html:77
 msgid "More documentation"
 msgstr "Mais Documentação"
 
-#: templates/index.html:76
+#: templates/index.html:80
 msgid "For Users"
 msgstr "Para Usuários"
 
-#: templates/index.html:79
+#: templates/index.html:83
 msgid "For Cloud Ops"
 msgstr "Para SysAdmins"
 
-#: templates/index.html:82
+#: templates/index.html:86
 msgid "Contribution and Feedback"
 msgstr "Contribuição e Feedback"
 
