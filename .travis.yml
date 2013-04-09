@@ -1,4 +1,5 @@
 language: python
+install: cat requirements.apt | xargs sudo apt-get install -qqy
 script: make test
 services: mongodb
 notifications:
