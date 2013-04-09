@@ -171,3 +171,7 @@ a:hover {
 	font-weight: lighter;
 	padding: 10px 15px;
 }
+
+.language-select a.active {
+	font-weight: bold;
+}

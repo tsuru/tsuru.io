@@ -41,6 +41,11 @@ GOOGLE_OAUTH_ENDPOINT = "https://www.googleapis.com/oauth2/v2"
 SIGN_KEY = os.environ.get("SIGN_KEY")
 
 
+@app.context_processor
+def language():
+    return dict(language=get_locale())
+
+
 @babel.localeselector
 def get_locale():
     if request.cookies.get('language'):
