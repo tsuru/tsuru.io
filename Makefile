@@ -32,5 +32,5 @@ generate-countries:
 	@echo "from flaskext.babel import lazy_gettext as _" >> countries.py
 	@echo >> countries.py
 	@echo "country_choices = [" >> countries.py
-	@cat raw/countries.txt | while read l; do echo "    (\"$$l\", _(\"$$l\"))" >> countries.py; done
+	@cat raw/countries.txt | while read l; do echo "    (\"$$l\", _(\"$$l\"))," >> countries.py; done
 	@echo "]" >> countries.py
