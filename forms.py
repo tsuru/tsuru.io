@@ -5,7 +5,6 @@
 import wtforms
 from flask.ext import wtf
 from wtforms import validators
-from countries import country_choices
 from flaskext.babel import lazy_gettext as _
 
 
@@ -40,8 +39,7 @@ class SurveyForm(wtf.Form):
     ]
     work = wtforms.SelectField(_("What do you do for a living?"),
                                choices=choices)
-    country = wtforms.SelectField(_("Where do you live?"),
-                                  choices=country_choices)
+    country = wtforms.SelectField(_("Where do you live?"), coerce=str)
     organization = wtforms.TextField(_("What is your company name?"))
     choices = [("build", _("Build my own PaaS")),
                ("compare", _("Compare to other PaaS")),

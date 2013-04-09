@@ -36,11 +36,6 @@ class SurveyFormTestCase(unittest.TestCase):
         choices = forms.SurveyForm.work.kwargs["choices"]
         self.assertListEqual(expected, choices)
 
-    def test_country_field_should_use_country_list(self):
-        from countries import country_choices
-        choices = forms.SurveyForm.country.kwargs["choices"]
-        self.assertEqual(country_choices, choices)
-
     def test_why_field_should_have_choices(self):
         expected = [("build", "Build my own PaaS"),
                     ("compare", "Compare to other PaaS"),
