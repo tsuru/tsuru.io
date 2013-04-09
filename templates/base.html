@@ -5,11 +5,11 @@
 	<title>{% block title %}Tsuru{% endblock %}</title>
 	<link href="{{url_for("static", filename="css/bootstrap.css")}}" media="all" rel="stylesheet" type="text/css">
 	<link href="{{url_for("static", filename="css/index.css")}}" media="all" rel="stylesheet" type="text/css">
-	<meta property="og:title" content="{% block og-title %}Tsuru{% endblock %}">
-	{% block og-url %}
+	<meta property="og:title" content="{% block ogtitle %}Tsuru{% endblock %}">
+	{% block ogurl %}
 	<meta property="og:url" content="http://tsuru.io">
 	{% endblock %}
-	{% block og-desc %}
+	{% block ogdesc %}
 	<meta property="og:description" content="{% trans %}Tsuru is an open source polyglot cloud application platform.{% endtrans %}">
 	{% endblock%}
 </head>
