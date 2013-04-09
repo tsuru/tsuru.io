@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-09 16:46-0300\n"
+"POT-Creation-Date: 2013-04-09 17:26-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -973,15 +973,15 @@ msgstr "Zâmbia"
 msgid "Zimbabwe"
 msgstr "Zimbábue"
 
-#: forms.py:12 templates/try.html:42
+#: forms.py:12 templates/try.html:51
 msgid "First name"
 msgstr "Nome"
 
-#: forms.py:14 templates/try.html:46
+#: forms.py:14 templates/try.html:55
 msgid "Last name"
 msgstr "Sobrenome"
 
-#: forms.py:17 templates/try.html:52
+#: forms.py:17 templates/try.html:61
 msgid "Email"
 msgstr "E-mail"
 
@@ -1045,15 +1045,15 @@ msgstr "Apenas curiosidade"
 msgid "Why do you want to try tsuru?"
 msgstr "Por que você quer experimentar o tsuru?"
 
-#: templates/about.html:2 templates/base.html:32
+#: templates/about.html:2 templates/about.html:3 templates/base.html:36
 msgid "About"
 msgstr "Sobre"
 
-#: templates/about.html:8 templates/index.html:9
+#: templates/about.html:13 templates/index.html:8
 msgid "About Tsuru"
 msgstr "Sobre o Tsuru"
 
-#: templates/about.html:11 templates/index.html:10
+#: templates/about.html:16 templates/index.html:9
 msgid ""
 "Tsuru is an open source polyglot cloud application platform. With Tsuru, "
 "you don’t need to think about servers at all. You can write apps in the "
@@ -1069,107 +1069,103 @@ msgstr ""
 "outros. Você gerencia sua aplicação usando linha de comando e faz o "
 "deploy do seu código com o Git, tudo rodando na infra-estrutura do Tsuru."
 
-#: templates/base.html:10
-msgid ""
-"try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
-" Source Polyglot PaaS. #paas #opensource #golang"
-msgstr ""
-"visite try.tsuru.io para ter a chance de testar inteiramente gratis o "
-"novo PaaS Open Source. #paas #opensource #golang"
+#: templates/base.html:13
+msgid "Tsuru is an open source polyglot cloud application platform."
+msgstr "Tsuru é uma plataforma de cloud computing poliglota e open source."
 
-#: templates/base.html:18
+#: templates/base.html:22
 msgid "open source platform as a service"
 msgstr "plataforma como serviço open source"
 
-#: templates/base.html:28 templates/index.html:2 templates/try.html:2
+#: templates/base.html:32 templates/try.html:2 templates/try.html:3
 msgid "Try"
 msgstr "Experimente"
 
-#: templates/base.html:29 templates/community.html:2 templates/community.html:8
-#: templates/index.html:18
+#: templates/base.html:33 templates/community.html:2 templates/community.html:3
+#: templates/community.html:13 templates/index.html:17
 msgid "Community"
 msgstr "Comunidade"
 
-#: templates/base.html:30 templates/index.html:58
+#: templates/base.html:34 templates/index.html:57
 msgid "Documentation"
 msgstr "Documentação"
 
-#: templates/base.html:31
+#: templates/base.html:35
 msgid "Code"
 msgstr "Código"
 
-#: templates/community.html:11 templates/index.html:24
+#: templates/community.html:16 templates/index.html:23
 msgid "Mailing List"
 msgstr "Listas de discussão"
 
-#: templates/community.html:12 templates/index.html:25
+#: templates/community.html:17 templates/index.html:24
 msgid "General List"
 msgstr "Usuários"
 
-#: templates/community.html:13 templates/index.html:26
+#: templates/community.html:18 templates/index.html:25
 msgid "Development List"
 msgstr "Desenvolvimento"
 
-#: templates/community.html:17
+#: templates/community.html:22
 msgid ""
 "#tsuru on Freenode <a href=\"http://webchat.freenode.net/\">Pop In</a> "
 "(via browser client)"
 msgstr ""
-"#tsuru no Freenode <a href=\"http://webchat.freenode.net/\">Pop-up</a> "
+"#tsuru no Freenode <a href=\"http://webchat.freenode.net/\">Pop-up</a>"
 "(para acesso através do navegador)"
 
-#: templates/community.html:20
+#: templates/community.html:25
 msgid "Social Networks"
-msgstr "Redes sociais"
+msgstr "Redes Sociais"
 
 #: templates/confirmation.html:2
 msgid "Thank you"
 msgstr "Obrigado"
 
-#: templates/confirmation.html:2 templates/confirmation.html:8
-#: templates/try.html:8
+#: templates/confirmation.html:2 templates/confirmation.html:10
+#: templates/try.html:17
 msgid "Try tsuru"
 msgstr "Experimente o tsuru"
 
-#: templates/confirmation.html:11
+#: templates/confirmation.html:13
 msgid "Thanks!"
 msgstr "Obrigado!"
 
-#: templates/confirmation.html:12
+#: templates/confirmation.html:14
 msgid "You will get to try tsuru very soon. "
 msgstr "Você poderá usar o tsuru em breve. "
 
-#: templates/confirmation.html:14
+#: templates/confirmation.html:16
 msgid "Help us to know you better. Give some more information about you."
 msgstr "Ajude-nos a conhecê-lo melhor. Responda algumas informações sobre você."
 
-#: templates/confirmation.html:16
+#: templates/confirmation.html:18
 msgid "Share with your friends"
 msgstr "Compartilhe com seus amigos"
 
-#: templates/confirmation.html:25
+#: templates/confirmation.html:27
 msgid ""
 "try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
 " Source Polyglot PaaS "
 msgstr "visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
 
-#: templates/index.html:32
+#: templates/index.html:31
 msgid "#tsuru on"
 msgstr "canal #tsuru no"
 
-#: templates/index.html:39
+#: templates/index.html:38
 msgid "Follow"
 msgstr "Siga"
 
-#: templates/index.html:46
+#: templates/index.html:45
 msgid "Follow on g+ "
 msgstr "Siga no g+ "
 
-#: templates/index.html:62
+#: templates/index.html:61
 msgid "Build your own PaaS"
 msgstr "Monte o seu próprio PaaS"
 
-#: templates/index.html:63
+#: templates/index.html:62
 msgid ""
 "Describes how to create a private PaaS service using Tsuru. It contains "
 "instuctions on how to build Tsuru and some of its components from source."
@@ -1178,11 +1174,11 @@ msgstr ""
 "como compilar o Tsuru e alguns dos seus componentes a partir do código "
 "fonte."
 
-#: templates/index.html:68
+#: templates/index.html:67
 msgid "Build your app in Tsuru"
 msgstr "Crie sua app no Tsuru"
 
-#: templates/index.html:69
+#: templates/index.html:68
 msgid ""
 "You manage your app using the Tsuru command-line tool and you deploy code"
 " using the Git revision control system, all running on the Tsuru "
@@ -1191,11 +1187,11 @@ msgstr ""
 "Você gerencia sua aplicação usando a linha de comando do Tsuru e faz o "
 "deploy do seu código com o Git, tudo rodando na infra-estrutura do Tsuru."
 
-#: templates/index.html:74
+#: templates/index.html:73
 msgid "Build your service"
 msgstr "Crie o seu serviço"
 
-#: templates/index.html:75
+#: templates/index.html:74
 msgid ""
 "Here you will find a hands-on guide to turning your existing cloud "
 "service into a Tsuru service."
@@ -1203,23 +1199,31 @@ msgstr ""
 "Aqui você vai encontrar um guia prático sobre como transformar um serviço"
 " já existente em um serviço do Tsuru."
 
-#: templates/index.html:83
+#: templates/index.html:82
 msgid "More documentation"
 msgstr "Mais Documentação"
 
-#: templates/index.html:86
+#: templates/index.html:85
 msgid "For Users"
 msgstr "Para Usuários"
 
-#: templates/index.html:89
+#: templates/index.html:88
 msgid "For Cloud Ops"
 msgstr "Para SysAdmins"
 
-#: templates/index.html:92
+#: templates/index.html:91
 msgid "Contribution and Feedback"
 msgstr "Contribuição e Feedback"
 
-#: templates/try.html:11
+#: templates/try.html:10
+msgid ""
+"try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
+" Source Polyglot PaaS. #paas #opensource #golang"
+msgstr ""
+"visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
+"#paas #opensource #golang"
+
+#: templates/try.html:20
 msgid ""
 "A few days ago when we've got some <a "
 "href=\"https://news.ycombinator.com/item?id=5436648\" "
@@ -1241,7 +1245,7 @@ msgstr ""
 "aplicações com o que nós acreditamos ser a melhor solução de plataforma "
 "como serviço open source do planeta."
 
-#: templates/try.html:12
+#: templates/try.html:21
 msgid ""
 "Better all, it will be <strong>entirely free</strong> during all the "
 "private beta testing period."
@@ -1249,7 +1253,7 @@ msgstr ""
 "E o melhor de tudo é que isso será <strong>inteiramente grátis</strong> "
 "durante todo o período de beta testing."
 
-#: templates/try.html:13
+#: templates/try.html:22
 msgid ""
 "Use the form in this page to stay connected with us and to get a chance "
 "to be one of the first to try it out for free."
@@ -1257,29 +1261,28 @@ msgstr ""
 "Cadastre-se no formulário ao lado para saber das novidades e ter a "
 "oportunidade de ser um dos primeiros a testar gratuitamente o tsuru."
 
-#: templates/try.html:15
+#: templates/try.html:24
 msgid "We're working hard hoping to get a seat for all of you."
 msgstr ""
 "Estamos trabalhando duro para conseguir reservar uma vaga para todos "
 "vocês."
 
-#: templates/try.html:17
+#: templates/try.html:26
 msgid "Tsuru team"
-msgstr "Equipe Tsuru"
+msgstr "Time Tsuru"
 
-#: templates/try.html:56
+#: templates/try.html:65
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/try.html:57
+#: templates/try.html:66
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
 "and does not obligate us to select you. It’s simply a way for us to "
-"assemble a pool of cool people(you!) who wants to try out Tsuru, the open"
+"assemble a pool of cool people (you!) who wants to try out Tsuru, the open"
 " source polyglot platform as a service."
 msgstr ""
 "Nota legal: o envio desse formulário não está te obrigando a participar "
 "do programa beta, assim como não nos obriga a te escolher para o mesmo. "
 "Isso é simplesmente uma maneira de selecionarmos um conjunto de pessoas "
-"legais(você!) que queiram testar o tsuru.io."
-
+"legais (você!) que queiram testar o tsuru.io."
