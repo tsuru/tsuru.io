@@ -72,7 +72,7 @@ def get_survey_form(email):
 
 
 def _index(form):
-    return render_template("index.html", facebook_app_id=FACEBOOK_APP_ID,
+    return render_template("try.html", facebook_app_id=FACEBOOK_APP_ID,
                            github_client_id=GITHUB_CLIENT_ID, form=form), 200
 
 

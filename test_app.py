@@ -56,7 +56,7 @@ class AppTestCase(ClientTest, unittest.TestCase):
         render.return_value = ""
         reload(app)
         self.api.get("/try")
-        render.assert_called_with("index.html",
+        render.assert_called_with("try.html",
                                   facebook_app_id=app.FACEBOOK_APP_ID,
                                   github_client_id=app.GITHUB_CLIENT_ID,
                                   form=m)
@@ -86,7 +86,7 @@ class AppTestCase(ClientTest, unittest.TestCase):
         self.assertEqual(200, resp.status_code)
         self.assertEqual("validation failed", resp.data)
         form.assert_called_with(werkzeug.ImmutableMultiDict(d))
-        render.assert_called_with("index.html",
+        render.assert_called_with("try.html",
                                   facebook_app_id=app.FACEBOOK_APP_ID,
                                   github_client_id=app.GITHUB_CLIENT_ID,
                                   form=m)
