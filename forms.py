@@ -26,6 +26,7 @@ class SurveyForm(wtf.Form):
     signature = wtforms.HiddenField(u"signature",
                                     validators=[validators.DataRequired()])
     choices = [
+        ("", _("Please select")),
         ("cio", "CIO"),
         ("cto", "CTO"),
         ("dba", "DBA"),
@@ -41,10 +42,13 @@ class SurveyForm(wtf.Form):
                                choices=choices)
     country = wtforms.SelectField(_("Where do you live?"), coerce=str)
     organization = wtforms.TextField(_("What is your company name?"))
-    choices = [("build", _("Build my own PaaS")),
-               ("compare", _("Compare to other PaaS")),
-               ("deploy", _("Deploy my apps")),
-               ("curious", _("I'm just curious")),
-               ("", _("Other"))]
+    choices = [
+        ("", _("Please select")),
+        ("build", _("Build my own PaaS")),
+        ("compare", _("Compare to other PaaS")),
+        ("deploy", _("Deploy my apps")),
+        ("curious", _("I'm just curious")),
+        ("", _("Other"))
+    ]
     why = wtforms.SelectField(_(u"Why do you want to try tsuru?"),
                               choices=choices)

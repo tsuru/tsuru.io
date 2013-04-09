@@ -75,8 +75,8 @@ def save_user(first_name, last_name, email, redirect_to=None):
 
 def get_survey_form(email, f=None):
     form = forms.SurveyForm(f)
-    form.country.choices = country_choices[:3]
-    other = copy.copy(country_choices[3:])
+    form.country.choices = country_choices[:4]
+    other = copy.copy(country_choices[4:])
     other.sort(key=lambda x: x[1])
     form.country.choices.extend(other)
     if f is None:

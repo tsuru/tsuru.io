@@ -29,15 +29,17 @@ class SurveyFormTestCase(unittest.TestCase):
         self.assertEqual(wtforms.SelectField, field.field_class)
 
     def test_work_field_should_have_choices(self):
-        expected = [("cio", "CIO"), ("cto", "CTO"), ("dba", "DBA"),
-                    ("developer", "Developer"), ("manager", "Project Manager"),
+        expected = [("", "Please select"), ("cio", "CIO"), ("cto", "CTO"),
+                    ("dba", "DBA"), ("developer", "Developer"),
+                    ("manager", "Project Manager"),
                     ("researcher", "Researcher"), ("student", "Student"),
                     ("teacher", "Teacher"), ("ops", "Ops"), ("", "Other")]
         choices = forms.SurveyForm.work.kwargs["choices"]
         self.assertListEqual(expected, choices)
 
     def test_why_field_should_have_choices(self):
-        expected = [("build", "Build my own PaaS"),
+        expected = [("", "Please select"),
+                    ("build", "Build my own PaaS"),
                     ("compare", "Compare to other PaaS"),
                     ("deploy", "Deploy my apps"),
                     ("curious", "I'm just curious"),
