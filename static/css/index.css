@@ -123,6 +123,27 @@
 
 #index .community a {
 	color: #fff;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+#index .community a:hover .social {
+	color: #fff;
+}
+
+#index .community a .social {
+	display: block;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 40px;
+	margin: 10px 0;
+}
+
+#index .community a span {
+	font-size: 13px;
+	font-weight: lighter;
+	letter-spacing: .5px;
 }
 
 #index .community a:hover {

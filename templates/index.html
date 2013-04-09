@@ -26,19 +26,25 @@
                             <p><a href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-dev">+ {% trans %}Development List{% endtrans %}</a></p>
                         </li>
                         <li>
-			                <img src="{{url_for("static", filename="img/irc.png")}}">
-                            <h3>IRC</h3>
-                            <p>{% trans %}#tsuru on{% endtrans %} <a href="http://webchat.freenode.net/">Freenode</a></p>
+                            <a href="http://webchat.freenode.net/">
+    			                <img src="{{url_for("static", filename="img/irc.png")}}">
+                                <span class="social">IRC</span>
+                                <span>{% trans %}#tsuru on{% endtrans %} Freenode</span>
+                            </a>
                         </li>
                         <li>
-			                <img src="{{url_for("static", filename="img/twitter.png")}}">
-                            <h3>Twitter</h3>
-                            <p>{% trans %}Follow{% endtrans %} <a href="https://twitter.com/tsurupaas">@tsurupaas</a></p>
+                            <a href="https://twitter.com/tsurupaas">
+    			                <img src="{{url_for("static", filename="img/twitter.png")}}">
+                                <span class="social">Twitter</span>
+                                <span>{% trans %}Follow{% endtrans %} @tsurupaas</span>
+                            </a>
                         </li>
                         <li>
-			                <img src="{{url_for("static", filename="img/gmail.png")}}">
-                            <h3>Google+</h3>
-                            <p>{% trans %}Follow on g+ {% endtrans %}<a href="https://plus.google.com/118205831863820582274">tsurupaas</a></p>
+                            <a href="https://plus.google.com/118205831863820582274">
+    			                <img src="{{url_for("static", filename="img/gmail.png")}}">
+                                <span class="social">Google+</span>
+                                <span>{% trans %}Follow on g+ {% endtrans %}tsurupaas</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
