@@ -57,7 +57,8 @@ country_choices = [
     ("Colombia", _("Colombia"))
     ("Comoros", _("Comoros"))
     ("Congo", _("Congo"))
-    ("Congo, The Democratic Republic of The", _("Congo, The Democratic Republic of The"))
+    ("Congo, The Democratic Republic of The",
+     _("Congo, The Democratic Republic of The"))
     ("Cook Islands", _("Cook Islands"))
     ("Costa Rica", _("Costa Rica"))
     ("Cote D'ivoire", _("Cote D'ivoire"))
@@ -100,7 +101,8 @@ country_choices = [
     ("Guinea-bissau", _("Guinea-bissau"))
     ("Guyana", _("Guyana"))
     ("Haiti", _("Haiti"))
-    ("Heard Island and Mcdonald Islands", _("Heard Island and Mcdonald Islands"))
+    ("Heard Island and Mcdonald Islands",
+     _("Heard Island and Mcdonald Islands"))
     ("Holy See (Vatican City State)", _("Holy See (Vatican City State)"))
     ("Honduras", _("Honduras"))
     ("Hong Kong", _("Hong Kong"))
@@ -119,7 +121,8 @@ country_choices = [
     ("Kazakhstan", _("Kazakhstan"))
     ("Kenya", _("Kenya"))
     ("Kiribati", _("Kiribati"))
-    ("Korea, Democratic People's Republic of", _("Korea, Democratic People's Republic of"))
+    ("Korea, Democratic People's Republic of",
+     _("Korea, Democratic People's Republic of"))
     ("Korea, Republic of", _("Korea, Republic of"))
     ("Kuwait", _("Kuwait"))
     ("Kyrgyzstan", _("Kyrgyzstan"))
@@ -133,7 +136,8 @@ country_choices = [
     ("Lithuania", _("Lithuania"))
     ("Luxembourg", _("Luxembourg"))
     ("Macao", _("Macao"))
-    ("Macedonia, The Former Yugoslav Republic of", _("Macedonia, The Former Yugoslav Republic of"))
+    ("Macedonia, The Former Yugoslav Republic of",
+     _("Macedonia, The Former Yugoslav Republic of"))
     ("Madagascar", _("Madagascar"))
     ("Malawi", _("Malawi"))
     ("Malaysia", _("Malaysia"))
@@ -205,7 +209,8 @@ country_choices = [
     ("Solomon Islands", _("Solomon Islands"))
     ("Somalia", _("Somalia"))
     ("South Africa", _("South Africa"))
-    ("South Georgia and The South Sandwich Islands", _("South Georgia and The South Sandwich Islands"))
+    ("South Georgia and The South Sandwich Islands",
+     _("South Georgia and The South Sandwich Islands"))
     ("Spain", _("Spain"))
     ("Sri Lanka", _("Sri Lanka"))
     ("Sudan", _("Sudan"))
@@ -234,7 +239,8 @@ country_choices = [
     ("United Arab Emirates", _("United Arab Emirates"))
     ("United Kingdom", _("United Kingdom"))
     ("United States", _("United States"))
-    ("United States Minor Outlying Islands", _("United States Minor Outlying Islands"))
+    ("United States Minor Outlying Islands",
+     _("United States Minor Outlying Islands"))
     ("Uruguay", _("Uruguay"))
     ("Uzbekistan", _("Uzbekistan"))
     ("Vanuatu", _("Vanuatu"))
