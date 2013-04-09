@@ -21,3 +21,16 @@ update-catalog: deps
 
 compile-trans: deps
 	@pybabel compile -d translations
+
+generate-countries:
+	@echo "# Copyright 2013 Globo.com. All rights reserved." > countries.py
+	@echo "# Use of this source code is governed by a BSD-style" >> countries.py
+	@echo "# license that can be found in the LICENSE file." >> countries.py
+	@echo >> countries.py
+	@echo "# This file is generated automatically, please avoid editing it." >> countries.py
+	@echo >> countries.py
+	@echo "from flaskext.babel import lazy_gettext as _" >> countries.py
+	@echo >> countries.py
+	@echo "country_choices = [" >> countries.py
+	@cat raw/countries.txt | while read l; do echo "    (\"$$l\", _(\"$$l\"))" >> countries.py; done
+	@echo "]" >> countries.py
