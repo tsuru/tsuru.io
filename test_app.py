@@ -451,6 +451,15 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
         self.assertEqual(app.sign(email), form.signature.data)
         app.SIGN_KEY = None
 
+    def test_get_survey_form_with_request_form(self):
+        app.SIGN_KEY = "test_key"
+        email = "test@test.com"
+        d = {"work": "dba"}
+        with app.app.test_request_context("/"):
+            form = app.get_survey_form(email, werkzeug.ImmutableMultiDict(d))
+            self.assertEqual("dba", form.work.data)
+        app.SIGN_KEY = None
+
 
 class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
 

@@ -2,6 +2,7 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
+import copy
 import hashlib
 import os
 
@@ -14,6 +15,7 @@ from flask_s3 import FlaskS3
 from flaskext.babel import Babel
 
 import forms
+from countries import country_choices
 
 
 app = Flask(__name__)
@@ -64,10 +66,15 @@ def save_user(first_name, last_name, email):
                            form=get_survey_form(email)), 200
 
 
-def get_survey_form(email):
-    form = forms.SurveyForm()
-    form.email.data = email
-    form.signature.data = sign(email)
+def get_survey_form(email, f=None):
+    form = forms.SurveyForm(f)
+    form.country.choices = country_choices[:3]
+    other = copy.copy(country_choices[3:])
+    other.sort(key=lambda x: x[1])
+    form.country.choices.extend(other)
+    if f is None:
+        form.email.data = email
+        form.signature.data = sign(email)
     return form
 
 
@@ -106,7 +113,7 @@ def community():
 
 @app.route("/survey", methods=["POST"])
 def survey():
-    if not forms.SurveyForm(request.form).validate():
+    if not get_survey_form(None, request.form).validate():
         return "Invalid email.", 400
     if sign(request.form["email"]) != request.form["signature"]:
         msg = "Signatures don't match. You're probably doing something nasty."
