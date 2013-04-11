@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-09 17:26-0300\n"
+"POT-Creation-Date: 2013-04-11 18:30-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -16,6 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: app.py:96 templates/try.html:52
+msgid ""
+"You have not defined a public email in your GitHub account, please <a "
+"href=\"http://github.com/settings/profile\">define it</a> and try again, "
+"or use one of the other options for signing up."
+msgstr ""
+"Você não possui um e-mail público no GitHub, defina um no <a "
+"href="https://github.com/settings/profile">seu perfil</a> e tente "
+"novamente, ou utilize uma das outras formas de cadastro."
 
 #: countries.py:10 forms.py:29 forms.py:46
 msgid "Please select"
@@ -973,15 +983,15 @@ msgstr "Zâmbia"
 msgid "Zimbabwe"
 msgstr "Zimbábue"
 
-#: forms.py:12 templates/try.html:51
+#: forms.py:12 templates/try.html:58
 msgid "First name"
 msgstr "Nome"
 
-#: forms.py:14 templates/try.html:55
+#: forms.py:14 templates/try.html:62
 msgid "Last name"
 msgstr "Sobrenome"
 
-#: forms.py:17 templates/try.html:61
+#: forms.py:17 templates/try.html:68
 msgid "Email"
 msgstr "E-mail"
 
@@ -1111,8 +1121,8 @@ msgid ""
 "#tsuru on Freenode <a href=\"http://webchat.freenode.net/\">Pop In</a> "
 "(via browser client)"
 msgstr ""
-"#tsuru no Freenode <a href=\"http://webchat.freenode.net/\">Pop-up</a>"
-"(para acesso através do navegador)"
+"#tsuru no Freenode <a href=\"http://webchat.freenode.net/\">Pop-"
+"up</a>(para acesso através do navegador)"
 
 #: templates/community.html:25
 msgid "Social Networks"
@@ -1144,9 +1154,10 @@ msgid "Share with your friends"
 msgstr "Compartilhe com seus amigos"
 
 #: templates/confirmation.html:27
+#, fuzzy
 msgid ""
-"try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
-" Source Polyglot PaaS "
+"try.tsuru.io to apply for a chance to play for free in tsuru.io - the "
+"Open Source Polyglot PaaS "
 msgstr "visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
 
 #: templates/index.html:31
@@ -1216,9 +1227,10 @@ msgid "Contribution and Feedback"
 msgstr "Contribuição e Feedback"
 
 #: templates/try.html:10
+#, fuzzy
 msgid ""
-"try.tsuru.io to apply to a chance to play for free in tsuru.io - the Open"
-" Source Polyglot PaaS. #paas #opensource #golang"
+"try.tsuru.io to apply for a chance to play for free in tsuru.io - the "
+"Open Source Polyglot PaaS. #paas #opensource #golang"
 msgstr ""
 "visite try.tsuru.io para ter a chance de testar o novo PaaS Open Source "
 "#paas #opensource #golang"
@@ -1271,18 +1283,19 @@ msgstr ""
 msgid "Tsuru team"
 msgstr "Time Tsuru"
 
-#: templates/try.html:65
+#: templates/try.html:72
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/try.html:66
+#: templates/try.html:73
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
 "and does not obligate us to select you. It’s simply a way for us to "
-"assemble a pool of cool people (you!) who wants to try out Tsuru, the open"
-" source polyglot platform as a service."
+"assemble a pool of cool people (you!) who wants to try out Tsuru, the "
+"open source polyglot platform as a service."
 msgstr ""
 "Nota legal: o envio desse formulário não está te obrigando a participar "
 "do programa beta, assim como não nos obriga a te escolher para o mesmo. "
 "Isso é simplesmente uma maneira de selecionarmos um conjunto de pessoas "
 "legais (você!) que queiram testar o tsuru.io."
+
