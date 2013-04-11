@@ -172,7 +172,7 @@ def github_register():
         first_name, last_name = parse_github_name(info)
         return save_user(first_name, last_name, info["email"])
     except Exception as e:
-        sys.stderr.write("%s\n" % e.args)
+        sys.stderr.write("%s\n" % e)
         return redirect(url_for("try_tsuru"))
 
 
