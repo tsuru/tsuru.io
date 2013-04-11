@@ -150,7 +150,8 @@ def facebook_register():
         return save_user(info["first_name"], info["last_name"], info["email"])
     except Exception as e:
         sys.stderr.write("%s\n" % e)
-        flash(_("We weren't able to get your email from Facebook, please use one of the other options for signing up."))
+        flash(_("We weren't able to get your email from Facebook, "
+                "please use one of the other options for signing up."))
         return redirect(url_for("try_tsuru"))
 
 
@@ -178,7 +179,10 @@ def github_register():
         return save_user(first_name, last_name, info["email"])
     except Exception as e:
         sys.stderr.write("%s\n" % e)
-        flash(_("You have not defined a public email in your GitHub account, please <a href=\"http://github.com/settings/profile\">define it</a> and try again, or use one of the other options for signing up."))
+        flash(_("You have not defined a public email in your GitHub account, "
+                "please <a href=\"http://github.com/settings/profile\">define "
+                "it</a> and try again, or use one of the other options "
+                "for signing up."))
         return redirect(url_for("try_tsuru"))
 
 
