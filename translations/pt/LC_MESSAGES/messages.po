@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-11 18:30-0300\n"
+"POT-Creation-Date: 2013-04-11 18:47-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -17,14 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: app.py:96 templates/try.html:52
+#: app.py:153
+msgid ""
+"We weren't able to get your email from Facebook, please use one of the "
+"other options for signing up."
+msgstr ""
+"Não foi possível obter seu e-mail no Facebook, por favor utilize uma das "
+"outras alternativas para se registrar."
+
+#: app.py:181
 msgid ""
 "You have not defined a public email in your GitHub account, please <a "
 "href=\"http://github.com/settings/profile\">define it</a> and try again, "
 "or use one of the other options for signing up."
 msgstr ""
 "Você não possui um e-mail público no GitHub, defina um no <a "
-"href="https://github.com/settings/profile">seu perfil</a> e tente "
+"href=\"https://github.com/settings/profile\">seu perfil</a> e tente "
 "novamente, ou utilize uma das outras formas de cadastro."
 
 #: countries.py:10 forms.py:29 forms.py:46
@@ -983,15 +991,15 @@ msgstr "Zâmbia"
 msgid "Zimbabwe"
 msgstr "Zimbábue"
 
-#: forms.py:12 templates/try.html:58
+#: forms.py:12 templates/try.html:56
 msgid "First name"
 msgstr "Nome"
 
-#: forms.py:14 templates/try.html:62
+#: forms.py:14 templates/try.html:60
 msgid "Last name"
 msgstr "Sobrenome"
 
-#: forms.py:17 templates/try.html:68
+#: forms.py:17 templates/try.html:66
 msgid "Email"
 msgstr "E-mail"
 
@@ -1283,11 +1291,11 @@ msgstr ""
 msgid "Tsuru team"
 msgstr "Time Tsuru"
 
-#: templates/try.html:72
+#: templates/try.html:70
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/try.html:73
+#: templates/try.html:71
 msgid ""
 "Legal Note: submitting this form does not obligate you to participate, "
 "and does not obligate us to select you. It’s simply a way for us to "

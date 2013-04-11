@@ -139,14 +139,19 @@ def survey():
 
 @app.route("/register/facebook")
 def facebook_register():
-    if not has_token(request.args):
-        return "Could not obtain access token from facebook.", 400
-    url = "https://graph.facebook.com/me?"
-    url += "fields=first_name,last_name,email&access_token={0}"
-    url = url.format(request.args["access_token"])
-    response = requests.get(url)
-    info = response.json()
-    return save_user(info["first_name"], info["last_name"], info["email"])
+    try:
+        if not has_token(request.args):
+            return "Could not obtain access token from facebook.", 400
+        url = "https://graph.facebook.com/me?"
+        url += "fields=first_name,last_name,email&access_token={0}"
+        url = url.format(request.args["access_token"])
+        response = requests.get(url)
+        info = response.json()
+        return save_user(info["first_name"], info["last_name"], info["email"])
+    except Exception as e:
+        sys.stderr.write("%s\n" % e)
+        flash(_("We weren't able to get your email from Facebook, please use one of the other options for signing up."))
+        return redirect(url_for("try_tsuru"))
 
 
 @app.route("/register/github")
