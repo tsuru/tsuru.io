@@ -46,7 +46,7 @@
 		<div class="login-form span4">
 			{% with messages = get_flashed_messages() %}
 				{% if messages %}
-				<div class="github-message">{{messages[0]|safe}}</div>
+				<div class="signup-message">{{messages[0]|safe}}</div>
 				{% endif %}
 			{% endwith %}
 			<form action="{{url_for("signup")}}" method="post" accept-charset="utf-8">
