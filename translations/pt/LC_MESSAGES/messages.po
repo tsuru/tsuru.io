@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  tsuru-beta-registration\n"
 "Report-Msgid-Bugs-To: tsuru@corp.globo.com\n"
-"POT-Creation-Date: 2013-04-11 18:47-0300\n"
+"POT-Creation-Date: 2013-04-11 18:54-0300\n"
 "PO-Revision-Date: 2013-04-08 11:48-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Não foi possível obter seu e-mail no Facebook, por favor utilize uma das "
 "outras alternativas para se registrar."
 
-#: app.py:181
+#: app.py:182
 msgid ""
 "You have not defined a public email in your GitHub account, please <a "
 "href=\"http://github.com/settings/profile\">define it</a> and try again, "
