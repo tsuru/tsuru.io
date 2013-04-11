@@ -160,6 +160,15 @@ class FacebookLoginTestCase(DatabaseTest, ClientTest, unittest.TestCase):
             render.assert_called_with("confirmation.html",
                                       form=app.get_survey_form(data["email"]))
 
+    @patch("requests.get")
+    @patch("sys.stderr")
+    def test_ignore_errors(self, stderr, get):
+        get.side_effect = Exception("Something happened")
+        resp = self.api.get("/register/facebook?access_token=10+10")
+        self.assertEqual(302, resp.status_code)
+        self.assertEqual("http://localhost/try", resp.headers["Location"])
+        stderr.write.assert_called_with("Something happened\n")
+
     def test_return_400_and_not_save_user_when_validation_fails(self):
         resp = self.api.get("/register/facebook?access_token=")
         self.assertEqual(400, resp.status_code)
