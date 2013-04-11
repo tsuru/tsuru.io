@@ -11,9 +11,9 @@ import pymongo
 import requests
 import werkzeug
 
-from flask import Flask, render_template, g, request, url_for, redirect
+from flask import Flask, render_template, flash, g, request, url_for, redirect
 from flask_s3 import FlaskS3
-from flaskext.babel import Babel
+from flaskext.babel import Babel, lazy_gettext as _
 
 import forms
 from countries import country_choices
@@ -173,6 +173,7 @@ def github_register():
         return save_user(first_name, last_name, info["email"])
     except Exception as e:
         sys.stderr.write("%s\n" % e)
+        flash(_("You have not defined a public email in your GitHub account, please <a href=\"http://github.com/settings/profile\">define it</a> and try again, or use one of the other options for signing up."))
         return redirect(url_for("try_tsuru"))
 
 
