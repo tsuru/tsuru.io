@@ -1,8 +1,8 @@
 deps:
-	@pip install -qr requirements.txt
+	@pip install -r requirements.txt
 
 test_deps:
-	@pip install -qr test_requirements.txt
+	@pip install -r test_requirements.txt
 
 test: test_deps
 	@nosetests -s --with-coverage --cover-erase --cover-package=app --cover-package=forms --cover-min-percentage=100 --cover-branches
