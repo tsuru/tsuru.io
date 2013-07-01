@@ -18,6 +18,8 @@ class SignupForm(wtf.Form):
         validators=[validators.DataRequired(), validators.Email()]
     )
 
+    identity = wtforms.TextField(_(u"Identity"))
+
 
 class SurveyForm(wtf.Form):
     email = wtforms.HiddenField(u"email",
