@@ -68,7 +68,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="span4">
+					<div class="span4 control-group{% if form.identity.errors %} error{% endif %}">
 						<label for="identity">{% trans %}Identity{% endtrans %}</label>
 						{{ form.identity(class_='input-xlarge') }}
 					</div>
