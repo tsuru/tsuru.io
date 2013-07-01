@@ -87,6 +87,10 @@ class SignupFormTestCase(unittest.TestCase):
         field = forms.SignupForm.identity
         self.assertEqual(wtforms.TextField, field.field_class)
 
+    def test_identity_label(self):
+        field = forms.SignupForm.identity
+        self.assertEqual(u"Identity", field.args[0])
+
     def test_email_label(self):
         field = forms.SignupForm.email
         self.assertEqual(u"Email", field.args[0])
