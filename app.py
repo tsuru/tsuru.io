@@ -63,8 +63,10 @@ def sign(email):
     return h.hexdigest()
 
 
-def save_user(first_name, last_name, email, redirect_to=None):
+def save_user(first_name, last_name, email, identity=None, redirect_to=None):
     user = {"first_name": first_name, "last_name": last_name, "email": email}
+    if identity:
+        user["identity"] = identity
     if g.db.users.find({"email": email}).count() > 0:
         if redirect_to:
             return redirect(redirect_to)
@@ -105,7 +107,8 @@ def try_tsuru():
 def signup():
     f = forms.SignupForm(request.form)
     if f.validate():
-        return save_user(f.first_name.data, f.last_name.data, f.email.data)
+        return save_user(f.first_name.data, f.last_name.data,
+                         f.email.data, identity=f.identity.data)
     return _try(f)
 
 

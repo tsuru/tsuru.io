@@ -74,14 +74,14 @@ class AppTestCase(ClientTest, unittest.TestCase):
     @patch("app.save_user")
     def test_signup(self, save):
         d = {"first_name": "Francisco", "last_name": "Souza",
-             "email": "fss@corp.globo.com"}
+             "email": "fss@corp.globo.com", "identity": "123"}
         save.return_value = "user saved"
         app.SIGN_KEY = "key"
         resp = self.api.post("/signup", data=d)
         self.assertEqual(200, resp.status_code)
         self.assertEqual("user saved", resp.data)
         save.assert_called_with("Francisco", "Souza",
-                                "fss@corp.globo.com")
+                                "fss@corp.globo.com", identity=u"123")
 
     @patch("flask.render_template")
     @patch("forms.SignupForm")
@@ -404,8 +404,12 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
         with patch("app.get_survey_form"):
             with app.app.test_request_context("/"):
                 app.before_request()
-                content, status = app.save_user("Francisco", "Souza",
-                                                "fss@corp.globo.com")
+                content, status = app.save_user(
+                    "Francisco",
+                    "Souza",
+                    "fss@corp.globo.com",
+                    identity="123"
+                )
                 app.teardown_request(None)
             self.assertEqual("template rendered", content)
             self.assertEqual(200, status)
@@ -416,6 +420,7 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
             "email": "fss@corp.globo.com",
             "first_name": "Francisco",
             "last_name": "Souza",
+            "identity": "123",
         })
         self.assertIsNotNone(u)
 
