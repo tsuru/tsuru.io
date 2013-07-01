@@ -19,7 +19,7 @@ class SignupForm(wtf.Form):
     )
 
     identity = wtforms.TextField(
-        _(u"Identity"),
+        _(u"National Identification Number"),
         validators=[validators.DataRequired()]
     )
 
