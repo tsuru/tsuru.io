@@ -193,6 +193,11 @@ def parse_github_name(info):
     return splitted[0], ""
 
 
+@app.route("/tos", methods=["GET"])
+def tos():
+    return render_template("tos.html")
+
+
 @app.route("/register/gplus", methods=["GET"])
 def gplus_register():
     token = request.args.get("token")

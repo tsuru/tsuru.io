@@ -572,3 +572,12 @@ class SurveyTestCase(DatabaseTest, ClientTest, unittest.TestCase):
         resp = self.api.post("/survey", data=data)
         self.assertEqual(201, resp.status_code)
         render.assert_called_once_with("confirmation.html", registered=True)
+
+
+class TosTestCase(unittest.TestCase):
+
+    def test_view(self):
+        reload(app)
+        self.api = app.app.test_client()
+        resp = self.api.get("/tos")
+        self.assertEqual(200, resp.status_code)
