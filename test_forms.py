@@ -91,6 +91,11 @@ class SignupFormTestCase(unittest.TestCase):
         field = forms.SignupForm.identity
         self.assertEqual(u"Identity", field.args[0])
 
+    def test_identity_should_be_mandatory(self):
+        field = forms.SignupForm.identity
+        self.assertIsInstance(field.kwargs["validators"][0],
+                              validators.DataRequired)
+
     def test_email_label(self):
         field = forms.SignupForm.email
         self.assertEqual(u"Email", field.args[0])

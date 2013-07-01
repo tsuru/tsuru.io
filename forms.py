@@ -18,7 +18,10 @@ class SignupForm(wtf.Form):
         validators=[validators.DataRequired(), validators.Email()]
     )
 
-    identity = wtforms.TextField(_(u"Identity"))
+    identity = wtforms.TextField(
+        _(u"Identity"),
+        validators=[validators.DataRequired()]
+    )
 
 
 class SurveyForm(wtf.Form):
