@@ -1,0 +1,71 @@
+<div id="try" class="try">
+	<div class="container">
+		<div class="content row">
+			<div class="span12 msg">
+				<h2 class="title">{% trans %}Try tsuru{% endtrans %}</h2>
+			</div>
+			<div class="span4">
+				<p>{% trans %}A few days ago when we've got some <a href="https://news.ycombinator.com/item?id=5436648" target="_blank">attention</a> in the <a href="http://www.wired.com/wiredenterprise/2013/03/tsuru/" target="_blank">news</a>, we were asked to provide a simple way to try out tsuru. So in a few weeks, we're planning to launch a public cloud PaaS powered by tsuru for you to test what we believe to be the best open source platform as a service in the world.{% endtrans %}</p>
+				<p>{% trans %}Better all, it will be <strong>entirely free</strong> during all the private beta testing period.{% endtrans %}</p>
+				<p>{% trans %}Use the form in this page to stay connected with us and to get a chance to be one of the first to try it out for free.{% endtrans %}</p>
+
+				<p>{% trans %}We're working hard hoping to get a seat for all of you.{% endtrans %}</p>
+
+				<p><strong>{% trans %}Tsuru team{% endtrans %}</strong></p>
+			</div>
+			<div class="login-btns span3">
+				<ul>
+					<li>
+					<a href="#" id="facebook-register"><img src="{{url_for("static", filename="img/botao_facebook.png")}}"></a>
+					<div id="fb-root"></div>
+					</li>
+
+					<li>
+					<a href="https://github.com/login/oauth/authorize?client_id={{ github_client_id }}&scope=user:email"><img src="{{url_for("static", filename="img/botao_github.png")}}"></a>
+					</li>
+
+					<!-- <li> -->
+					<!-- <span id="signinButton"><img src="{{url_for("static", filename="img/botao_gplus.png")}}"></span> -->
+					<!-- </li> -->
+				</ul>
+			</div>
+			<div class="span1 or">
+			</div>
+			<div class="login-form span4">
+				{% with messages = get_flashed_messages() %}
+				{% if messages %}
+				<div class="signup-message">{{messages[0]|safe}}</div>
+				{% endif %}
+				{% endwith %}
+				<form action="{{url_for("signup")}}" method="post" accept-charset="utf-8">
+					{{ form.csrf_token }}
+					<div class="row">
+						<div class="span2 control-group{% if form.first_name.errors %} error{% endif %}">
+							<label for="first_name">{% trans %}First name{% endtrans %}</label>
+							{{ form.first_name(class_='input-medium') }}
+						</div>
+						<div class="span2 control-group{% if form.last_name.errors %} error{% endif %}">
+							<label for="last_name">{% trans %}Last name{% endtrans %}</label>
+							{{ form.last_name(class_='input-medium') }}
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 control-group{% if form.email.errors %} error{% endif %}">
+							<label for="email">{% trans %}Email{% endtrans %}</label>
+							{{ form.email(class_='input-xlarge') }}
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4 control-group{% if form.identity.errors %} error{% endif %}">
+							<label for="identity">{% trans %}National Identification Number{% endtrans %}</label>
+							{{ form.identity(class_='input-xlarge') }}
+						</div>
+					</div>
+					<p>By signing up you agree to the <a href="/tos">Terms of Service</a></p>
+					<p><input type="submit" value="{% trans %}Submit{% endtrans %}"></p>
+					<p class="legal-note">{% trans %}Legal Note: submitting this form does not obligate you to participate, and does not obligate us to select you. It’s simply a way for us to assemble a pool of cool people (you!) who wants to try out Tsuru, the open source polyglot platform as a service.{% endtrans %}</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

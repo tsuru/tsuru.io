@@ -95,7 +95,7 @@ def _try(form):
 
 @app.route("/")
 def index():
-    return render_template("index.html"), 200
+    return render_template("index.html", form=forms.SignupForm()), 200
 
 
 @app.route("/try")
