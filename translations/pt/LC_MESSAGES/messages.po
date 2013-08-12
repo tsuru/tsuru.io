@@ -872,7 +872,7 @@ msgid "Syrian Arab Republic"
 msgstr "Síria"
 
 #: countries.py:226
-msgid "Taiwan, Province of China"
+msgid "Taiwan"
 msgstr "Taiwan"
 
 #: countries.py:227

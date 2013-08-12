@@ -223,7 +223,7 @@ country_choices = [
     ("Sweden", _("Sweden")),
     ("Switzerland", _("Switzerland")),
     ("Syrian Arab Republic", _("Syrian Arab Republic")),
-    ("Taiwan, Province of China", _("Taiwan, Province of China")),
+    ("Taiwan", _("Taiwan")),
     ("Tajikistan", _("Tajikistan")),
     ("Tanzania, United Republic of", _("Tanzania, United Republic of")),
     ("Thailand", _("Thailand")),
