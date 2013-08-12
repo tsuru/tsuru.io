@@ -333,10 +333,10 @@ class GplusLoginTestCase(ClientTest, unittest.TestCase):
                 "/register/gplus?token=mytoken&token_type=Bearer"
             )
             self.assertEqual(200, resp.status_code)
-            render.assert_called_with("confirmation.html",
-                                      form=app.get_survey_form(
-                                      "secret@company.com"
-                                      ))
+            render.assert_called_with(
+                "confirmation.html",
+                form=app.get_survey_form("secret@company.com")
+            )
 
     @patch("requests.get")
     def test_form_when_user_is_already_registered(self, get):
@@ -413,9 +413,10 @@ class HelperTestCase(DatabaseTest, unittest.TestCase):
                 app.teardown_request(None)
             self.assertEqual("template rendered", content)
             self.assertEqual(200, status)
-            render.assert_called_with("confirmation.html",
-                                      form=app.get_survey_form(
-                                      "fss@corp.globo.com"))
+            render.assert_called_with(
+                "confirmation.html",
+                form=app.get_survey_form("fss@corp.globo.com")
+            )
         u = self.db.users.find_one({
             "email": "fss@corp.globo.com",
             "first_name": "Francisco",
