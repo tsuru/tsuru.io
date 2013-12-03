@@ -3,3 +3,4 @@
 .coverage
 messages.pot
 *.mo
+.sass-cache/
