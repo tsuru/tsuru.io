@@ -1,4 +1,0 @@
-hooks:
-  pre-restart:
-    - python upload_static.py
-    - make compile-trans
