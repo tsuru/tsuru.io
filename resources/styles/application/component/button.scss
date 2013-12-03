@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+//
+// Button component
+//
+// -----------------------------------------------------------------------------
+
+$button-color-background: black !default;
+$button-color: white !default;
+
+// -----------------------------------------------------------------------------
+// Placeholders
+// -----------------------------------------------------------------------------
+
+%button {
+	background-color: $button-color-background;
+	border-radius: 100em;
+	color: $button-color;
+	cursor: pointer;
+	display: inline-block;
+	padding: proportional(0.5) proportional(2);
+	transition: background-color 0.25s ease;
+	user-select: none;
+
+	&:hover {
+		background-color: lighten($button-color-background, 2.5%);
+	}
+
+	&:active {
+		background-color: darken($button-color-background, 2.5%);
+	}
+
+}
+
+%button-medium {
+	padding: proportional(1) proportional(2);
+}
+
+%button-large {
+	padding: proportional(1.5) proportional(2);
+}

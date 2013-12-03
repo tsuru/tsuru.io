@@ -1,0 +1,126 @@
+// -----------------------------------------------------------------------------
+//
+// Functions
+//
+// Application functions.
+//
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Directions
+// -----------------------------------------------------------------------------
+
+@function direction($direction) {
+
+	@if ($direction == "ltr") {
+		@return left;
+	} @else if ($direction == "rtl") {
+		@return right;
+	}
+
+}
+
+@function opposite-direction($direction) {
+
+	@if direction($direction) == right {
+		@return left;
+	} @else {
+		@return right;
+	}
+
+}
+
+// -----------------------------------------------------------------------------
+// Layout
+// -----------------------------------------------------------------------------
+
+@function snap($value) {
+	$above: 0;
+	$below: 0;
+	$counter: 0;
+	$found: false;
+	$result: 0;
+
+	@while ($found == false) {
+		$current: $counter * $proportional-base;
+
+		@if ($current == $value) {
+			$result: $value;
+			$found: true;
+		} @else {
+
+			@if ($current < $value) {
+				$below: $current;
+			} @else {
+				$above: $current;
+				$found: true;
+			}
+
+			@if ($above != 0) and ($found == true) {
+
+				@if (($above - $value) >= ($value - $below)) {
+					$result: $below;
+				} @else {
+					$result: $above;
+				}
+
+			}
+
+		}
+
+		$counter: $counter + 1;
+	}
+
+	@return if($relative, relative($result), $result);
+}
+
+@function proportional($multiple: 1) {
+	$proportion: $multiple * $proportional-base;
+	@return if($relative, relative($proportion), $proportion);
+}
+
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+@function font-size($size, $context: $font-size) {
+	@return if($relative, relative($size, $context), $size);
+}
+
+@function font-leading($font-size, $ratio: 1.5) {
+	$counter: 0;
+	$leading: 0;
+
+	@while  (($leading / $font-size) < $ratio) {
+		$counter: $counter + 1;
+		$leading: $counter * $font-leading;
+	}
+
+	@return if($relative, relative($leading), $leading);
+}
+
+// -----------------------------------------------------------------------------
+// Units
+// -----------------------------------------------------------------------------
+
+@function em($value, $context: $font-size) {
+
+	@if (type-of($value) == "number") and (unit($value) == "px") {
+		$value: ($value / $context) * 1em;
+	}
+
+	@return $value;
+}
+
+@function rem($value, $context: $font-size) {
+
+	@if (type-of($value) == "number") and (unit($value) == "px") {
+		$value: ($value / $context) * 1rem;
+	}
+
+	@return $value;
+}
+
+@function relative($value, $context: $font-size) {
+	@return if($relative, rem($value), $value);
+}
