@@ -34,3 +34,9 @@ generate-countries:
 	@echo "country_choices = [" >> countries.py
 	@cat raw/countries.txt | while read l; do echo "    (\"$$l\", _(\"$$l\"))," >> countries.py; done
 	@echo "]" >> countries.py
+
+sass:
+	@sass resources/styles/application.scss resources/styles/application.css
+	@sass resources/styles/large.scss resources/styles/large.css
+	@sass resources/styles/medium.scss resources/styles/medium.css
+	@sass resources/styles/small.scss resources/styles/small.css
