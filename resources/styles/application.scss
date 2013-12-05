@@ -638,8 +638,6 @@ datalist {
 #features {
 
 	.column {
-		@include gutter(proportional(5));
-
 		width: (100% / 3);
 	}
 
@@ -661,8 +659,6 @@ datalist {
 	}
 
 	.column {
-		@include gutter(proportional(6));
-
 		width: (100% / 5);
 	}
 

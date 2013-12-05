@@ -296,8 +296,6 @@ datalist {
   padding: 64px 0 96px; }
 
 #features .column {
-  padding-left: 20px;
-  padding-right: 20px;
   width: 33.33333%; }
 
 #community {
@@ -305,8 +303,6 @@ datalist {
   #community .section-title {
     margin-bottom: 40px; }
   #community .column {
-    padding-left: 24px;
-    padding-right: 24px;
     width: 20%; }
 
 #footer {
