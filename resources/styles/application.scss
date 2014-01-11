@@ -556,6 +556,8 @@ datalist {
 
 	background-color: $color-primary;
 	padding: proportional(4);
+	position: fixed;
+	width: 100%;
 
 	.brand {
 		float: direction($reading-direction);
@@ -579,7 +581,7 @@ datalist {
 
 	background-image: linear-gradient(135deg, rgba(255, 51, 85, 1) 0%, rgba(255, 153, 51, 1) 100%);
 	color: $color-light;
-	padding: proportional(16) 0;
+	padding: 240px 0 128px;
 	text-align: center;
 
 	h1 {
