@@ -256,7 +256,9 @@ datalist {
 
 #header {
   background-color: #222233;
-  padding: 32px; }
+  padding: 32px;
+  position: fixed;
+  width: 100%; }
   #header .brand {
     float: left;
     height: 24px;
@@ -268,7 +270,7 @@ datalist {
 #hero {
   background-image: linear-gradient(135deg, #ff3355 0%, #ff9933 100%);
   color: white;
-  padding: 128px 0;
+  padding: 240px 0 128px;
   text-align: center; }
   #hero h1 {
     color: inherit;
