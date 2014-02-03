@@ -4,3 +4,4 @@
 messages.pot
 *.mo
 .sass-cache/
+node_modules

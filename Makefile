@@ -36,7 +36,4 @@ generate-countries:
 	@echo "]" >> countries.py
 
 sass:
-	@sass resources/styles/application.scss resources/styles/application.css
-	@sass resources/styles/large.scss resources/styles/large.css
-	@sass resources/styles/medium.scss resources/styles/medium.css
-	@sass resources/styles/small.scss resources/styles/small.css
+	@grunt sass
