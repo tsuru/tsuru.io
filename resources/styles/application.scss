@@ -11,6 +11,7 @@
 @import
 	"application/fonts",
 	"application/functions",
+	"application/mixins",
 	"application/variables";
 
 @import
@@ -24,7 +25,7 @@
 * {
 	background: none;
 	border: 0;
-	box-sizing: border-box;
+	@include box-sizing(border-box);
 	color: inherit;
 	font-family: inherit;
 	font-size: 100%;
