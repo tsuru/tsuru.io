@@ -13,7 +13,7 @@ $button-color: white !default;
 
 %button {
 	background-color: $button-color-background;
-	border-radius: 100em;
+	border-radius: 1px;
 	color: $button-color;
 	cursor: pointer;
 	display: inline-block;

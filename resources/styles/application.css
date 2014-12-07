@@ -1,22 +1,22 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300);
-.button, #hero .button {
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300);
+.button, #hero .try .button {
   background-color: #222233;
-  border-radius: 100em;
+  border-radius: 1px;
   color: white;
   cursor: pointer;
   display: inline-block;
   padding: 4px 16px;
   transition: background-color 0.25s ease;
   user-select: none; }
-  .button:hover, #hero .button:hover {
+  .button:hover, #hero .try .button:hover {
     background-color: #27273b; }
-  .button:active, #hero .button:active {
+  .button:active, #hero .try .button:active {
     background-color: #1d1d2b; }
 
 #features .button {
   padding: 8px 16px; }
 
-#hero .button {
+#hero .try .button {
   padding: 12px 16px; }
 
 .column {
@@ -163,7 +163,7 @@ datalist {
 .section-title, .feature-description, .social-icon, #header, #hero {
   -webkit-font-smoothing: antialiased; }
 
-#hero .button {
+#hero .try .button {
   -webkit-font-smoothing: subpixel-antialiased; }
 
 .brand-image {
@@ -259,7 +259,8 @@ datalist {
   background-color: #222233;
   padding: 32px;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 100; }
   #header .brand {
     float: left;
     height: 24px;
@@ -286,9 +287,36 @@ datalist {
     line-height: 32px;
     margin-bottom: 48px;
     padding: 0 25%; }
-  #hero .button {
-    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.5);
-    letter-spacing: 0.1em; }
+  #hero .try {
+    display: inline-block;
+    position: relative; }
+    #hero .try .button {
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.1em; }
+    #hero .try .caret {
+      border-top: 4px solid;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      display: inline-block;
+      vertical-align: middle;
+      border-width: 5px 5px 0; }
+    #hero .try .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      color: #000;
+      top: 100%;
+      left: -2px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      font-size: 14px;
+      min-width: 250px;
+      padding: 6px 0 6px 17px;
+      margin: 2px 0 0;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      text-align: left; }
+    #hero .try .open {
+      display: block; }
   #hero .github {
     background-color: #171515; }
 
