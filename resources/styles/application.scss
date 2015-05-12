@@ -565,6 +565,7 @@ datalist {
 		float: direction($reading-direction);
 		height: proportional(3);
 		margin: proportional(1.5) 0;
+		overflow: hidden;
 	}
 
 	.navigation {
