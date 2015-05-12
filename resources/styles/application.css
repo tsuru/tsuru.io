@@ -84,11 +84,7 @@ h5,
 h6 {
   color: #444455; }
 
-h1 {
-  line-height: 56px;
-  font-size: 55px; }
-
-h2 {
+h1, h2 {
   line-height: 48px;
   font-size: 42px; }
 
