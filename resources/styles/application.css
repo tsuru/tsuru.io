@@ -1,8 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300);
 .button, #hero .try .button {
-  background-color: #222233;
+  background-color: #223;
   border-radius: 1px;
-  color: white;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   padding: 4px 16px;
@@ -84,11 +84,7 @@ h5,
 h6 {
   color: #444455; }
 
-h1 {
-  line-height: 56px;
-  font-size: 55px; }
-
-h2 {
+h1, h2 {
   line-height: 48px;
   font-size: 42px; }
 
@@ -180,7 +176,7 @@ datalist {
   display: block;
   padding: 12px; }
   .navigation-link:hover {
-    color: #33dd99; }
+    color: #3d9; }
 
 .section-header {
   text-align: center; }
@@ -220,16 +216,16 @@ datalist {
   margin-bottom: 24px; }
 
 .social {
-  color: #222233; }
+  color: #223; }
 
 .social-item {
   float: left;
   text-align: center; }
 
 .social-icon {
-  background-color: #222233;
+  background-color: #223;
   border-radius: 100em;
-  color: white;
+  color: #fff;
   display: block;
   font-size: 32px;
   height: 80px;
@@ -240,7 +236,7 @@ datalist {
   width: 80px; }
 
 .social-link:hover .social-icon {
-  background-color: #33dd99; }
+  background-color: #3d9; }
 
 .twitter .social-icon {
   background-color: #00acee; }
@@ -256,7 +252,7 @@ datalist {
   margin-right: 8px; }
 
 #header {
-  background-color: #222233;
+  background-color: #223;
   padding: 32px;
   position: fixed;
   width: 100%;
@@ -264,14 +260,15 @@ datalist {
   #header .brand {
     float: left;
     height: 24px;
-    margin: 12px 0; }
+    margin: 12px 0;
+    overflow: hidden; }
   #header .navigation {
-    color: white;
+    color: #fff;
     float: right; }
 
 #hero {
   background-image: linear-gradient(135deg, #ff3355 0%, #ff9933 100%);
-  color: white;
+  color: #fff;
   padding: 240px 0 128px;
   text-align: center; }
   #hero h1 {
@@ -337,9 +334,11 @@ datalist {
     width: 20%; }
 
 #footer {
-  background-color: #222233;
+  background-color: #223;
   padding: 96px 0; }
 
 @viewport {
   width: device-width;
   zoom: 1; }
+
+/*# sourceMappingURL=application.css.map */

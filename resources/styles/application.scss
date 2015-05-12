@@ -131,12 +131,7 @@ h6 {
 	color: $font-color-headings;
 }
 
-h1 {
-	line-height: font-leading(55px, 1);
-	font-size: font-size(55px);
-}
-
-h2 {
+h1,h2 {
 	line-height: font-leading(42, 1);
 	font-size: font-size(42px);
 }
@@ -565,6 +560,7 @@ datalist {
 		float: direction($reading-direction);
 		height: proportional(3);
 		margin: proportional(1.5) 0;
+		overflow: hidden;
 	}
 
 	.navigation {
