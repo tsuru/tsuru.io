@@ -383,14 +383,49 @@ datalist {
 
 .brand-image {
 	display: block;
-	height: 100%;
+  width: 100%;
+}
+
+.brand-name {
+  display: none;
 }
 
 // -----------------------------------------------------------------------------
 // Navigation module
 // -----------------------------------------------------------------------------
 
+.burger-layer {
+  display: block;
+  width: 100%;
+  height: 20%;
+  background: lighten($color-primary, 40%);
+}
+
+.navigation-button {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 20px;
+  border: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    @extend .burger-layer;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
 .navigation-items {
+  display: none;
 	@extend %container;
 }
 
@@ -556,16 +591,22 @@ datalist {
 	width: 100%;
 	z-index: 100;
 
+  .container {
+    position: relative;
+  }
+
 	.brand {
-		float: direction($reading-direction);
-		height: proportional(3);
-		margin: proportional(1.5) 0;
-		overflow: hidden;
+    display: inline-block;
+    width: 70%;
 	}
 
 	.navigation {
-		color: $color-light;
-		float: opposite-direction($reading-direction);
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-light;
 	}
 
 }
