@@ -1,3 +1,4 @@
+@import "../respond-to";
 // -----------------------------------------------------------------------------
 //
 // Layout component
@@ -9,7 +10,9 @@
 // -----------------------------------------------------------------------------
 
 %column {
-	float: direction($reading-direction);
+  @include respond-to(medium) {
+  	float: direction($reading-direction);
+  }
 }
 
 %container {

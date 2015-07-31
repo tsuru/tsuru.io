@@ -11,7 +11,8 @@
 @import
 	"application/fonts",
 	"application/functions",
-	"application/mixins",
+  "application/mixins",
+	"application/respond-to",
 	"application/variables";
 
 @import
@@ -383,35 +384,126 @@ datalist {
 
 .brand-image {
 	display: block;
-	height: 100%;
+  width: 100%;
+}
+
+.brand-name {
+  display: none;
 }
 
 // -----------------------------------------------------------------------------
 // Navigation module
 // -----------------------------------------------------------------------------
 
+.burger-layer {
+  display: block;
+  width: 100%;
+  height: 20%;
+  background: white;
+  transition: background-color 0.3s ease;
+}
+
+.navigation {
+  width: 100%;
+  color: $color-light;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  @include respond-to(medium) {
+    position: relative;
+    top: 2px;
+    float: right;
+    width: auto;
+    height: auto;
+  }
+
+  &.navigation--is-open {
+    height: 200px;
+    overflow: visible;
+  }
+}
+
+.navigation-button {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 20px;
+  border: none;
+  outline: none;
+
+  @include respond-to(medium) {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    @extend .burger-layer;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &.navigation--is-open {
+    &::before,
+    &::after,
+    .burger-layer {
+      background: #3d9;
+    }
+  }
+}
+
 .navigation-items {
+  margin-top: 20px;
+  font-size: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transition-delay: 0.15s;
 	@extend %container;
+
+  .navigation--is-open & {
+    opacity: 1;
+  }
+
+  @include respond-to(medium) {
+    margin-top: 0;
+    font-size: 16px;
+    opacity: 1;
+  }
 }
 
 .navigation-item {
-	float: direction($reading-direction);
+  @include respond-to(medium) {
+    display: inline-block;
 
-	+ .navigation-item {
-		margin-left: proportional(1);
-	}
-
+    + .navigation-item {
+      margin-left: 30px;
+    }
+  }
 }
 
 .navigation-link {
+  display: block;
+  padding: 14px 0;
 	color: inherit;
-	display: block;
-	padding: proportional(1.5);
 
 	&:hover {
 		color: $color-secondary;
 	}
 
+  @include respond-to(medium) {
+    padding: 0;
+  }
 }
 
 // -----------------------------------------------------------------------------
@@ -445,7 +537,11 @@ datalist {
 	line-height: font-leading(21px);
 	margin: 0 auto proportional(10);
 	text-align: center;
-	width: 50%;
+	width: 100%;
+
+  @include respond-to(medium) {
+    width: 50%;
+  }
 }
 
 .section-button {
@@ -460,7 +556,20 @@ datalist {
 // -----------------------------------------------------------------------------
 
 .feature {
-	text-align: center;
+  text-align: center;
+  padding: 0 5%;
+
+  @include respond-to(medium) {
+    padding: 0;
+  }
+
+  + .feature {
+    margin-top: 50px;
+
+    @include respond-to(medium) {
+      margin-top: 0;
+    }
+  }
 }
 
 .feature-description {
@@ -479,8 +588,10 @@ datalist {
 }
 
 .social-item {
-	float: left;
-	text-align: center;
+  @include respond-to(medium) {
+  	float: left;
+  	text-align: center;
+  }
 }
 
 .social-icon {
@@ -489,26 +600,39 @@ datalist {
 	background-color: $color-dark;
 	border-radius: 100em;
 	color: $color-light;
-	display: block;
-	font-size: font-size(32px);
-	height: proportional(10);
-	line-height: proportional(10);
-	margin: 0 auto proportional(2);
-	text-align: center;
-	transition: background-color 0.25s ease;
-	width: proportional(10);
+  display: inline-block;
+  font-size: font-size(32px);
+  text-align: center;
+  transition: background-color 0.25s ease;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  margin: 8px 10px 8px 0;
+  vertical-align: sub;
+
+  @include respond-to(medium) {
+    display: block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto proportional(2);
+  }
 }
 
 .social-link {
+  display: block;
+  width: 100%;
+
+  @include respond-to(medium) {
+    display: inline;
+    width: auto;
+  }
 
 	&:hover {
-
 		.social-icon {
 			background-color: $color-secondary;
 		}
-
 	}
-
 }
 
 .twitter {
@@ -551,23 +675,33 @@ datalist {
 	@extend %font-smoothing;
 
 	background-color: $color-primary;
-	padding: proportional(4);
+	padding: 32px;
 	position: fixed;
 	width: 100%;
 	z-index: 100;
 
+  @include respond-to(medium) {
+    padding: 42px;
+  }
+
+  .container {
+    position: relative;
+    padding-bottom: 4px;
+
+    @include respond-to(medium) {
+      float: left;
+      padding: 0;
+    }
+  }
+
 	.brand {
-		float: direction($reading-direction);
-		height: proportional(3);
-		margin: proportional(1.5) 0;
-		overflow: hidden;
-	}
+    width: 55%;
+    max-width: 260px;
 
-	.navigation {
-		color: $color-light;
-		float: opposite-direction($reading-direction);
+    @include respond-to(medium) {
+      width: 120px;
+    }
 	}
-
 }
 
 // -----------------------------------------------------------------------------
@@ -576,11 +710,14 @@ datalist {
 
 #hero {
 	@extend %font-smoothing;
+	padding: 180px 0 90px 0;
+  background-image: linear-gradient(135deg, rgba(255, 51, 85, 1) 0%, rgba(255, 153, 51, 1) 100%);
+  color: $color-light;
+  text-align: center;
 
-	background-image: linear-gradient(135deg, rgba(255, 51, 85, 1) 0%, rgba(255, 153, 51, 1) 100%);
-	color: $color-light;
-	padding: 240px 0 128px;
-	text-align: center;
+  @include respond-to(medium) {
+    padding: 240px 0 128px 0;
+  }
 
 	h1 {
 		color: inherit;
@@ -593,23 +730,36 @@ datalist {
 	}
 
 	p {
-		font-size: font-size(21px);
-		line-height: font-leading(21px);
-		margin-bottom: proportional(6);
-		padding: 0 25%;
+    padding: 0 10%;
+    margin-bottom: proportional(6);
+    font-size: 30px;
+    line-height: 160%;
+
+    @include respond-to(medium) {
+      padding: 0 25%;
+      font-size: 21px;
+    }
 	}
 
 	.try {
-		display: inline-block;
+		display: block;
 		position: relative;
+
+    @include respond-to(medium) {
+      display: inline-block;
+    }
 
 		.button {
 			@extend %button-large;
 			@extend %button;
 			@extend %font-smoothing-reset;
-
+      width: 90%;
 			box-shadow: 0 0 0 relative(3px) rgba(255, 255, 255, 0.5);
 			letter-spacing: 0.1em;
+
+      @include respond-to(medium) {
+        width: auto;
+      }
 		}
 
 		.caret {
@@ -624,19 +774,38 @@ datalist {
 		.dropdown-menu {
 			display: none;
 			position: absolute;
-			background-color: #fff;
-			color: #000;
-			top: 100%;
-			left: -2px;
-			border-radius: 4px;
-			border: 1px solid rgba(0,0,0,.15);
-			font-size: 14px;
-			min-width: 250px;
-			padding: 6px 0 6px 17px;
-			margin: 2px 0 0;
-			box-shadow: 0 6px 12px rgba(0,0,0,.175);
-			text-align: left;
+      left: 50%;
+      width: calc(90% + 4px);
+      transform: translateX(-50%);
+      padding: 10px 0;
+      text-align: center;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+      top: 100%;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,.15);
+      margin: 2px 0 0;
+      box-shadow: 0 6px 12px rgba(0,0,0,.175);
+
+      @include respond-to(medium) {
+        width: 250px;
+        left: -2px;
+        transform: none;
+        padding: 6px 0 6px 17px;
+        text-align: left;
+        font-size: 14px;
+      }
 		}
+
+    .dropdown-menu-link {
+      display: block;
+      padding: 10px 0px;
+
+      @include respond-to(medium) {
+        padding: 5px 0px;
+      }
+    }
 
 		.open {
 			display: block;
@@ -658,12 +827,20 @@ datalist {
 	.content-container {
 		margin: 0 auto;
 		max-width: relative(960px);
+    padding: 0 5%;
+
+    @include respond-to(medium) {
+      padding: 0;
+    }
 	}
 
 	.content-section {
-		padding: proportional(8) 0 proportional(12);
-	}
+		padding: 50px 0;
 
+    @include respond-to(medium) {
+      padding: proportional(8) 0 proportional(12) 0;
+    }
+	}
 }
 
 // -----------------------------------------------------------------------------
@@ -673,12 +850,20 @@ datalist {
 #features {
 
 	.column {
-		width: (100% / 3);
+    @include respond-to(medium) {
+  		width: (100% / 3);
+    }
 	}
 
 	.button {
 		@extend %button-medium;
 	}
+
+  .section-title {
+    @include respond-to-max(medium) {
+      margin-bottom: 50px;
+    }
+  }
 
 }
 
@@ -690,11 +875,18 @@ datalist {
 	background-color: #f7eeeb;
 
 	.section-title {
+    font-size: 45px;
 		margin-bottom: proportional(5);
+
+    @include respond-to(medium) {
+      font-size: 55px;
+    }
 	}
 
 	.column {
-		width: (100% / 5);
+    @include respond-to(medium) {
+  		width: (100% / 5);
+    }
 	}
 
 }
@@ -705,7 +897,11 @@ datalist {
 
 #footer {
 	background-color: $color-primary;
-	padding: proportional(12) 0;
+  padding: 50px 0;
+
+  @include respond-to(medium) {
+  	padding: proportional(12) 0;
+  }
 }
 
 // -----------------------------------------------------------------------------

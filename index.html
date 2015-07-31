@@ -1,190 +1,182 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-
+    <meta charset="utf-8" />
     <meta name="description" content="Tsuru is an extensible and open source Platform as a Service (Paas) software.">
     <meta name="keywords" content="tsuru, open source, paas, private paas, docker, auto scale, cloud, plataform as a service, deploy">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:image" content="https://tsuru.io/resources/images/tsuru-fb-icon.png" />
-    <meta name=viewport content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="resources/styles/font-awesome.css">
-    <link rel="stylesheet" href="resources/styles/application.css">
-    <link rel="stylesheet" media="only screen and (min-width: 320px)" href="resources/styles/small.css">
-    <link rel="stylesheet" media="only screen and (min-width: 720px)" href="resources/styles/medium.css">
-    <link rel="stylesheet" media="only screen and (min-width: 1024px)" href="resources/styles/large.css">
-    <link rel="stylesheet" media="print" href="resources/styles/print.css">
-
+    <link rel="stylesheet" href="resources/styles/font-awesome.css" />
+    <link rel="stylesheet" href="resources/styles/application.css" />
+    <link rel="stylesheet" media="only screen and (min-width: 320px)" href="resources/styles/small.css" />
+    <link rel="stylesheet" media="only screen and (min-width: 720px)" href="resources/styles/medium.css" />
+    <link rel="stylesheet" media="only screen and (min-width: 1024px)" href="resources/styles/large.css" />
+    <link rel="stylesheet" media="print" href="resources/styles/print.css" />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
-
     <title>Tsuru</title>
   </head>
   <body>
     <header id="header" class="section">
-    <div class="container">
-      <h1 class="brand">
-	       <a href="/"><img class="brand-image" src="resources/images/brand.svg" alt="Tsuru">Tsuru</a>
-      </h1>
-      <nav class="navigation">
-      <ul class="navigation-items">
-	<li class="navigation-item">
-	<a class="navigation-link" href="http://docs.tsuru.io/en/latest/installing/index.html" title="Install">Install</a></li>
-	<li class="navigation-item">
-	<a class="navigation-link" href="http://docs.tsuru.io/" title="Documentation">Documentation</a></li>
-	<li class="navigation-item">
-	<a class="navigation-link" href="http://blog.tsuru.io" title="Blog">Blog</a></li>
-	<li class="navigation-item">
-	<a class="navigation-link" href="https://github.com/tsuru/tsuru" title="Source">Source</a></li>
-      </ul>
+      <div class="container">
+        <h1 class="brand">
+          <a href="/">
+            <img class="brand-image" src="resources/images/brand.svg" alt="Tsuru" />
+            <span class="brand-name">Tsuru</span>
+          </a>
+        </h1>
+        <button class="navigation-button" id="navigation-button">
+          <div class="burger-layer"></div>
+        </button>
+      </div>
+      <nav class="navigation" id="navigation">
+        <ul class="navigation-items">
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://docs.tsuru.io/en/latest/installing/index.html" title="Install">Install</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://docs.tsuru.io/" title="Documentation">Documentation</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://blog.tsuru.io" title="Blog">Blog</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://github.com/tsuru/tsuru" title="Source">Source</a>
+          </li>
+        </ul>
       </nav>
-    </div>
     </header>
     <section id="hero" class="section">
-    <div class="container">
-      <p>
-      Tsuru is an extensible and open source Platform as a Service software.</p>
-      <div class="try">
-	<a href="#" class="button">
-	  Try tsuru
-	  <span class="caret">
-	  </span>
-	</a>
-	<ul class="dropdown-menu">
-	  <li>
-	  <a target="_blank" href="http://docs.tsuru.io/en/latest/installing/index.html">Install guide</a></li>
-	  <li>
-	  <a target="_blank" href="https://github.com/tsuru/now">All in one machine install script</a></li>
-	  <li>
-	  <a target="_blank" href="https://github.com/tsuru/tsuru-bootstrap">Vagrant + tsuru</a></li>
-	</ul>
+      <div class="container">
+        <p>Tsuru is an extensible and open source Platform as a Service software.</p>
+        <div class="try">
+          <a href="#" class="button">
+            Try tsuru <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-menu-link" target="_blank" href="http://docs.tsuru.io/en/latest/installing/index.html">
+                Install guide
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-menu-link" target="_blank" href="https://github.com/tsuru/now">
+                All in one machine install script
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-menu-link" target="_blank" href="https://github.com/tsuru/tsuru-bootstrap">
+                Vagrant + tsuru
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
     </section>
     <main id="content">
-    <article id="features" class="content-section section">
-    <div class="content-container container">
-      <header class="section-header">
-      <h2 class="section-title">
-	Features</h2>
-      </header>
-      <section class="feature column">
-      <header class="feature-header">
-      <img src="resources/images/techs-icon.svg" alt="Ruby, Python and Java programming languages icons"></a>
-      <h2 class="section-subtitle feature-title">
-	Run anything</h2>
-      </header>
-      <p class="feature-description">
-      	Tsuru goes beyond 12 factor apps. Run any application written in any language or framework.
-      </p>
-      </section>
-      <section class="feature column">
-      <header class="feature-header">
-      <img src="resources/images/rocket-icon.svg" alt="Rocket Rising"></a>
-      <h2 class="section-subtitle feature-title">
-	Deploy fast and safe</h2>
-      </header>
-      <p class="feature-description">
-      	The deploy process is really simple and no special tools needed, just a simple git push.
-      </p>
-      </section>
-      <section class="feature column">
-      <header class="feature-header">
-      <img src="resources/images/scale-icon.svg" alt="Evolving graph"></a>
-      <h2 class="section-subtitle feature-title">
-	Scale</h2>
-      </header>
-      <p class="feature-description">
-      	Grow your application dynamically allocating resources with ease.
-      </p>
-      </section>
-    </div>
-    <div class="content-container container">
-      <section class="feature column">
-      <header class="feature-header">
-      <img src="resources/images/optmize-icon.svg" alt="Speedometer"></a>
-      <h2 class="section-subtitle feature-title">
-	Optimize resources</h2>
-      </header>
-      <p class="feature-description">
-      	Your application units are distributed between multiple nodes increasing resource utilization.
-      </p>
-      </section>
-      <section class="feature column">
-      <header class="feature-header">
-      <img src="resources/images/shield-icon.svg" alt="Security shield"></a>
-      <h2 class="section-subtitle feature-title">
-	Failproof</h2>
-      </header>
-      <p class="feature-description">
-      	Tsuru keeps your apps running by rebalancing resources and recovering failed units and nodes automatically.
-      </p>
-      </section>
-      <section class="feature column">
-      <header class="feature-header">
-      <img src="resources/images/monkey-icon.svg" alt='A monkey in a cloud'></a>
-      <h2 class="section-subtitle feature-title">
-	Iaas integrated</h2>
-      </header>
-      <p class="feature-description">
-      	Tsuru is integrated with EC2, Apache Cloudstack which allows auto provisioning simple, painless and fast.
-      </p>
-      </section>
-    </div>
-    </article>
-    <article id="community" class="content-section section">
-    <div class="content-container container">
-      <header class="section-header">
-      <h2 class="section-title">
-	Community</h2>
-      </header>
-      <p class="section-leader">
-      Tsuru is an open source project and, as such, we welcome contributions. Feel free to report or fix bugs, contribute to the documentation, or just give your opinion about the software.</p>
-      <ul class="social container">
-	<li class="social-item mail column">
-	<a class="social-link" href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-users" title="Tsuru general mailing list">
-	  <i class="social-icon icon fa fa-envelope">
-	  </i>
-	  General mailing list
-	</a>
-	</li>
-	<li class="social-item mail column">
-	<a class="social-link" href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-dev" title="Tsuru development mailing list">
-	  <i class="social-icon icon fa fa-envelope">
-	  </i>
-	  Development mailing list
-	</a>
-	</li>
-	<li class="social-item irc column">
-	<a class="social-link" href="http://webchat.freenode.net/" title="Tsuru IRC channel">
-	  <i class="social-icon icon fa fa-comments">
-	  </i>
-	  #tsuru on Freenode
-	</a>
-	</li>
-	<li class="social-item twitter column">
-	<a class="social-link" href="https://twitter.com/tsurupaas" title="Tsuru on twitter">
-	  <i class="social-icon icon fa fa-twitter">
-	  </i>
-	  Twitter
-	</a>
-	</li>
-	<li class="social-item google-plus column">
-	<a class="social-link" href="https://plus.google.com/118205831863820582274" title="Tsuru on Google+">
-	  <i class="social-icon icon fa fa-google-plus">
-	  </i>
-	  Google+
-	</a>
-	</li>
-      </ul>
-    </div>
-    </article>
+      <article id="features" class="content-section section">
+        <div class="content-container container">
+          <header class="section-header">
+            <h2 class="section-title">Features</h2>
+          </header>
+          <section class="feature column">
+            <header class="feature-header">
+              <img src="resources/images/techs-icon.svg" alt="Ruby, Python and Java programming languages icons" />
+              <h2 class="section-subtitle feature-title">Run anything</h2>
+            </header>
+            <p class="feature-description">
+              Tsuru goes beyond 12 factor apps. Run any application written in any language or framework.
+            </p>
+          </section>
+          <section class="feature column">
+            <header class="feature-header">
+              <img src="resources/images/rocket-icon.svg" alt="Rocket Rising" />
+              <h2 class="section-subtitle feature-title">Deploy fast and safe</h2>
+            </header>
+            <p class="feature-description">
+              The deploy process is really simple and no special tools needed, just a simple git push.
+            </p>
+          </section>
+          <section class="feature column">
+            <header class="feature-header">
+              <img src="resources/images/scale-icon.svg" alt="Evolving graph" />
+              <h2 class="section-subtitle feature-title">Scale</h2>
+            </header>
+            <p class="feature-description">
+              Grow your application dynamically allocating resources with ease.
+            </p>
+          </section>
+        </div>
+        <div class="content-container container">
+          <section class="feature column">
+            <header class="feature-header">
+              <img src="resources/images/optmize-icon.svg" alt="Speedometer" />
+              <h2 class="section-subtitle feature-title">Optimize resources</h2>
+            </header>
+            <p class="feature-description">
+              Your application units are distributed between multiple nodes increasing resource utilization.
+            </p>
+          </section>
+          <section class="feature column">
+            <header class="feature-header">
+              <img src="resources/images/shield-icon.svg" alt="Security shield" />
+              <h2 class="section-subtitle feature-title">Failproof</h2>
+            </header>
+            <p class="feature-description">
+              Tsuru keeps your apps running by rebalancing resources and recovering failed units and nodes automatically.
+            </p>
+          </section>
+          <section class="feature column">
+            <header class="feature-header">
+              <img src="resources/images/monkey-icon.svg" alt='A monkey in a cloud' />
+              <h2 class="section-subtitle feature-title">Iaas integrated</h2>
+            </header>
+            <p class="feature-description">
+              Tsuru is integrated with EC2, Apache Cloudstack which allows auto provisioning simple, painless and fast.
+            </p>
+          </section>
+        </div>
+      </article>
+      <article id="community" class="content-section section">
+        <div class="content-container container">
+          <header class="section-header">
+            <h2 class="section-title">Community</h2>
+          </header>
+          <p class="section-leader">
+            Tsuru is an open source project and, as such, we welcome contributions. Feel free to report or fix bugs, contribute to the documentation, or just give your opinion about the software.
+          </p>
+          <ul class="social container">
+            <li class="social-item mail column">
+              <a class="social-link" href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-users" title="Tsuru general mailing list">
+                <i class="social-icon icon fa fa-envelope"></i> General mailing list
+              </a>
+            </li>
+            <li class="social-item mail column">
+              <a class="social-link" href="https://groups.google.com/forum/?fromgroups#!forum/tsuru-dev" title="Tsuru development mailing list">
+                <i class="social-icon icon fa fa-envelope"></i> Development mailing list
+              </a>
+            </li>
+            <li class="social-item irc column">
+              <a class="social-link" href="http://webchat.freenode.net/" title="Tsuru IRC channel">
+                <i class="social-icon icon fa fa-comments"></i> #tsuru on Freenode
+              </a>
+            </li>
+            <li class="social-item twitter column">
+              <a class="social-link" href="https://twitter.com/tsurupaas" title="Tsuru on twitter">
+                <i class="social-icon icon fa fa-twitter"></i> Twitter
+              </a>
+            </li>
+            <li class="social-item google-plus column">
+              <a class="social-link" href="https://plus.google.com/118205831863820582274" title="Tsuru on Google+">
+                <i class="social-icon icon fa fa-google-plus"></i> Google+
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
     </main>
-    <footer id="footer">
-    </footer>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js">
-    </script>
-    <script src="resources/js/tsuruio.js">
-    </script>
+    <footer id="footer"></footer>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="resources/js/tsuruio.js"></script>
   </body>
 </html>
