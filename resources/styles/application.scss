@@ -11,7 +11,8 @@
 @import
 	"application/fonts",
 	"application/functions",
-	"application/mixins",
+  "application/mixins",
+	"application/respond-to",
 	"application/variables";
 
 @import
@@ -401,12 +402,24 @@ datalist {
   background: lighten($color-primary, 40%);
 }
 
+.navigation {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $color-light;
+}
+
 .navigation-button {
   position: relative;
   display: block;
   width: 30px;
   height: 20px;
   border: none;
+
+  @include respond-to(medium) {
+    display: none;
+  }
 
   &::before,
   &::after {
@@ -427,6 +440,10 @@ datalist {
 .navigation-items {
   display: none;
 	@extend %container;
+
+  @include respond-to(medium) {
+    display: block;
+  }
 }
 
 .navigation-item {
@@ -586,29 +603,28 @@ datalist {
 	@extend %font-smoothing;
 
 	background-color: $color-primary;
-	padding: proportional(4);
+	padding: 32px;
 	position: fixed;
 	width: 100%;
 	z-index: 100;
 
+  @include respond-to(medium) {
+    padding: 42px 32px;
+  }
+
   .container {
     position: relative;
+    padding-bottom: 4px;
   }
 
 	.brand {
-    display: inline-block;
-    width: 70%;
-	}
+    width: 55%;
+    max-width: 260px;
 
-	.navigation {
-    position: absolute;
-    display: inline-block;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: $color-light;
+    @include respond-to(medium) {
+      width: 120px;
+    }
 	}
-
 }
 
 // -----------------------------------------------------------------------------
