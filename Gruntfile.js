@@ -2,6 +2,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		sass: {
+      options: {
+        sourcemap: 'none'
+      },
 			dist: {
 				files: [{
 					expand: true,
@@ -14,7 +17,7 @@ module.exports = function(grunt) {
 		},
 		sitemap: {
 			dist: {
-				pattern: ['*.html', 'easy/*.html', '!**/google*.html'], // this will exclude 'google*.html' 
+				pattern: ['*.html', 'easy/*.html', '!**/google*.html'], // this will exclude 'google*.html'
 				siteRoot: './'
 			}
 		},
