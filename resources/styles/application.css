@@ -174,7 +174,7 @@ datalist {
   display: block;
   width: 100%;
   height: 20%;
-  background: #7a7aa7;
+  background: white;
   transition: background-color 0.3s ease; }
 
 .navigation {
@@ -218,7 +218,7 @@ datalist {
   .navigation-button.navigation--is-open .burger-layer,
   .navigation-button.navigation--is-open .navigation-button::before,
   .navigation-button.navigation--is-open .navigation-button::after {
-    background: #4b4b70; }
+    background: #3d9; }
 
 .navigation-items {
   margin-top: 20px;

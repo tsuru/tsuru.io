@@ -399,7 +399,7 @@ datalist {
   display: block;
   width: 100%;
   height: 20%;
-  background: lighten($color-primary, 40%);
+  background: white;
   transition: background-color 0.3s ease;
 }
 
@@ -458,7 +458,7 @@ datalist {
     &::before,
     &::after,
     .burger-layer {
-      background: lighten($color-primary, 20%);
+      background: #3d9;
     }
   }
 }
