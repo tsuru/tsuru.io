@@ -411,7 +411,11 @@ datalist {
   transition: all 0.3s ease;
 
   @include respond-to(medium) {
-    display: block;
+    position: relative;
+    top: 2px;
+    float: right;
+    width: auto;
+    height: auto;
   }
 
   &.navigation--is-open {
@@ -470,14 +474,22 @@ datalist {
   .navigation--is-open & {
     opacity: 1;
   }
+
+  @include respond-to(medium) {
+    margin-top: 0;
+    font-size: 16px;
+    opacity: 1;
+  }
 }
 
 .navigation-item {
-	// margin-top: 20px;
+  @include respond-to(medium) {
+    display: inline-block;
 
- //  &:first-child {
- //    margin-top: 10px;
- //  }
+    + .navigation-item {
+      margin-left: 30px;
+    }
+  }
 }
 
 .navigation-link {
@@ -489,6 +501,9 @@ datalist {
 		color: $color-secondary;
 	}
 
+  @include respond-to(medium) {
+    padding: 0;
+  }
 }
 
 // -----------------------------------------------------------------------------
@@ -634,12 +649,17 @@ datalist {
 	z-index: 100;
 
   @include respond-to(medium) {
-    padding: 42px 32px;
+    padding: 42px;
   }
 
   .container {
     position: relative;
     padding-bottom: 4px;
+
+    @include respond-to(medium) {
+      float: left;
+      padding: 0;
+    }
   }
 
 	.brand {
