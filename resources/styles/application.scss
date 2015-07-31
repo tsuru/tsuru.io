@@ -897,7 +897,11 @@ datalist {
 
 #footer {
 	background-color: $color-primary;
-	padding: proportional(12) 0;
+  padding: 50px 0;
+
+  @include respond-to(medium) {
+  	padding: proportional(12) 0;
+  }
 }
 
 // -----------------------------------------------------------------------------
