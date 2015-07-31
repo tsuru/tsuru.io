@@ -400,22 +400,36 @@ datalist {
   width: 100%;
   height: 20%;
   background: lighten($color-primary, 40%);
+  transition: background-color 0.3s ease;
 }
 
 .navigation {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 100%;
   color: $color-light;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  @include respond-to(medium) {
+    display: block;
+  }
+
+  &.navigation--is-open {
+    height: 200px;
+    overflow: visible;
+  }
 }
 
 .navigation-button {
-  position: relative;
+  position: absolute;
   display: block;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 30px;
   height: 20px;
   border: none;
+  outline: none;
 
   @include respond-to(medium) {
     display: none;
@@ -435,30 +449,41 @@ datalist {
   &::after {
     bottom: 0;
   }
+
+  &.navigation--is-open {
+    &::before,
+    &::after,
+    .burger-layer {
+      background: lighten($color-primary, 20%);
+    }
+  }
 }
 
 .navigation-items {
-  display: none;
+  margin-top: 20px;
+  font-size: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transition-delay: 0.15s;
 	@extend %container;
 
-  @include respond-to(medium) {
-    display: block;
+  .navigation--is-open & {
+    opacity: 1;
   }
 }
 
 .navigation-item {
-	float: direction($reading-direction);
+	// margin-top: 20px;
 
-	+ .navigation-item {
-		margin-left: proportional(1);
-	}
-
+ //  &:first-child {
+ //    margin-top: 10px;
+ //  }
 }
 
 .navigation-link {
+  display: block;
+  padding: 14px 0;
 	color: inherit;
-	display: block;
-	padding: proportional(1.5);
 
 	&:hover {
 		color: $color-secondary;
