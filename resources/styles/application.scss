@@ -710,16 +710,24 @@ datalist {
 	}
 
 	.try {
-		display: inline-block;
+		display: block;
 		position: relative;
+
+    @include respond-to(medium) {
+      display: inline-block;
+    }
 
 		.button {
 			@extend %button-large;
 			@extend %button;
 			@extend %font-smoothing-reset;
-
+      width: 90%;
 			box-shadow: 0 0 0 relative(3px) rgba(255, 255, 255, 0.5);
 			letter-spacing: 0.1em;
+
+      @include respond-to(medium) {
+        width: auto;
+      }
 		}
 
 		.caret {
@@ -734,19 +742,38 @@ datalist {
 		.dropdown-menu {
 			display: none;
 			position: absolute;
-			background-color: #fff;
-			color: #000;
-			top: 100%;
-			left: -2px;
-			border-radius: 4px;
-			border: 1px solid rgba(0,0,0,.15);
-			font-size: 14px;
-			min-width: 250px;
-			padding: 6px 0 6px 17px;
-			margin: 2px 0 0;
-			box-shadow: 0 6px 12px rgba(0,0,0,.175);
-			text-align: left;
+      left: 50%;
+      width: calc(90% + 4px);
+      transform: translateX(-50%);
+      padding: 10px 0;
+      text-align: center;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+      top: 100%;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,.15);
+      margin: 2px 0 0;
+      box-shadow: 0 6px 12px rgba(0,0,0,.175);
+
+      @include respond-to(medium) {
+        width: 250px;
+        left: -2px;
+        transform: none;
+        padding: 6px 0 6px 17px;
+        text-align: left;
+        font-size: 14px;
+      }
 		}
+
+    .dropdown-menu-link {
+      display: block;
+      padding: 10px 0px;
+
+      @include respond-to(medium) {
+        padding: 5px 0px;
+      }
+    }
 
 		.open {
 			display: block;
