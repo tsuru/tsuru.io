@@ -678,11 +678,14 @@ datalist {
 
 #hero {
 	@extend %font-smoothing;
+	padding: 180px 0 90px 0;
+  background-image: linear-gradient(135deg, rgba(255, 51, 85, 1) 0%, rgba(255, 153, 51, 1) 100%);
+  color: $color-light;
+  text-align: center;
 
-	background-image: linear-gradient(135deg, rgba(255, 51, 85, 1) 0%, rgba(255, 153, 51, 1) 100%);
-	color: $color-light;
-	padding: 240px 0 128px;
-	text-align: center;
+  @include respond-to(medium) {
+    padding: 240px 0 128px 0;
+  }
 
 	h1 {
 		color: inherit;
@@ -695,10 +698,15 @@ datalist {
 	}
 
 	p {
-		font-size: font-size(21px);
-		line-height: font-leading(21px);
-		margin-bottom: proportional(6);
-		padding: 0 25%;
+    padding: 0 10%;
+    margin-bottom: proportional(6);
+    font-size: 30px;
+    line-height: 160%;
+
+    @include respond-to(medium) {
+      padding: 0 25%;
+      font-size: 21px;
+    }
 	}
 
 	.try {
