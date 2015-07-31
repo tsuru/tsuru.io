@@ -537,7 +537,11 @@ datalist {
 	line-height: font-leading(21px);
 	margin: 0 auto proportional(10);
 	text-align: center;
-	width: 50%;
+	width: 100%;
+
+  @include respond-to(medium) {
+    width: 50%;
+  }
 }
 
 .section-button {
@@ -553,12 +557,17 @@ datalist {
 
 .feature {
   text-align: center;
+  padding: 0 5%;
+
+  @include respond-to(medium) {
+    padding: 0;
+  }
 
   + .feature {
     margin-top: 50px;
 
     @include respond-to(medium) {
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
 }
@@ -579,8 +588,10 @@ datalist {
 }
 
 .social-item {
-	float: left;
-	text-align: center;
+  @include respond-to(medium) {
+  	float: left;
+  	text-align: center;
+  }
 }
 
 .social-icon {
@@ -589,26 +600,39 @@ datalist {
 	background-color: $color-dark;
 	border-radius: 100em;
 	color: $color-light;
-	display: block;
-	font-size: font-size(32px);
-	height: proportional(10);
-	line-height: proportional(10);
-	margin: 0 auto proportional(2);
-	text-align: center;
-	transition: background-color 0.25s ease;
-	width: proportional(10);
+  display: inline-block;
+  font-size: font-size(32px);
+  text-align: center;
+  transition: background-color 0.25s ease;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  margin: 8px 10px 8px 0;
+  vertical-align: sub;
+
+  @include respond-to(medium) {
+    display: block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto proportional(2);
+  }
 }
 
 .social-link {
+  display: block;
+  width: 100%;
+
+  @include respond-to(medium) {
+    display: inline;
+    width: auto;
+  }
 
 	&:hover {
-
 		.social-icon {
 			background-color: $color-secondary;
 		}
-
 	}
-
 }
 
 .twitter {
@@ -803,7 +827,7 @@ datalist {
 	.content-container {
 		margin: 0 auto;
 		max-width: relative(960px);
-    padding: 0 10%;
+    padding: 0 5%;
 
     @include respond-to(medium) {
       padding: 0;
@@ -851,11 +875,18 @@ datalist {
 	background-color: #f7eeeb;
 
 	.section-title {
+    font-size: 45px;
 		margin-bottom: proportional(5);
+
+    @include respond-to(medium) {
+      font-size: 55px;
+    }
 	}
 
 	.column {
-		width: (100% / 5);
+    @include respond-to(medium) {
+  		width: (100% / 5);
+    }
 	}
 
 }
