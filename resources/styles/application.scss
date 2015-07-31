@@ -552,7 +552,15 @@ datalist {
 // -----------------------------------------------------------------------------
 
 .feature {
-	text-align: center;
+  text-align: center;
+
+  + .feature {
+    margin-top: 50px;
+
+    @include respond-to(medium) {
+      margin-top: 0px;
+    }
+  }
 }
 
 .feature-description {
@@ -795,12 +803,20 @@ datalist {
 	.content-container {
 		margin: 0 auto;
 		max-width: relative(960px);
+    padding: 0 10%;
+
+    @include respond-to(medium) {
+      padding: 0;
+    }
 	}
 
 	.content-section {
-		padding: proportional(8) 0 proportional(12);
-	}
+		padding: 50px 0;
 
+    @include respond-to(medium) {
+      padding: proportional(8) 0 proportional(12) 0;
+    }
+	}
 }
 
 // -----------------------------------------------------------------------------
@@ -810,12 +826,20 @@ datalist {
 #features {
 
 	.column {
-		width: (100% / 3);
+    @include respond-to(medium) {
+  		width: (100% / 3);
+    }
 	}
 
 	.button {
 		@extend %button-medium;
 	}
+
+  .section-title {
+    @include respond-to-max(medium) {
+      margin-bottom: 50px;
+    }
+  }
 
 }
 
