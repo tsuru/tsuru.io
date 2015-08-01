@@ -2,9 +2,10 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		sass: {
-      options: {
-        sourcemap: 'none'
-      },
+            options: {
+                sourcemap: 'none',
+                style: 'compressed'
+            },
 			dist: {
 				files: [{
 					expand: true,
@@ -15,6 +16,18 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer-core')({browsers: 'last 2 versions'}), // add vendor prefixes
+                ]
+            },
+            dist: {
+                src: 'resources/styles/**/*.css'
+            }
+        },
+
 		sitemap: {
 			dist: {
 				pattern: ['*.html', 'easy/*.html', '!**/google*.html'], // this will exclude 'google*.html'
@@ -52,7 +65,7 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: '**/*.scss',
-				tasks: ['sass']
+				tasks: ['sass', 'postcss']
 			},
 			html: {
 				files: ['*.html', 'easy/*.html', '!**/google*.html'],
@@ -63,7 +76,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-sitemap');
-	grunt.loadNpmTasks('grunt-robots-txt');
+    grunt.loadNpmTasks('grunt-robots-txt');
+	grunt.loadNpmTasks('grunt-postcss');
 
 	grunt.registerTask('map',['sitemap', 'robotstxt']);
 	grunt.registerTask('default',['watch']);
