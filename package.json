@@ -8,6 +8,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-postcss": "^0.5.5",
     "grunt-robots-txt": "0.3.0",
-    "grunt-sitemap": "1.2.1"
+    "grunt-sitemap": "1.2.1",
+    "load-grunt-tasks": "^3.2.0"
   }
 }
