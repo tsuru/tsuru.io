@@ -10,16 +10,6 @@ module.exports = (grunt) ->
 # 	grunt.initConfig({
 # 		pkg: grunt.file.readJSON('package.json'),
 
-#         postcss: {
-#             options: {
-#                 processors: [
-#                     require('autoprefixer-core')({browsers: 'last 2 versions'}), add vendor prefixes
-#                 ]
-#             },
-#             dist: {
-#                 src: 'resources/styles/**/*.css'
-#             }
-#         },
 
 # 		sitemap: {
 # 			dist: {
