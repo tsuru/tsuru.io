@@ -10,13 +10,6 @@ module.exports = (grunt) ->
 # 	grunt.initConfig({
 # 		pkg: grunt.file.readJSON('package.json'),
 
-
-# 		sitemap: {
-# 			dist: {
-# 				pattern: ['*.html', 'easy/*.html', '!**/google*.html'], this will exclude 'google*.html'
-# 				siteRoot: './'
-# 			}
-# 		},
 # 		robotstxt: {
 #             dist: {
 #                 dest: './',
