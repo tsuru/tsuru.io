@@ -1,12 +1,22 @@
-(function($){
-  $('#navigation-button').click(function(e){
-    e.preventDefault();
-    $(this).toggleClass('navigation--is-open');
-    $('#navigation').toggleClass('navigation--is-open');
+(function(){
+  var cancelEvent = function(event){
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
+  };
+
+  var navigation = document.getElementById('navigation');
+  var navButton = document.getElementById('navigation-button');
+
+  navButton.addEventListener('click', function(e){
+    cancelEvent(e);
+    navButton.classList.toggle('navigation--is-open');
+    navigation.classList.toggle('navigation--is-open');
   });
 
-  $('.try .button').on('click', function(e){
-    e.preventDefault();
-    $('.dropdown-menu').toggleClass('open');
+  var tryButton = document.getElementById('try-button');
+  var dropdown = document.getElementById('dropdown-menu');
+
+  tryButton.addEventListener('click', function(e){
+    cancelEvent(e);
+    dropdown.classList.toggle('open');
   });
-})(jQuery);
+})();
