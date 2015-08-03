@@ -2,10 +2,7 @@ module.exports = (grunt) ->
   grunt.config 'watch',
     css:
       files: 'resources/styles/**/*.scss'
-      tasks: [
-        'sass'
-        'postcss'
-      ]
+      tasks: 'css'
     html:
       files: '**/*.html'
-      tasks: 'sitemap'
+      tasks: 'map'
