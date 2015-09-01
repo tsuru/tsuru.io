@@ -538,10 +538,6 @@ datalist {
 	margin: 0 auto proportional(10);
 	text-align: center;
 	width: 100%;
-
-  @include respond-to(medium) {
-    width: 50%;
-  }
 }
 
 .section-button {
@@ -866,13 +862,46 @@ datalist {
   }
 
 }
+// -----------------------------------------------------------------------------
+// Trusted by section
+// -----------------------------------------------------------------------------
+
+#trusted {
+	background-color: #f7eeeb;
+
+	.section-title {
+		margin-bottom: proportional(5);
+	}
+}
+
+.trusted {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.trusted-item {
+    @include respond-to(medium) {
+  	    float: left;
+  	    text-align: center;
+        padding: 50px 25px 0 25px;
+    }
+
+    img {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
 
 // -----------------------------------------------------------------------------
 // Community section
 // -----------------------------------------------------------------------------
 
 #community {
-	background-color: #f7eeeb;
+	background-color: #fff;
 
 	.section-title {
     font-size: 45px;
