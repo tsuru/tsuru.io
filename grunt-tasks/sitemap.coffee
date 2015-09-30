@@ -4,6 +4,5 @@ module.exports = (grunt) ->
       siteRoot: './'
       pattern: [
         '*.html'
-        'easy/*.html'
         '!**/google*.html' # this will exclude 'google*.html'
       ]
