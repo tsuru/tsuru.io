@@ -913,7 +913,7 @@ datalist {
 
 	.column {
     @include respond-to(medium) {
-  		width: (100% / 5);
+  		width: (100% / 4);
     }
 	}
 
