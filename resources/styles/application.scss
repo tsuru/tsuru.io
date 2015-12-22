@@ -877,32 +877,50 @@ datalist {
 .trusted {
     display: flex;
     justify-content: center;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+    text-align: center;
+
+    @include respond-to(medium) {
+        flex-flow: row wrap;
+    }
+
+    @include respond-to(large) {
+        flex-flow: row wrap;
+    }
 }
 
 
 .trusted-item {
-    @include respond-to(medium) {
-  	    text-align: center;
-        padding: 50px 25px 0 25px;
-        width: 25%;
-    }
+    padding: 20px;
 
     &.hu img {
-        width: 55%; 
+        width: 30%;
     }
 
-    &.gcom img {
-        width: 70%;
+    &.jb img {
+        width: 60%;
     }
 
-    img {
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        width: 100%;
+    @include respond-to(medium) {
+        padding: 50px 25px 0 25px;
+        width: 25%;
+
+        &.hu img {
+            width: 55%;
+        }
+
+        &.gcom img {
+            width: 70%;
+        }
+
+        img {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 100%;
+        }
     }
 }
 
