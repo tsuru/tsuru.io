@@ -880,10 +880,20 @@ datalist {
     flex-flow: row wrap;
 }
 
+
 .trusted-item {
     @include respond-to(medium) {
   	    text-align: center;
         padding: 50px 25px 0 25px;
+        width: 25%;
+    }
+
+    &.hu img {
+        width: 55%; 
+    }
+
+    &.gcom img {
+        width: 70%;
     }
 
     img {
@@ -892,6 +902,7 @@ datalist {
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+        width: 100%;
     }
 }
 
