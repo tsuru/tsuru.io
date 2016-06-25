@@ -24,7 +24,7 @@ That's it. You're set.
 Having the dependencies installed, just `grunt run`:
 
 ```shell
-$ npm start
+$ npm run build
 ```
 
 Now you can access it locally at `localhost:7777`.

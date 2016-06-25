@@ -2,7 +2,7 @@
   "name": "Tsuru",
   "homepage": "http://tsuru.io/",
   "scripts": {
-    "start": "node_modules/grunt-cli/bin/grunt run"
+    "build": "node_modules/grunt-cli/bin/grunt run"
   },
   "devDependencies": {
     "autoprefixer-core": "5.2.1",
