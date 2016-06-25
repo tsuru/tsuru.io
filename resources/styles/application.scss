@@ -104,11 +104,12 @@ section {
 }
 
 body {
-	color: $font-color;
-	direction: $reading-direction;
-	font-family: $font-family;
-	font-size: font-size($font-size);
-	line-height: font-leading($font-size);
+       background-color: $color-primary;
+       color: $font-color;
+       direction: $reading-direction;
+       font-family: $font-family;
+       font-size: font-size($font-size);
+       line-height: font-leading($font-size);
 }
 
 // -----------------------------------------------------------------------------
@@ -554,6 +555,7 @@ datalist {
 .feature {
   text-align: center;
   padding: 0 5%;
+  background-color: #FFF;
 
   @include respond-to(medium) {
     padding: 0;
@@ -945,7 +947,7 @@ datalist {
 // -----------------------------------------------------------------------------
 
 #footer {
-	background-color: $color-primary;
+  background-color: $color-primary;
   padding: 50px 0;
 
   @include respond-to(medium) {
