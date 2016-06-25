@@ -24,9 +24,8 @@ That's it. You're set.
 Having the dependencies installed, just `grunt run`:
 
 ```shell
-$ cd tsuru.io
-$ grunt run
+$ npm run build
 ```
 
-Now you can access it locally at `localhost:7777`.  
+Now you can access it locally at `localhost:7777`.
 At any changes, the page will be automatically generated again.
