@@ -838,6 +838,7 @@ datalist {
 // -----------------------------------------------------------------------------
 
 #features {
+	background-color: #fff;
 
 	.column {
     @include respond-to(medium) {
