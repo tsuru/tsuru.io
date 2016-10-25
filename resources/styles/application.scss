@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 // -----------------------------------------------------------------------------
 //
 // Application
@@ -9,45 +8,36 @@
 // -----------------------------------------------------------------------------
 
 @import
-	"application/fonts",
-	"application/functions",
-  "application/mixins",
-	"application/respond-to",
-	"application/variables";
-
+"application/fonts", "application/functions", "application/mixins", "application/respond-to", "application/variables";
 @import
-	"application/component/button",
-	"application/component/layout";
+"application/component/button", "application/component/layout";
 
 // -----------------------------------------------------------------------------
 // Global
 // -----------------------------------------------------------------------------
 
 * {
-	background: none;
-	border: 0;
-	@include box-sizing(border-box);
-	color: inherit;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: normal;
-	font-weight: 500;
-	line-height: inherit;
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
-	vertical-align: baseline;
+    background: none;
+    border: 0;
+    @include box-sizing(border-box);
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: 500;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    vertical-align: baseline;
 }
-
 *[disabled] {
-	cursor: not-allowed;
-	user-select: none;
+    cursor: not-allowed;
+    user-select: none;
 }
-
 *[hidden] {
-	display: none;
+    display: none;
 }
-
 // -----------------------------------------------------------------------------
 // Metadata elements
 //
@@ -64,9 +54,8 @@
 // -----------------------------------------------------------------------------
 
 template {
-	display: none;
+    display: none;
 }
-
 // -----------------------------------------------------------------------------
 // Root element
 //
@@ -75,9 +64,8 @@ template {
 // -----------------------------------------------------------------------------
 
 html {
-	font-size: $font-size;
+    font-size: $font-size;
 }
-
 // -----------------------------------------------------------------------------
 // Sectioning elements
 //
@@ -93,25 +81,17 @@ html {
 //
 // -----------------------------------------------------------------------------
 
-article,
-aside,
-footer,
-header,
-main,
-nav,
-section {
-	display: block;
+article, aside, footer, header, main, nav, section {
+    display: block;
 }
-
 body {
-       background-color: $color-primary;
-       color: $font-color;
-       direction: $reading-direction;
-       font-family: $font-family;
-       font-size: font-size($font-size);
-       line-height: font-leading($font-size);
+    background-color: $color-primary;
+    color: $font-color;
+    direction: $reading-direction;
+    font-family: $font-family;
+    font-size: font-size($font-size);
+    line-height: font-leading($font-size);
 }
-
 // -----------------------------------------------------------------------------
 // Heading elements
 //
@@ -124,40 +104,29 @@ body {
 //
 // -----------------------------------------------------------------------------
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: $font-color-headings;
+h1, h2, h3, h4, h5, h6 {
+    color: $font-color-headings;
 }
-
-h1,h2 {
-	line-height: font-leading(42, 1);
-	font-size: font-size(42px);
+h1, h2 {
+    line-height: font-leading(42, 1);
+    font-size: font-size(42px);
 }
-
 h3 {
-	line-height: font-leading(34px, 1);
-	font-size: font-size(34px);
+    line-height: font-leading(34px, 1);
+    font-size: font-size(34px);
 }
-
 h4 {
-	line-height: font-leading(26px, 1);
-	font-size: font-size(26px);
+    line-height: font-leading(26px, 1);
+    font-size: font-size(26px);
 }
-
 h5 {
-	line-height: font-leading(21px, 1);
-	font-size: font-size(21px);
+    line-height: font-leading(21px, 1);
+    font-size: font-size(21px);
 }
-
 h6 {
-	line-height: font-leading($font-size, 1);
-	font-size: font-size($font-size);
+    line-height: font-leading($font-size, 1);
+    font-size: font-size($font-size);
 }
-
 // -----------------------------------------------------------------------------
 // Flow elements
 //
@@ -175,24 +144,18 @@ h6 {
 //
 // -----------------------------------------------------------------------------
 
-figure,
-figcaption {
-	display: block;
+figure, figcaption {
+    display: block;
 }
-
-ol,
-ul {
-	list-style: none;
+ol, ul {
+    list-style: none;
 }
-
 hr {
-	height: 0;
+    height: 0;
 }
-
 pre {
-	white-space: pre-wrap;
+    white-space: pre-wrap;
 }
-
 // -----------------------------------------------------------------------------
 // Phrasing elements
 //
@@ -224,38 +187,28 @@ pre {
 //
 // -----------------------------------------------------------------------------
 
-code,
-kbd,
-samp {
-	font-family: $font-family-monospace;
+code, kbd, samp {
+    font-family: $font-family-monospace;
 }
-
-sub,
-sup {
-	font-size: 80%;
-	line-height: 0;
+sub, sup {
+    font-size: 80%;
+    line-height: 0;
 }
-
 b {
-	font-weight: 900;
+    font-weight: 900;
 }
-
 q {
-	quotes: "\201C" "\201D" "\2018" "\2019";
+    quotes: "\201C" "\201D" "\2018" "\2019";
 }
-
 small {
-	font-size: 80%;
+    font-size: 80%;
 }
-
 sub {
-	vertical-align: sub;
+    vertical-align: sub;
 }
-
 sup {
-	vertical-align: super;
+    vertical-align: super;
 }
-
 // -----------------------------------------------------------------------------
 // Edit elements
 //
@@ -286,12 +239,9 @@ sup {
 //
 // -----------------------------------------------------------------------------
 
-audio,
-canvas,
-video {
-	display: block;
+audio, canvas, video {
+    display: block;
 }
-
 // -----------------------------------------------------------------------------
 // Tabular elements
 //
@@ -309,11 +259,10 @@ video {
 // -----------------------------------------------------------------------------
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
 }
-
 // -----------------------------------------------------------------------------
 // Form elements
 //
@@ -336,9 +285,8 @@ table {
 // -----------------------------------------------------------------------------
 
 datalist {
-	display: none;
+    display: none;
 }
-
 // -----------------------------------------------------------------------------
 // Interactive elements
 //
@@ -356,519 +304,456 @@ datalist {
 // -----------------------------------------------------------------------------
 
 %font-smoothing {
-	-webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
-
 %font-smoothing-reset {
-	-webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
-
 // -----------------------------------------------------------------------------
 // Layout module
 // -----------------------------------------------------------------------------
 
 .column {
-	@extend %column;
+    @extend %column;
 }
-
 .container {
-	@extend %container;
+    @extend %container;
 }
-
 .section {
-	@extend %section;
+    @extend %section;
 }
-
 // -----------------------------------------------------------------------------
 // Brand module
 // -----------------------------------------------------------------------------
 
 .brand-image {
-	display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
-
 .brand-name {
-  display: none;
+    display: none;
 }
-
 // -----------------------------------------------------------------------------
 // Navigation module
 // -----------------------------------------------------------------------------
 
 .burger-layer {
-  display: block;
-  width: 100%;
-  height: 20%;
-  background: white;
-  transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    height: 20%;
+    background: white;
+    transition: background-color 0.3s ease;
 }
-
 .navigation {
-  width: 100%;
-  color: $color-light;
-  height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
+    width: 100%;
+    color: $color-light;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
 
-  @include respond-to(medium) {
-    position: relative;
-    top: 2px;
-    float: right;
-    width: auto;
-    height: auto;
-  }
-
-  &.navigation--is-open {
-    height: 200px;
-    overflow: visible;
-  }
+    @include respond-to(medium) {
+        position: relative;
+        top: 2px;
+        float: right;
+        width: auto;
+        height: auto;
+    }
+    &.navigation--is-open {
+        height: 200px;
+        overflow: visible;
+    }
 }
-
 .navigation-button {
-  position: absolute;
-  display: block;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 20px;
-  border: none;
-  outline: none;
-
-  @include respond-to(medium) {
-    display: none;
-  }
-
-  &::before,
-  &::after {
-    content: '';
     position: absolute;
-    @extend .burger-layer;
-  }
+    display: block;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 20px;
+    border: none;
+    outline: none;
 
-  &::before {
-    top: 0;
-  }
-
-  &::after {
-    bottom: 0;
-  }
-
-  &.navigation--is-open {
-    &::before,
-    &::after,
-    .burger-layer {
-      background: #3d9;
+    @include respond-to(medium) {
+        display: none;
     }
-  }
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        @extend .burger-layer;
+    }
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+    &.navigation--is-open {
+        &::before, &::after, .burger-layer {
+            background: #3d9;
+        }
+    }
 }
-
 .navigation-items {
-  margin-top: 20px;
-  font-size: 25px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  transition-delay: 0.15s;
-	@extend %container;
+    margin-top: 20px;
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.15s;
+    @extend %container;
 
-  .navigation--is-open & {
-    opacity: 1;
-  }
-
-  @include respond-to(medium) {
-    margin-top: 0;
-    font-size: 16px;
-    opacity: 1;
-  }
-}
-
-.navigation-item {
-  @include respond-to(medium) {
-    display: inline-block;
-
-    + .navigation-item {
-      margin-left: 30px;
+    .navigation--is-open & {
+        opacity: 1;
     }
-  }
+    @include respond-to(medium) {
+        margin-top: 0;
+        font-size: 16px;
+        opacity: 1;
+    }
 }
+.navigation-item {
+    @include respond-to(medium) {
+        display: inline-block;
 
+        + .navigation-item {
+            margin-left: 30px;
+        }
+    }
+}
 .navigation-link {
-  display: block;
-  padding: 14px 0;
-	color: inherit;
+    display: block;
+    padding: 14px 0;
+    color: inherit;
 
-	&:hover {
-		color: $color-secondary;
-	}
-
-  @include respond-to(medium) {
-    padding: 0;
-  }
+    &:hover {
+        color: $color-secondary;
+    }
+    @include respond-to(medium) {
+        padding: 0;
+    }
 }
-
 // -----------------------------------------------------------------------------
 // Section module
 // -----------------------------------------------------------------------------
 
 .section-header {
-	text-align: center;
+    text-align: center;
 }
-
 .section-title {
-	@extend %font-smoothing;
-
-	font-size: font-size(55px);
-	font-weight: $font-weight-thin;
-	letter-spacing: -0.035em;
-	line-height: font-leading(55px, 1);
-	margin-bottom: proportional(12);
+    @extend %font-smoothing;
+    font-size: font-size(55px);
+    font-weight: $font-weight-thin;
+    letter-spacing: -0.035em;
+    line-height: font-leading(55px, 1);
+    margin-bottom: proportional(12);
 }
-
 .section-subtitle {
-	font-size: font-size(21px);
-	font-weight: $font-weight-regular;
-	line-height: font-leading(21px, 1);
-	margin-bottom: proportional(3);
+    font-size: font-size(21px);
+    font-weight: $font-weight-regular;
+    line-height: font-leading(21px, 1);
+    margin-bottom: proportional(3);
 }
-
 .section-leader {
-	font-size: font-size(21px);
-	font-weight: $font-weight-light;
-	line-height: font-leading(21px);
-	margin: 0 auto proportional(10);
-	text-align: center;
-	width: 100%;
+    font-size: font-size(21px);
+    font-weight: $font-weight-light;
+    line-height: font-leading(21px);
+    margin: 0 auto proportional(10);
+    text-align: center;
+    width: 100%;
 }
-
 .section-button {
-	font-size: font-size(13px);
-	letter-spacing: 0.1em;
-	line-height: font-leading(13px);
-	text-transform: uppercase;
+    font-size: font-size(13px);
+    letter-spacing: 0.1em;
+    line-height: font-leading(13px);
+    text-transform: uppercase;
 }
-
 // -----------------------------------------------------------------------------
 // Feature module
 // -----------------------------------------------------------------------------
 
 .feature {
-  text-align: center;
-  padding: 0 5%;
-  background-color: #FFF;
-
-  @include respond-to(medium) {
-    padding: 0;
-  }
-
-  + .feature {
-    margin-top: 50px;
+    text-align: center;
+    padding: 0 5%;
+    background-color: #FFF;
 
     @include respond-to(medium) {
-      margin-top: 0;
+        padding: 0;
     }
-  }
-}
+    + .feature {
+        margin-top: 50px;
 
+        @include respond-to(medium) {
+            margin-top: 0;
+        }
+    }
+}
 .feature-description {
-	@extend %font-smoothing;
-
-	font-weight: $font-weight-regular;
-	margin-bottom: proportional(3);
+    @extend %font-smoothing;
+    font-weight: $font-weight-regular;
+    margin-bottom: proportional(3);
 }
-
 // -----------------------------------------------------------------------------
 // Social module
 // -----------------------------------------------------------------------------
 
 .social {
-	color: $color-primary;
+    color: $color-primary;
 }
-
 .social-item {
-  @include respond-to(medium) {
-  	float: left;
-  	text-align: center;
-  }
+    @include respond-to(medium) {
+        float: left;
+        text-align: center;
+    }
 }
-
 .social-icon {
-	@extend %font-smoothing;
+    @extend %font-smoothing;
+    background-color: $color-dark;
+    border-radius: 100em;
+    color: $color-light;
+    display: inline-block;
+    font-size: font-size(32px);
+    text-align: center;
+    transition: background-color 0.25s ease;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin: 8px 10px 8px 0;
+    vertical-align: sub;
 
-	background-color: $color-dark;
-	border-radius: 100em;
-	color: $color-light;
-  display: inline-block;
-  font-size: font-size(32px);
-  text-align: center;
-  transition: background-color 0.25s ease;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  margin: 8px 10px 8px 0;
-  vertical-align: sub;
-
-  @include respond-to(medium) {
-    display: block;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    margin: 0 auto proportional(2);
-  }
+    @include respond-to(medium) {
+        display: block;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        margin: 0 auto proportional(2);
+    }
 }
-
 .social-link {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 
-  @include respond-to(medium) {
-    display: inline;
-    width: auto;
-  }
-
-	&:hover {
-		.social-icon {
-			background-color: $color-secondary;
-		}
-	}
+    @include respond-to(medium) {
+        display: inline;
+        width: auto;
+    }
+    &:hover {
+        .social-icon {
+            background-color: $color-secondary;
+        }
+    }
 }
-
 .google-plus {
-
-	.social-icon {
-		background-color: $color-google;
-	}
-
+    .social-icon {
+        background-color: $color-google;
+    }
 }
-
 // -----------------------------------------------------------------------------
 // Button module
 // -----------------------------------------------------------------------------
 
 .button {
-	@extend %button;
+    @extend %button;
 }
-
 .button-icon {
-	display: block;
-	float: left;
-	font-size: font-size(24px);
-	line-height: font-leading(24px, 1);
-	margin-right: proportional(1);
+    display: block;
+    float: left;
+    font-size: font-size(24px);
+    line-height: font-leading(24px, 1);
+    margin-right: proportional(1);
 }
-
 // -----------------------------------------------------------------------------
 // Header section
 // -----------------------------------------------------------------------------
 
 #header {
-	@extend %font-smoothing;
-
-	background-color: $color-primary;
-	padding: 32px;
-	position: fixed;
-	width: 100%;
-	z-index: 100;
-
-  @include respond-to(medium) {
-    padding: 42px;
-  }
-
-  .container {
-    position: relative;
-    padding-bottom: 4px;
+    @extend %font-smoothing;
+    background-color: $color-primary;
+    padding: 32px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 
     @include respond-to(medium) {
-      float: left;
-      padding: 0;
+        padding: 42px;
     }
-  }
+    .container {
+        position: relative;
+        padding-bottom: 4px;
 
-	.brand {
-    width: 55%;
-    max-width: 260px;
-
-    @include respond-to(medium) {
-      width: 120px;
+        @include respond-to(medium) {
+            float: left;
+            padding: 0;
+        }
     }
-	}
+    .brand {
+        width: 55%;
+        max-width: 260px;
+
+        @include respond-to(medium) {
+            width: 120px;
+        }
+    }
 }
-
 // -----------------------------------------------------------------------------
 // Hero section
 // -----------------------------------------------------------------------------
 
 #hero {
-	@extend %font-smoothing;
-	padding: 180px 0 90px 0;
-  background-image: linear-gradient(135deg, rgba(255, 51, 85, 1) 0%, rgba(255, 153, 51, 1) 100%);
-  color: $color-light;
-  text-align: center;
-
-  @include respond-to(medium) {
-    padding: 240px 0 128px 0;
-  }
-
-	h1 {
-		color: inherit;
-		font-size: font-size(42px);
-		font-weight: $font-weight-thin;
-		line-height: font-leading(42px, 1);
-		margin-bottom: proportional(3);
-		text-transform: uppercase;
-		letter-spacing: -0.05em;
-	}
-
-	p {
-    padding: 0 10%;
-    margin-bottom: proportional(6);
-    font-size: 30px;
-    line-height: 160%;
+    @extend %font-smoothing;
+    padding: 180px 0 90px 0;
+    background-image: linear-gradient(135deg, rgba(255, 51, 85, 1) 0%, rgba(255, 153, 51, 1) 100%);
+    color: $color-light;
+    text-align: center;
 
     @include respond-to(medium) {
-      padding: 0 25%;
-      font-size: 21px;
+        padding: 240px 0 128px 0;
     }
-	}
-
-	.try {
-		display: block;
-		position: relative;
-
-    @include respond-to(medium) {
-      display: inline-block;
+    h1 {
+        color: inherit;
+        font-size: font-size(42px);
+        font-weight: $font-weight-thin;
+        line-height: font-leading(42px, 1);
+        margin-bottom: proportional(3);
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
     }
+    p {
+        padding: 0 10%;
+        margin-bottom: proportional(6);
+        font-size: 30px;
+        line-height: 160%;
 
-		.button {
-			@extend %button-large;
-			@extend %button;
-			@extend %font-smoothing-reset;
-      width: 90%;
-			box-shadow: 0 0 0 relative(3px) rgba(255, 255, 255, 0.5);
-			letter-spacing: 0.1em;
-
-      @include respond-to(medium) {
-        width: auto;
-      }
-		}
-
-		.caret {
-			border-top: 4px solid;
-			border-right: 4px solid transparent;
-			border-left: 4px solid transparent;
-			display: inline-block;
-			vertical-align: middle;
-			border-width: 5px 5px 0;
-		}
-
-		.dropdown-menu {
-			display: none;
-			position: absolute;
-      left: 50%;
-      width: calc(90% + 4px);
-      transform: translateX(-50%);
-      padding: 10px 0;
-      text-align: center;
-      font-size: 16px;
-      background-color: #fff;
-      color: #000;
-      top: 100%;
-      border-radius: 4px;
-      border: 1px solid rgba(0,0,0,.15);
-      margin: 2px 0 0;
-      box-shadow: 0 6px 12px rgba(0,0,0,.175);
-
-      @include respond-to(medium) {
-        width: 250px;
-        left: -2px;
-        transform: none;
-        padding: 6px 0 6px 17px;
-        text-align: left;
-        font-size: 14px;
-      }
-		}
-
-    .dropdown-menu-link {
-      display: block;
-      padding: 10px 0px;
-
-      @include respond-to(medium) {
-        padding: 5px 0px;
-      }
+        @include respond-to(medium) {
+            padding: 0 25%;
+            font-size: 21px;
+        }
     }
+    .try {
+        display: block;
+        position: relative;
 
-		.open {
-			display: block;
-		}
-	}
+        @include respond-to(medium) {
+            display: inline-block;
+        }
+        .button {
+            @extend %button-large;
+            @extend %button;
+            @extend %font-smoothing-reset;
+            width: 90%;
+            box-shadow: 0 0 0 relative(3px) rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.1em;
 
-	.github {
-		background-color: $color-github;
-	}
+            @include respond-to(medium) {
+                width: auto;
+            }
+        }
+        .caret {
+            border-top: 4px solid;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            display: inline-block;
+            vertical-align: middle;
+            border-width: 5px 5px 0;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            left: 50%;
+            width: calc(90% + 4px);
+            transform: translateX(-50%);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 16px;
+            background-color: #fff;
+            color: #000;
+            top: 100%;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, .15);
+            margin: 2px 0 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 
+            @include respond-to(medium) {
+                width: 250px;
+                left: -2px;
+                transform: none;
+                padding: 6px 0 6px 17px;
+                text-align: left;
+                font-size: 14px;
+            }
+        }
+        .dropdown-menu-link {
+            display: block;
+            padding: 10px 0px;
+
+            @include respond-to(medium) {
+                padding: 5px 0px;
+            }
+        }
+        .open {
+            display: block;
+        }
+    }
+    .dropdown-menu-link:hover {
+        color: #3d9;
+    }
+    .github {
+        background-color: $color-github;
+    }
 }
-
 // -----------------------------------------------------------------------------
 // Content section
 // -----------------------------------------------------------------------------
 
 #content {
+    .content-container {
+        margin: 0 auto;
+        max-width: relative(960px);
+        padding: 0 5%;
 
-	.content-container {
-		margin: 0 auto;
-		max-width: relative(960px);
-    padding: 0 5%;
-
-    @include respond-to(medium) {
-      padding: 0;
+        @include respond-to(medium) {
+            padding: 0;
+        }
     }
-	}
+    .content-section {
+        padding: 50px 0;
 
-	.content-section {
-		padding: 50px 0;
-
-    @include respond-to(medium) {
-      padding: proportional(8) 0 proportional(12) 0;
+        @include respond-to(medium) {
+            padding: proportional(8) 0 proportional(12) 0;
+        }
     }
-	}
 }
-
 // -----------------------------------------------------------------------------
 // Features section
 // -----------------------------------------------------------------------------
 
 #features {
-	background-color: #fff;
+    background-color: #fff;
 
-	.column {
-    @include respond-to(medium) {
-  		width: (100% / 3);
+    .column {
+        @include respond-to(medium) {
+            width: (100% / 3);
+        }
     }
-	}
-
-	.button {
-		@extend %button-medium;
-	}
-
-  .section-title {
-    @include respond-to-max(medium) {
-      margin-bottom: 50px;
+    .button {
+        @extend %button-medium;
     }
-  }
-
+    .section-title {
+        @include respond-to-max(medium) {
+            margin-bottom: 50px;
+        }
+    }
 }
 // -----------------------------------------------------------------------------
 // Trusted by section
 // -----------------------------------------------------------------------------
 
 #trusted {
-	background-color: #f7eeeb;
+    background-color: #f7eeeb;
 
-	.section-title {
-		margin-bottom: proportional(5);
-	}
+    .section-title {
+        margin-bottom: proportional(5);
+    }
 }
-
 .trusted {
     display: flex;
     justify-content: center;
@@ -878,24 +763,19 @@ datalist {
     @include respond-to(medium) {
         flex-flow: row wrap;
     }
-
     @include respond-to(large) {
         flex-flow: row wrap;
     }
 }
-
-
 .trusted-item {
     padding: 20px;
 
     &.hu img {
         width: 30%;
     }
-
     &.jb img {
         width: 60%;
     }
-
     @include respond-to(medium) {
         padding: 50px 25px 0 25px;
         width: 25%;
@@ -903,11 +783,9 @@ datalist {
         &.hu img {
             width: 55%;
         }
-
         &.gcom img {
             width: 70%;
         }
-
         img {
             top: 50%;
             -webkit-transform: translateY(-50%);
@@ -917,49 +795,44 @@ datalist {
         }
     }
 }
-
 // -----------------------------------------------------------------------------
 // Community section
 // -----------------------------------------------------------------------------
 
 #community {
-	background-color: #fff;
+    background-color: #fff;
 
-	.section-title {
-    font-size: 45px;
-		margin-bottom: proportional(5);
+    .section-title {
+        font-size: 45px;
+        margin-bottom: proportional(5);
 
-    @include respond-to(medium) {
-      font-size: 55px;
+        @include respond-to(medium) {
+            font-size: 55px;
+        }
     }
-	}
-
-	.column {
-    @include respond-to(medium) {
-  		width: (100% / 4);
+    .column {
+        @include respond-to(medium) {
+            width: (100% / 4);
+        }
     }
-	}
-
 }
-
 // -----------------------------------------------------------------------------
 // Footer section
 // -----------------------------------------------------------------------------
 
 #footer {
-  background-color: $color-primary;
-  padding: 50px 0;
+    background-color: $color-primary;
+    padding: 50px 0;
 
-  @include respond-to(medium) {
-  	padding: proportional(12) 0;
-  }
+    @include respond-to(medium) {
+        padding: proportional(12) 0;
+    }
 }
-
 // -----------------------------------------------------------------------------
 // Viewport media query
 // -----------------------------------------------------------------------------
 
 @viewport {
-	width: device-width;
-	zoom: 1;
+    width: device-width;
+    zoom: 1;
 }
