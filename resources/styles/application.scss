@@ -802,6 +802,10 @@ datalist {
 		}
 	}
 
+    .dropdown-menu-link:hover {
+        color: #3d9;
+    }
+
 	.github {
 		background-color: $color-github;
 	}
