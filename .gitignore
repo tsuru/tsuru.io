@@ -6,3 +6,4 @@ messages.pot
 .sass-cache/
 node_modules
 *.map
+.DS_Store
