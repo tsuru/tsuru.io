@@ -774,7 +774,22 @@ datalist {
         width: 30%;
     }
     &.jb img {
+        width: 100%;
+    }
+    &.rivendel img {
         width: 60%;
+    }
+    &.nuveo img {
+        width: 100%;
+    }
+    &.filmow img {
+        width: 100%;
+    }
+    &.eduk img {
+        width: 70%;
+    }
+    @include respond-to(small) {
+        padding: 40px;
     }
     @include respond-to(medium) {
         padding: 50px 25px 0 25px;
