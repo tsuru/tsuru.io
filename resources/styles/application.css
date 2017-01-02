@@ -472,21 +472,12 @@ datalist {
 
 .trusted-item {
   padding: 20px; }
-  .trusted-item.hu img {
-    width: 30%; }
   .trusted-item.jb img {
     width: 100%; }
-  .trusted-item.rivendel img {
-    width: 60%; }
   .trusted-item.nuveo img {
     width: 100%; }
   .trusted-item.filmow img {
     width: 100%; }
-  .trusted-item.eduk img {
-    width: 70%; }
-  @media screen and (min-width: 300px) {
-    .trusted-item {
-      padding: 40px; } }
   @media screen and (min-width: 800px) {
     .trusted-item {
       padding: 50px 25px 0 25px;
