@@ -779,6 +779,9 @@ datalist {
     &.filmow img {
         width: 100%;
     }
+    &.jumia img {
+        width: 100%;
+    }
     @include respond-to(medium) {
         padding: 50px 25px 0 25px;
         width: 25%;
