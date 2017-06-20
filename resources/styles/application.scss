@@ -769,7 +769,6 @@ datalist {
 }
 .trusted-item {
     padding: 20px;
-
     &.jb img {
         width: 100%;
     }
@@ -780,6 +779,9 @@ datalist {
         width: 100%;
     }
     &.jumia img {
+        width: 100%;
+    }
+    &.stone img {
         width: 100%;
     }
     @include respond-to(medium) {
