@@ -755,6 +755,7 @@ datalist {
     }
 }
 .trusted {
+    align-items: center;
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
@@ -768,22 +769,15 @@ datalist {
     }
 }
 .trusted-item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     padding: 20px;
-    &.jb img {
+
+    img {
         width: 100%;
     }
-    &.nuveo img {
-        width: 100%;
-    }
-    &.filmow img {
-        width: 100%;
-    }
-    &.jumia img {
-        width: 100%;
-    }
-    &.stone img {
-        width: 100%;
-    }
+
     @include respond-to(medium) {
         padding: 50px 25px 0 25px;
         width: 25%;
@@ -792,14 +786,7 @@ datalist {
             width: 55%;
         }
         &.gcom img {
-            width: 70%;
-        }
-        img {
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            width: 100%;
+            width: 83%;
         }
     }
 }
