@@ -781,13 +781,6 @@ datalist {
     @include respond-to(medium) {
         padding: 50px 25px 0 25px;
         width: 25%;
-
-        &.hu img {
-            width: 55%;
-        }
-        &.gcom img {
-            width: 83%;
-        }
     }
 }
 // -----------------------------------------------------------------------------
