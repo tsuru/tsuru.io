@@ -12,19 +12,20 @@ $ git clone git@github.com:tsuru/tsuru.io.git
 ```
 
 And install the dependencies:
+
 ```shell
 $ cd tsuru.io
-$ npm install
+$ make install
 ```
 
 That's it. You're set.
 
 ## Running & developing
 
-Having the dependencies installed, just `grunt run`:
+Having the dependencies installed, just run:
 
 ```shell
-$ npm run build
+$ make run
 ```
 
 Now you can access it locally at `localhost:7777`.
