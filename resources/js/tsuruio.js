@@ -14,9 +14,10 @@
 
   var tryButton = document.getElementById('try-button');
   var dropdown = document.getElementById('dropdown-menu');
-
-  tryButton.addEventListener('click', function(e){
-    cancelEvent(e);
-    dropdown.classList.toggle('open');
-  });
+  if (tryButton && dropdown) {
+    tryButton.addEventListener('click', function(e){
+      cancelEvent(e);
+      dropdown.classList.toggle('open');
+    });
+  }
 })();
