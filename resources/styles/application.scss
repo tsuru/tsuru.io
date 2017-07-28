@@ -420,6 +420,10 @@ datalist {
         }
     }
 }
+.navigation-self {
+  border-bottom: 2px solid #eee;
+  color: #eee;
+}
 .navigation-link {
     display: block;
     padding: 14px 0;
@@ -823,4 +827,37 @@ datalist {
 @viewport {
     width: device-width;
     zoom: 1;
+}
+
+.media-page {
+  #articles {
+    background-color: #fff;
+    padding-top: 140px;
+
+    a:hover {
+      color: $color-secondary;
+    }
+  }
+
+  #videos {
+    background-color: #f7eeeb;
+
+    .videos-list {
+      align-items: flex-end;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .video-item {
+      margin-bottom: 50px;
+      width: 400px;
+
+      h3 {
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 15px;
+      }
+    }
+  }
 }
