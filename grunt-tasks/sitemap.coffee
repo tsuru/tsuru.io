@@ -3,6 +3,7 @@ module.exports = (grunt) ->
     dist:
       siteRoot: './'
       pattern: [
-        '*.html'
+        '**/*.html'
         '!**/google*.html' # this will exclude 'google*.html'
+        '!node_modules/**'
       ]

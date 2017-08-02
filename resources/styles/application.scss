@@ -359,11 +359,12 @@ datalist {
         height: auto;
     }
     &.navigation--is-open {
-        height: 200px;
+        height: 300px;
         overflow: visible;
     }
 }
 .navigation-button {
+    cursor: pointer;
     position: absolute;
     display: block;
     right: 0;
@@ -423,6 +424,13 @@ datalist {
 .navigation-self {
   border-bottom: 2px solid #eee;
   color: #eee;
+  display: inline-block;
+  margin: 14px 3px 9px 0;
+  padding-bottom: 3px;
+
+  @include respond-to(medium) {
+    margin: 0;
+  }
 }
 .navigation-link {
     display: block;
