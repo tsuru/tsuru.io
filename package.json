@@ -1,6 +1,6 @@
 {
   "name": "Tsuru",
-  "homepage": "http://tsuru.io/",
+  "homepage": "https://tsuru.io/",
   "scripts": {
     "build": "node_modules/grunt-cli/bin/grunt run"
   },

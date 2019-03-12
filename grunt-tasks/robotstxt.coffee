@@ -7,14 +7,14 @@ module.exports = (grunt) ->
         disallow: '/resources/'
       }, {
         ua: 'googlebot-news'
-        allow: 'http://blog.tsuru.io/'
+        allow: 'https://blog.tsuru.io/'
       }, {
         ua: 'googlebot-third'
-        allow: ['http://docs.tsuru.io/']
+        allow: ['https://docs.tsuru.io/']
       }, {
         sitemap: [
-          'http://tsuru.io/sitemap.xml'
-          'http://docs.tsuru.io/sitemap.xml'
+          'https://tsuru.io/sitemap.xml'
+          'https://docs.tsuru.io/sitemap.xml'
         ]
       }, {
         crawldelay: 100
