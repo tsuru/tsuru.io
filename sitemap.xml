@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://tsuru.io/</loc>
+    <loc>https://tsuru.io/</loc>
     <lastmod>2017-07-28T22:04:25.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://tsuru.io/media/</loc>
+    <loc>https://tsuru.io/media/</loc>
     <lastmod>2017-07-28T22:03:33.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
