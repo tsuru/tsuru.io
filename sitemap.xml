@@ -2,17 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tsuru.io/</loc>
-<<<<<<< Updated upstream
-    <lastmod>2017-07-28T22:04:25.000Z</lastmod>
-=======
-    <lastmod>2021-04-30T16:37:19.432Z</lastmod>
->>>>>>> Stashed changes
+    <lastmod>2021-04-30T18:10:28.019Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tsuru.io/media/</loc>
-    <lastmod>2017-07-28T22:03:33.000Z</lastmod>
+    <lastmod>2021-04-25T17:46:46.765Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

@@ -685,7 +685,7 @@ datalist {
             box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 
             @include respond-to(medium) {
-                width: 250px;
+                width: 350px;
                 left: -2px;
                 transform: none;
                 padding: 6px 0 6px 17px;
