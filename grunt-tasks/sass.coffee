@@ -1,7 +1,6 @@
 module.exports = (grunt) ->
   grunt.config 'sass',
     options:
-      sourcemap: 'none'
       style: 'compressed'
     dist:
       files: [
