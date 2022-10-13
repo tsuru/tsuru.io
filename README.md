@@ -4,19 +4,22 @@ This is the [tsuru.io](http://tsuru.io) landing page.
 
 ## Setting up
 
-You must have [SASS](http://sass-lang.com/), [Node.js](https://nodejs.org/) and [grunt-cli](http://gruntjs.com/getting-started) installed.
+You must have the latest [Node.js](https://nodejs.org/) version installed.
+
 After that, clone this project:
 
 ```shell
 $ git clone git@github.com:tsuru/tsuru.io.git
 ```
 
-And install the dependencies:
+Then install the dependencies:
 
 ```shell
 $ cd tsuru.io
 $ make install
 ```
+
+This will install [SASS](http://sass-lang.com/) and [Grunt](http://gruntjs.com/getting-started) CLIs globally in your computer.
 
 That's it. You're set.
 
