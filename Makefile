@@ -1,8 +1,8 @@
 sass:
-	@grunt sass
+	@./node_modules/.bin/grunt sass
 
 install:
-	@gem install sass --no-ri --no-rdoc
+	@sudo gem install sass
 	@npm install
 
 run:
