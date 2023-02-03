@@ -2,3 +2,9 @@
 .gitignore
 .sass-cache
 node_modules
+grunt-tasks
+Dockerfile
+Gruntfile.coffee
+Makefile
+Procfile
+README.md
